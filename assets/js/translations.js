@@ -73,10 +73,12 @@ window.CS_T = {
     p2_desc: "Website and search presence for a digital marketing group.",
     p3_tags: "Web Design",
     p3_desc: "Website design project.",
-    p4_tags: "Design",
-    p4_desc: "Website design project.",
-    p5_tags: "SEO",
-    p5_desc: "Search engine optimization project.",
+    p4_tags: "Web Design · Site Admin",
+    p4_desc: "Website design and administration.",
+    p5_tags: "Web Design · Site Admin",
+    p5_desc: "Website design and administration.",
+    p6_tags: "Web Design · Site Admin",
+    p6_desc: "Website design and administration.",
 
     /* contact */
     contact_h: "Contact",
@@ -163,10 +165,12 @@ window.CS_T = {
     p2_desc: "سایت و حضور در نتایج جستجو برای یک مجموعه دیجیتال مارکتینگ.",
     p3_tags: "طراحی سایت",
     p3_desc: "پروژه طراحی سایت.",
-    p4_tags: "طراحی",
-    p4_desc: "پروژه طراحی سایت.",
-    p5_tags: "سئو",
-    p5_desc: "پروژه بهینه‌سازی برای موتورهای جستجو.",
+    p4_tags: "طراحی سایت · ادمینی سایت",
+    p4_desc: "طراحی و ادمینی سایت.",
+    p5_tags: "طراحی سایت · ادمینی سایت",
+    p5_desc: "طراحی و ادمینی سایت.",
+    p6_tags: "طراحی سایت · ادمینی سایت",
+    p6_desc: "طراحی و ادمینی سایت.",
 
     /* contact */
     contact_h: "تماس",
@@ -177,7 +181,7 @@ window.CS_T = {
     footer: "© ۲۰۲۶ شایان میرخانی",
 
     /* hidden page */
-    arch: "سرفرشته",
+    arch: "فرشته من",
     pw_ph: "رمز عبور",
     unlock: "باز کردن",
     back: "بازگشت",
