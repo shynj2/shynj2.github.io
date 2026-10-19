@@ -193,4 +193,6 @@ html[lang=fa] .pm-card h4{letter-spacing:0;text-transform:none}
 	.floor{left:50%;width:240vw;margin-left:-120vw}
 	.shards.wide{inset:0 auto 0 50%;width:100vw;margin-left:-50vw;overflow:visible}
 	.shards.wide .shard{filter:drop-shadow(0 0 14px #19f3e666)}
+	.shards.wide.up{top:-360px;overflow:clip}
+	body:not(.scrolled) .glass-in .shard{opacity:0}
 }

@@ -64,8 +64,12 @@
 			box.className = "shards" + (wide ? " wide" : "");
 			box.setAttribute("aria-hidden", "true");
 
+			/* the footer is short and last: give its box extra room above it and clip it,
+			   so shards never push the page taller */
+			var up = wide && h.tagName === "FOOTER", boxH = h.offsetHeight + (up ? 360 : 0);
+			if (up) box.className += " up";
 			var count = 2;
-			if (wide) count = Math.max(3, Math.min(8, Math.round(h.offsetHeight / 210)));
+			if (wide) count = Math.max(3, Math.min(8, Math.round(boxH / 210)));
 
 			for (var k = 0; k < count; k++) {
 				var el = document.createElement("div");
@@ -76,6 +80,7 @@
 					sz = 100 + rnd() * 140;
 					/* spread evenly down the section with a little jitter */
 					topPct = ((k + .1 + rnd() * .6) / count) * 100;
+					if (up) topPct = Math.min(topPct, (boxH - sz * .9) / boxH * 100);
 					/* x position inside the side gutter (a little may tuck behind the content) */
 					var lo = -sz * .15, hi2 = Math.max(gut - sz * .85, lo);
 					var off = lo + rnd() * (hi2 - lo);
@@ -121,7 +126,11 @@
 			it.el.style.transform = "translate3d(0," + (m * it.sp).toFixed(1) + "px,0) rotate(" + (it.rot + m * .02).toFixed(1) + "deg)";
 		});
 	}
+	/* desktop: shards only show once the visitor has scrolled down */
+	function gate() { body.classList.toggle("scrolled", (window.pageYOffset || 0) > 30); }
+	gate();
 	window.addEventListener("scroll", function () {
+		gate();
 		if (!tk) { tk = 1; requestAnimationFrame(function () { tk = 0; upd(); }); }
 	}, { passive: true });
 
