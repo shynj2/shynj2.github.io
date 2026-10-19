@@ -185,3 +185,12 @@ body.calm .shard{transition:none}
 html[dir=rtl] .pm-list li{--dir:-1}
 body.calm .pm-card{clip-path:none!important}
 html[lang=fa] .pm-card h4{letter-spacing:0;text-transform:none}
+
+/* ---- desktop: full-width grid floor + page-wide glass shards (mobile unchanged) ---- */
+@media(min-width:701px){
+	html{overflow-x:clip}
+	.hero{overflow:visible}
+	.floor{left:50%;width:240vw;margin-left:-120vw}
+	.shards.wide{inset:0 auto 0 50%;width:100vw;margin-left:-50vw;overflow:visible}
+	.shards.wide .shard{filter:drop-shadow(0 0 14px #19f3e666)}
+}

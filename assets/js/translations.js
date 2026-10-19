@@ -78,7 +78,6 @@ window.CS_T = {
     /* contact */
     contact_h: "Contact",
     contact_intro: "Write to me about projects or collaboration:",
-    contact_loc: "Hashtgerd New Town, Iran",
     c_mail: "Email",
     c_phone: "Phone",
     c_tg: "Telegram",
@@ -181,7 +180,6 @@ window.CS_T = {
     /* contact */
     contact_h: "تماس",
     contact_intro: "برای پروژه یا همکاری برایم بنویسید:",
-    contact_loc: "شهر جدید هشتگرد، ایران",
     c_mail: "ایمیل",
     c_phone: "شماره تماس",
     c_tg: "تلگرام",
