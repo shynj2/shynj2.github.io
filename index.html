@@ -35,7 +35,13 @@
 
 <section id="about">
 	<h2 data-i18n="about_h">About</h2>
-	<div class="panel"><p style="margin:0" data-i18n="about">I'm a web designer, SEO specialist and digital marketer who has led web design and digital marketing teams. I build WordPress and Elementor sites with clean HTML and CSS, then grow them with SEO, Google Ads and content. I'm intensely punctual, and I work by seven principles: honesty, honor, loyalty, punctuality, courage, hard work and a firm moral code.</p></div>
+	<div class="panel about-grid">
+		<figure class="me">
+			<img src="assets/img/shayan.jpg" width="520" height="650" alt="Shayan Mirkhani" decoding="async">
+			<i class="c tl"></i><i class="c br"></i>
+		</figure>
+		<p style="margin:0" data-i18n="about">I'm a web designer, SEO specialist and digital marketer who has led web design and digital marketing teams. I build WordPress and Elementor sites with clean HTML and CSS, then grow them with SEO, Google Ads and content. I'm intensely punctual, and I work by seven principles: honesty, honor, loyalty, punctuality, courage, hard work and a firm moral code.</p>
+	</div>
 </section>
 
 <section id="resume">
@@ -76,17 +82,6 @@
 	</div>
 	<div class="cols second">
 		<div class="panel">
-			<h3 class="sub" data-i18n="edu_h">Education</h3>
-			<div class="job">
-				<h3 data-i18n="edu1_title">Psychology student</h3>
-				<p style="margin:4px 0 0" data-i18n="edu1_desc">Islamic Azad University, Karaj Branch</p>
-			</div>
-			<div class="job">
-				<h3 data-i18n="edu2_title">Diploma in Experimental Sciences</h3>
-				<p style="margin:4px 0 0" data-i18n="edu2_desc">High school</p>
-			</div>
-		</div>
-		<div class="panel">
 			<h3 class="sub" data-i18n="lang_h">Languages</h3>
 			<ul class="tags">
 				<li data-i18n="lang1">English</li>
@@ -100,42 +95,42 @@
 <section id="works">
 	<h2 data-i18n="works_h">Works</h2>
 	<div class="grid">
-		<article class="card">
+		<article class="card" data-project="1">
 			<a class="thumb" href="https://pooyansport.com" target="_blank" rel="noopener" aria-label="pooyansport.com"><span class="dom">pooyansport.com</span></a>
 			<h3><a href="https://pooyansport.com" target="_blank" rel="noopener">Pooyansport.com</a></h3>
 			<small class="tg" data-i18n="p1_tags">Web Design · SEO</small>
 			<p data-i18n="p1_desc">Website for a sportswear store: design and search optimization.</p>
 			<a class="more" href="https://pooyansport.com" target="_blank" rel="noopener" data-i18n="view">View project</a>
 		</article>
-		<article class="card">
+		<article class="card" data-project="2">
 			<a class="thumb" href="https://aidbax.ir" target="_blank" rel="noopener" aria-label="aidbax.ir"><span class="dom">aidbax.ir</span></a>
 			<h3><a href="https://aidbax.ir" target="_blank" rel="noopener">Aidbax.ir</a></h3>
 			<small class="tg" data-i18n="p2_tags">Digital Marketing · Web Design · SEO</small>
 			<p data-i18n="p2_desc">Website and search presence for a digital marketing group.</p>
 			<a class="more" href="https://aidbax.ir" target="_blank" rel="noopener" data-i18n="view">View project</a>
 		</article>
-		<article class="card">
+		<article class="card" data-project="3">
 			<a class="thumb" href="https://newabzar.com" target="_blank" rel="noopener" aria-label="newabzar.com"><span class="dom">newabzar.com</span></a>
 			<h3><a href="https://newabzar.com" target="_blank" rel="noopener">Newabzar.com</a></h3>
 			<small class="tg" data-i18n="p3_tags">Web Design</small>
 			<p data-i18n="p3_desc">Website design project.</p>
 			<a class="more" href="https://newabzar.com" target="_blank" rel="noopener" data-i18n="view">View project</a>
 		</article>
-		<article class="card">
+		<article class="card" data-project="4">
 			<a class="thumb" href="https://abzaramini.com" target="_blank" rel="noopener" aria-label="abzaramini.com"><span class="dom">abzaramini.com</span></a>
 			<h3><a href="https://abzaramini.com" target="_blank" rel="noopener">Abzaramini.com</a></h3>
 			<small class="tg" data-i18n="p4_tags">Web Design · Site Admin</small>
 			<p data-i18n="p4_desc">Website design and administration.</p>
 			<a class="more" href="https://abzaramini.com" target="_blank" rel="noopener" data-i18n="view">View project</a>
 		</article>
-		<article class="card">
+		<article class="card" data-project="5">
 			<a class="thumb" href="https://newabzar1.ir" target="_blank" rel="noopener" aria-label="newabzar1.ir"><span class="dom">newabzar1.ir</span></a>
 			<h3><a href="https://newabzar1.ir" target="_blank" rel="noopener">Newabzar1.ir</a></h3>
 			<small class="tg" data-i18n="p5_tags">Web Design · Site Admin</small>
 			<p data-i18n="p5_desc">Website design and administration.</p>
 			<a class="more" href="https://newabzar1.ir" target="_blank" rel="noopener" data-i18n="view">View project</a>
 		</article>
-		<article class="card">
+		<article class="card" data-project="6">
 			<a class="thumb" href="https://takabzarplus.ir" target="_blank" rel="noopener" aria-label="takabzarplus.ir"><span class="dom">takabzarplus.ir</span></a>
 			<h3><a href="https://takabzarplus.ir" target="_blank" rel="noopener">Takabzarplus.ir</a></h3>
 			<small class="tg" data-i18n="p6_tags">Web Design · Site Admin</small>
@@ -148,9 +143,12 @@
 <section id="contact">
 	<h2 data-i18n="contact_h">Contact</h2>
 	<div class="panel">
-		<p style="margin:0 0 8px" data-i18n="contact_intro">Write to me about projects or collaboration:</p>
-		<p style="margin:0 0 8px"><a class="mail" href="mailto:shynj2@gmail.com" dir="ltr">shynj2@gmail.com</a></p>
-		<p style="margin:0;color:var(--dim)" data-i18n="contact_loc">Hashtgerd New Town, Iran</p>
+		<p style="margin:0 0 12px" data-i18n="contact_intro">Write to me about projects or collaboration:</p>
+		<ul class="contacts">
+			<li><span class="k" data-i18n="c_mail">Email</span><a class="mail" href="mailto:shynj2@gmail.com" dir="ltr">shynj2@gmail.com</a></li>
+			<li><span class="k" data-i18n="c_phone">Phone</span><a class="mail" href="tel:+989229513128" dir="ltr">09229513128</a></li>
+			<li><span class="k" data-i18n="c_tg">Telegram</span><a class="mail" href="https://t.me/shynj2" target="_blank" rel="noopener" dir="ltr">@shynj2</a></li>
+		</ul>
 	</div>
 </section>
 
@@ -160,6 +158,19 @@
 <div id="sec" hidden><button class="b" id="sx" type="button" data-i18n="back">Back</button>
 <div id="gate"><h2 data-i18n="arch">Archangel</h2><input id="pw" type="password" placeholder="Password" data-i18n-ph="pw_ph" autocomplete="off"><button class="b" id="go" type="button" data-i18n="unlock">Unlock</button><p id="msg"></p></div>
 <div id="vault"></div></div>
+<div id="pm" class="pm" role="dialog" aria-modal="true" aria-labelledby="pm-t" hidden>
+	<div class="pm-bg" data-close></div>
+	<div class="pm-card" tabindex="-1">
+		<button class="b pm-x" type="button" data-close aria-label="Close">✕</button>
+		<span class="pm-dom" id="pm-dom" dir="ltr"></span>
+		<h3 id="pm-t"></h3>
+		<small class="tg" id="pm-tags"></small>
+		<p class="pm-role"><strong id="pm-role"></strong><span id="pm-date"></span></p>
+		<h4 data-i18n="did_h">What I did</h4>
+		<ul class="pm-list" id="pm-list"></ul>
+		<a class="btn" id="pm-go" href="#" target="_blank" rel="noopener" data-i18n="visit">Visit website</a>
+	</div>
+</div>
 <div id="glt" aria-hidden="true"></div>
 
 <div class="bar">
@@ -171,5 +182,7 @@
 <script src="assets/js/secret-data.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/fx.js"></script>
+<script src="assets/js/shards.js"></script>
+<script src="assets/js/works.js"></script>
 </body>
 </html>

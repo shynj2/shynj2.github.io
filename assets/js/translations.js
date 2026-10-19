@@ -53,11 +53,6 @@ window.CS_T = {
     skill9: "Moz Keyword Tools",
     skill10: "Screaming Frog",
 
-    edu_h: "Education",
-    edu1_title: "Psychology student",
-    edu1_desc: "Islamic Azad University, Karaj Branch",
-    edu2_title: "Diploma in Experimental Sciences",
-    edu2_desc: "High school",
 
     lang_h: "Languages",
     lang1: "English",
@@ -66,7 +61,7 @@ window.CS_T = {
 
     /* works */
     works_h: "Works",
-    view: "View project",
+    view: "View details",
     p1_tags: "Web Design · SEO",
     p1_desc: "Website for a sportswear store: design and search optimization.",
     p2_tags: "Digital Marketing · Web Design · SEO",
@@ -83,7 +78,22 @@ window.CS_T = {
     /* contact */
     contact_h: "Contact",
     contact_intro: "Write to me about projects or collaboration:",
-    contact_loc: "Hashtgerd New Town, Iran",
+    c_mail: "Email",
+    c_phone: "Phone",
+    c_tg: "Telegram",
+
+    /* work popup */
+    did_h: "What I did",
+    visit: "Visit website",
+    role_seo_admin: "SEO Consultant · Website Admin",
+    role_head_web: "Head of Web Design · SEO Consultant",
+    role_web: "Web Designer",
+    role_web_admin: "Web Designer · Site Admin",
+    mb_site: "Designed and built the website",
+    mb_seo: "Optimized the site for search engines (SEO)",
+    mb_admin: "Handled day-to-day site administration",
+    mb_lead: "Led the web design team and its projects",
+    mb_consult: "Provided SEO consulting for the group’s web presence",
 
     /* footer */
     footer: "© 2026 Shayan Mirkhani",
@@ -145,11 +155,6 @@ window.CS_T = {
     skill9: "ابزارهای کلمات کلیدی Moz",
     skill10: "اسکریمینگ فراگ",
 
-    edu_h: "تحصیلات",
-    edu1_title: "دانشجوی روانشناسی",
-    edu1_desc: "دانشگاه آزاد اسلامی واحد کرج",
-    edu2_title: "دیپلم علوم تجربی",
-    edu2_desc: "دبیرستان",
 
     lang_h: "زبان‌ها",
     lang1: "انگلیسی",
@@ -158,7 +163,7 @@ window.CS_T = {
 
     /* works */
     works_h: "نمونه‌کارها",
-    view: "مشاهده پروژه",
+    view: "مشاهده جزئیات",
     p1_tags: "طراحی سایت · سئو",
     p1_desc: "سایت یک فروشگاه پوشاک ورزشی: طراحی و بهینه‌سازی برای موتورهای جستجو.",
     p2_tags: "دیجیتال مارکتینگ · طراحی سایت · سئو",
@@ -175,7 +180,22 @@ window.CS_T = {
     /* contact */
     contact_h: "تماس",
     contact_intro: "برای پروژه یا همکاری برایم بنویسید:",
-    contact_loc: "شهر جدید هشتگرد، ایران",
+    c_mail: "ایمیل",
+    c_phone: "شماره تماس",
+    c_tg: "تلگرام",
+
+    /* work popup */
+    did_h: "چه کاری انجام دادم",
+    visit: "مشاهده سایت",
+    role_seo_admin: "مشاور سئو · ادمین سایت",
+    role_head_web: "مدیر بخش طراحی سایت · مشاور سئو",
+    role_web: "طراح سایت",
+    role_web_admin: "طراح سایت · ادمین سایت",
+    mb_site: "طراحی و راه‌اندازی سایت",
+    mb_seo: "بهینه‌سازی سایت برای موتورهای جستجو (سئو)",
+    mb_admin: "ادمینی و مدیریت روزمرهٔ سایت",
+    mb_lead: "مدیریت تیم طراحی سایت و پروژه‌های آن",
+    mb_consult: "مشاورهٔ سئو برای حضور آنلاین مجموعه",
 
     /* footer */
     footer: "© ۲۰۲۶ شایان میرخانی",

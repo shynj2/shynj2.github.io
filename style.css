@@ -135,3 +135,53 @@ html[lang=fa] body{line-height:1.9}
 html[lang=fa] .tags li{line-height:1.7}
 html[lang=fa] #sec #gate h2{letter-spacing:0}
 html[lang=fa] button.b{font-family:Vazirmatn,"Share Tech Mono",sans-serif}
+
+/* ---- about photo ---- */
+.about-grid{display:grid;grid-template-columns:minmax(0,230px) 1fr;gap:28px;align-items:center}
+.me{position:relative;margin:0;border:1px solid var(--cyan);box-shadow:5px 5px 0 var(--mag),0 0 20px #19f3e633;background:var(--void)}
+.me img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
+.me::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,#0a061226 0 1px,transparent 1px 4px),linear-gradient(transparent 60%,#0a061299)}
+.me .c{position:absolute;width:22px;height:22px;z-index:1;border:2px solid var(--gold);pointer-events:none}
+.me .tl{top:-7px;left:-7px;border-right:0;border-bottom:0}
+.me .br{bottom:-7px;right:-7px;border-left:0;border-top:0}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;justify-items:center}.me{width:min(230px,70%)}.about-grid p{justify-self:stretch}}
+
+/* ---- contact list ---- */
+.contacts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.contacts li{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.contacts .k{min-width:92px;color:var(--dim);font-size:14px}
+.contacts a.mail{font-size:19px}
+
+/* ---- glass shards in the background ---- */
+.shards{position:absolute;inset:0 -20px;z-index:-1;pointer-events:none;overflow-x:clip}
+body.js section>.shards{clip-path:none}
+.shard{position:absolute;width:calc(var(--sz)*1px);aspect-ratio:1;opacity:0;transition:opacity 1.4s ease;will-change:transform;filter:drop-shadow(0 0 10px #19f3e644)}
+.shard svg{display:block;width:100%;height:100%;overflow:visible}
+.glass-in .shard{opacity:var(--o)}
+@media(max-width:700px){.shard{width:calc(var(--sz)*.62px)}}
+body.calm .shard{transition:none}
+
+/* ---- work popup ---- */
+.card{cursor:pointer}
+.pm{position:fixed;inset:0;z-index:7;display:grid;place-items:center;padding:20px}
+.pm-bg{position:absolute;inset:0;background:#0a0612e0;opacity:0;transition:opacity .3s}
+.pm.open .pm-bg{opacity:1}
+.pm-card{position:relative;width:min(560px,100%);max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow:auto;background:var(--panel);border:1px solid var(--cyan);box-shadow:8px 8px 0 var(--mag),0 0 34px #19f3e633;padding:26px 24px 24px;outline:none;clip-path:inset(0 100% 0 0);transition:clip-path .3s steps(8)}
+.pm.open .pm-card{clip-path:inset(-24px);transition:clip-path .65s steps(14);animation:pmj .55s steps(1)}
+@keyframes pmj{0%{transform:translateX(-8px) skewX(3deg);filter:hue-rotate(50deg)}25%{transform:translateX(9px);filter:none}45%{transform:translateX(-4px) skewX(-3deg);filter:saturate(2.2)}70%{transform:translateX(3px);filter:none}100%{transform:none}}
+.pm-x{position:absolute;top:10px;right:10px;z-index:1;padding:4px 10px;line-height:1.3}
+.pm-dom{display:block;text-align:left;margin:-26px -24px 18px;padding:34px 56px 26px 24px;font-size:20px;color:var(--ink);text-shadow:0 0 10px var(--mag);border-bottom:1px solid #ff2e8866;background:linear-gradient(135deg,#ff2e8844,#19f3e633),repeating-linear-gradient(0deg,#ffffff0a 0 1px,transparent 1px 4px);word-break:break-all}
+.pm-card h3{font-size:26px;color:var(--gold);text-shadow:0 0 10px #ffc85755}
+.pm-card .tg{display:block;margin:4px 0 14px;color:var(--cyan);font-size:13px}
+.pm-role{margin:0 0 16px;display:grid;gap:2px}
+.pm-role strong{color:var(--ink);font-weight:400}
+.pm-role span{color:var(--dim);font-size:14px}
+.pm-card h4{margin:0 0 10px;font:inherit;color:var(--cyan);letter-spacing:.06em;text-transform:uppercase;font-size:14px}
+.pm-list{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:8px}
+.pm-list li{position:relative;padding-inline-start:24px}
+.pm-list li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:8px;height:8px;background:var(--mag);transform:rotate(45deg);box-shadow:0 0 8px var(--mag)}
+.pm.open .pm-list li{animation:pmi .45s steps(5) both;animation-delay:calc(.55s + var(--i,0)*.13s)}
+@keyframes pmi{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+html[dir=rtl] .pm-list li{--dir:-1}
+body.calm .pm-card{clip-path:none!important}
+html[lang=fa] .pm-card h4{letter-spacing:0;text-transform:none}
