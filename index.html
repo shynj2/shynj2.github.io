@@ -17,6 +17,28 @@
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
       } catch (e) {}
     </script>
+    <style>
+      html, body { background: #04060b; color: #bfeaff; margin: 0; }
+    </style>
+    <script>
+      window.__soicErrors = [];
+      window.addEventListener('error', function (e) {
+        window.__soicErrors.push(String(e.message || e.error || e));
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        window.__soicErrors.push('Promise: ' + String((e.reason && e.reason.message) || e.reason));
+      });
+      // If nothing rendered after a few seconds, show why (helps debug on real phones)
+      setTimeout(function () {
+        var root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          var d = document.createElement('pre');
+          d.style.cssText = 'white-space:pre-wrap;padding:16px;font:12px monospace;color:#ff9a7a';
+          d.textContent = 'Failed to start.\n' + (window.__soicErrors.join('\n') || 'No error captured (browser may be too old).') + '\n\n' + navigator.userAgent;
+          document.body.appendChild(d);
+        }
+      }, 6000);
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,6 +48,7 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript style="color:#bfeaff;padding:16px;display:block">JavaScript is required.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

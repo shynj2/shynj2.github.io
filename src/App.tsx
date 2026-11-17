@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Scene } from './three/Scene';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Hero } from './sections/Hero';
 import { Campaigns, Chronicle, Houses, Pillars, Rookery, Strongholds } from './sections/Chapters';
 import { Realms } from './sections/Realms';
@@ -69,7 +70,9 @@ export default function App() {
 
   return (
     <>
-      <Scene />
+      <ErrorBoundary fallback={<div className="fixed inset-0 z-0" style={{ background: '#04060b' }} />}>
+        <Scene />
+      </ErrorBoundary>
       <div ref={grainRef} className="grain" aria-hidden />
       <main className="relative z-10">
         <Hero />
