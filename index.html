@@ -37,14 +37,13 @@
           d.textContent = 'Failed to start.\n' + (window.__soicErrors.join('\n') || 'No error captured (browser may be too old).') + '\n\n' + navigator.userAgent;
           document.body.appendChild(d);
         }
-      }, 6000);
+      }, 20000);
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Noto+Sans+Runic&family=Share+Tech+Mono&family=Silkscreen&family=Vazirmatn:wght@300..900&family=Zen+Antique&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Non-blocking fonts: if Google Fonts is slow or blocked, the site still starts with fallback fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Noto+Sans+Runic&family=Share+Tech+Mono&family=Silkscreen&family=Vazirmatn:wght@300..900&family=Zen+Antique&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Noto+Sans+Runic&family=Share+Tech+Mono&family=Silkscreen&family=Vazirmatn:wght@300..900&family=Zen+Antique&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>
