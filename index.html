@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#04060b" />
+    <title>Shayan Mirkhani — A Song of Ice &amp; Code</title>
+    <meta
+      name="description"
+      content="Shayan Mirkhani — Web Designer, SEO Specialist & Digital Marketer. An interactive 3D resume: A Song of Ice & Code."
+    />
+    <script>
+      try {
+        var l = localStorage.getItem('soic_lang') || (/^fa/i.test(navigator.language) ? 'fa' : 'en');
+        document.documentElement.lang = l;
+        document.documentElement.dir = l === 'fa' ? 'rtl' : 'ltr';
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Noto+Sans+Runic&family=Share+Tech+Mono&family=Silkscreen&family=Vazirmatn:wght@300..900&family=Zen+Antique&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
