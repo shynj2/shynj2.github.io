@@ -80,6 +80,7 @@ export function SpotCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const onMove = (e: RPE<HTMLDivElement>) => {
+    if (e.pointerType === 'touch' || world.mobile) return;
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
@@ -87,7 +88,7 @@ export function SpotCard({
     const y = (e.clientY - r.top) / r.height;
     el.style.setProperty('--mx', `${x * 100}%`);
     el.style.setProperty('--my', `${y * 100}%`);
-    if (tilt && !world.mobile) {
+    if (tilt) {
       el.style.setProperty('--rx', `${(0.5 - y) * 6}deg`);
       el.style.setProperty('--ry', `${(x - 0.5) * 8}deg`);
     }

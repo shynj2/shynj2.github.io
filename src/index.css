@@ -37,7 +37,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
 }
 
@@ -58,9 +58,42 @@ html[lang="fa"] .kicker {
   letter-spacing: 0 !important;
 }
 
+/* A sweep across the story is a scene gesture, not a text selection. Keep editing native. */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+:where(input, textarea, [contenteditable]:not([contenteditable='false'])) {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+img {
+  -webkit-user-drag: none;
+}
 ::selection {
   background: var(--accent);
   color: #04060b;
+}
+
+/* Keep the canvas composited independently from scrolling copy. */
+.scene-canvas {
+  background: #04060b;
+  contain: layout paint style;
+}
+.scene-canvas canvas { display: block; }
+
+@media (max-width: 767px), (pointer: coarse) {
+  .grain { display: none; }
+  /* Mobile Safari can lose backdrop tiles when these layers move over WebGL. */
+  #root :is([class*="backdrop-blur"], .glass, .card, .btn-ghost) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .portfolio-content .card, .portfolio-content .glass { background-color: rgba(7, 11, 20, 0.34); }
+  .portfolio-content :is([style*="blur("], .name-metal) { filter: none !important; }
+  .portfolio-content .card-tilt { transform: none; }
 }
 
 /* keep copy legible when it floats over the 3D realm */

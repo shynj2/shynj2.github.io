@@ -1,7 +1,6 @@
-/**
- * Fully procedural soundscape (no audio files):
- * icy wind + low drone at the start → fire roar & crackles as the realm heats up.
- */
+import { Soundtrack } from './score';
+
+/** Mix the original score with the procedural world ambience. */
 class Ambience {
   private ctx: AudioContext | null = null;
   private master: GainNode | null = null;
@@ -11,9 +10,14 @@ class Ambience {
   private drone: GainNode | null = null;
   private droneFilter: BiquadFilterNode | null = null;
   private noise: AudioBuffer | null = null;
+  private score: Soundtrack | null = null;
   private timer = 0;
+  private suspendTimer = 0;
   private heat = 0;
   private charge = 0;
+  private chapter = 0;
+  private hatch = 0;
+  private phoenix = 0;
   private last = 0;
   enabled = false;
 
@@ -30,6 +34,7 @@ class Ambience {
     comp.ratio.value = 3;
     master.connect(comp).connect(ctx.destination);
     this.master = master;
+    this.score = new Soundtrack(ctx, master);
 
     // pink noise buffer
     const len = ctx.sampleRate * 4;
@@ -77,13 +82,13 @@ class Ambience {
     gLfo.connect(gAmt).connect(gust.gain);
     gLfo.start();
     const windGain = ctx.createGain();
-    windGain.gain.value = 0.55;
+    windGain.gain.value = 0.32;
     w.connect(bp).connect(gust).connect(windGain).connect(master);
     this.wind = windGain;
 
     // ominous drone
     const droneGain = ctx.createGain();
-    droneGain.gain.value = 0.09;
+    droneGain.gain.value = 0.034;
     const lp = ctx.createBiquadFilter();
     lp.type = 'lowpass';
     lp.frequency.value = 320;
@@ -146,42 +151,65 @@ class Ambience {
   }
 
   start() {
+    if (this.enabled) {
+      if (this.ctx && this.ctx.state !== 'running') void this.ctx.resume().catch(() => {});
+      return;
+    }
     try {
       if (!this.ctx) this.build();
     } catch {
       return;
     }
-    const ctx = this.ctx!;
-    void ctx.resume();
+    const ctx = this.ctx;
+    const master = this.master;
+    if (!ctx || !master) return;
+    window.clearTimeout(this.suspendTimer);
     this.enabled = true;
-    this.master!.gain.cancelScheduledValues(ctx.currentTime);
-    this.master!.gain.setTargetAtTime(0.75, ctx.currentTime, 0.9);
-    if (!this.timer) this.timer = window.setInterval(() => this.crackle(), 55);
-    this.last = 0;
-    this.update(this.heat, this.charge);
+    // Resume inside the same click/tap that opted in to sound, for Safari and Chrome autoplay policies.
+    void ctx.resume().catch(() => {});
+    master.gain.cancelScheduledValues(ctx.currentTime);
+    master.gain.setTargetAtTime(0.86, ctx.currentTime, 0.39);
+    if (!this.timer) this.timer = window.setInterval(() => this.crackle(), 76);
+    this.last = -1000;
+    this.update(this.heat, this.charge, this.chapter, this.hatch, this.phoenix);
+    this.score?.prepare();
   }
 
   mute() {
-    if (!this.ctx || !this.master) return;
+    if (!this.ctx || !this.master || !this.enabled) return;
+    const ctx = this.ctx;
     this.enabled = false;
-    this.master.gain.cancelScheduledValues(this.ctx.currentTime);
-    this.master.gain.setTargetAtTime(0, this.ctx.currentTime, 0.35);
+    window.clearInterval(this.timer);
+    this.timer = 0;
+    this.master.gain.cancelScheduledValues(ctx.currentTime);
+    this.master.gain.setTargetAtTime(0, ctx.currentTime, 0.085);
+    this.suspendTimer = window.setTimeout(() => {
+      if (!this.enabled) void ctx.suspend().catch(() => {});
+    }, 480);
   }
 
-  update(heat: number, charge: number) {
+  update(heat: number, charge: number, chapter: number, hatch: number, phoenix: number) {
     this.heat = heat;
     this.charge = charge;
+    this.chapter = chapter;
+    this.hatch = hatch;
+    this.phoenix = phoenix;
     if (!this.ctx || !this.enabled || !this.wind || !this.fire || !this.fireFilter || !this.drone || !this.droneFilter) return;
     const now = performance.now();
     if (now - this.last < 110) return;
     this.last = now;
     const t = this.ctx.currentTime;
-    this.wind.gain.setTargetAtTime(0.55 * (1 - heat * 0.75) + charge * 0.1, t, 0.5);
-    this.fire.gain.setTargetAtTime(heat * 0.22 + charge * 0.55, t, 0.3);
+    this.wind.gain.setTargetAtTime(0.34 * (1 - heat * 0.75) + charge * 0.06, t, 0.5);
+    this.fire.gain.setTargetAtTime(heat * 0.15 + charge * 0.29, t, 0.3);
     this.fireFilter.frequency.setTargetAtTime(480 + heat * 520 + charge * 1800, t, 0.3);
-    this.drone.gain.setTargetAtTime(0.085 + heat * 0.07, t, 0.8);
+    this.drone.gain.setTargetAtTime(0.033 + heat * 0.023, t, 0.8);
     this.droneFilter.frequency.setTargetAtTime(300 + heat * 380, t, 0.8);
+    this.score?.update(chapter, hatch, phoenix);
   }
+
+  fadeFinale() { this.score?.melt(); }
+
+  returnToIce() { this.score?.rebirth(); }
 
   dracarys(power: number) {
     const ctx = this.ctx;

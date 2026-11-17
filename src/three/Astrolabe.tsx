@@ -75,7 +75,8 @@ void main(){
   border = max(border, 1.0 - smoothstep(0.0, fy * 1.5, abs(vUv.y - 0.94) - fy * 0.5));
 
   vec3 V = normalize(cameraPosition - vW);
-  float fres = pow(1.0 - abs(dot(normalize(vNw), V)), 2.0);
+  float rim = 1.0 - clamp(abs(dot(normalize(vNw), V)), 0.0, 1.0);
+  float fres = rim * rim;
   float sweep = pow(0.5 + 0.5 * sin(vUv.x * 6.28318 * 2.0 - uTime + uSeed * 4.0), 6.0);
   vec3 runeCol = mix(uNeonCol, uFire, clamp(uHeat + uCharge * 0.7, 0.0, 1.0));
   // neon realm: the rings alternate cyan / magenta

@@ -39,7 +39,7 @@ void main(){
   vec3 zenith = mix(vec3(0.004, 0.008, 0.02), vec3(0.014, 0.004, 0.012), heat);
   vec3 horizon = mix(vec3(0.028, 0.055, 0.09), vec3(0.11, 0.03, 0.03), heat);
   vec3 col = mix(horizon, zenith, smoothstep(-0.05, 0.6, e));
-  col = mix(col, vec3(0.008, 0.012, 0.02), smoothstep(0.0, -0.35, e));
+  col = mix(col, vec3(0.008, 0.012, 0.02), (1.0 - smoothstep(-0.35, 0.0, e)));
   col += mix(vec3(0.05, 0.1, 0.16), vec3(0.22, 0.07, 0.04), heat) * exp(-abs(e) * 14.0) * 0.6;
 
   // stars — only above the horizon where visible
@@ -50,7 +50,7 @@ void main(){
     if (rnd > 0.986) {
       vec3 f = fract(sp) - 0.5;
       vec3 off = vec3(h31(id + 1.0), h31(id + 2.0), h31(id + 3.0)) - 0.5;
-      float star = smoothstep(0.26, 0.0, length(f - off * 0.5));
+      float star = (1.0 - smoothstep(0.0, 0.26, length(f - off * 0.5)));
       float tw = 0.55 + 0.45 * sin(uTime * (0.8 + rnd * 3.0) + rnd * 60.0);
       col += vec3(0.8, 0.9, 1.0) * star * tw * smoothstep(0.02, 0.25, e) * 1.3;
     }
@@ -68,14 +68,29 @@ void main(){
     cLow = mix(cLow, vec3(1.0, 0.7, 0.25), uDawn);
     cHigh = mix(cHigh, vec3(1.0, 0.4, 0.2), uDawn);
 
-    for (int i = 0; i < 3; i++){
+    #ifdef LIGHTWEIGHT
+      const int curtains = 2;
+    #else
+      const int curtains = 3;
+    #endif
+    for (int i = 0; i < curtains; i++){
       float fi = float(i);
-      float base = 0.09 + fi * 0.065 + 0.05 * snoise(vec3(d.x * 1.4 + fi * 3.1, d.z * 1.4, uTime * 0.03 + fi));
+      #ifdef LIGHTWEIGHT
+        float bend = sin(d.x * 3.7 + d.z * 2.7 + fi * 1.4 + uTime * 0.12) * 0.7;
+      #else
+        float bend = snoise(vec3(d.x * 1.4 + fi * 3.1, d.z * 1.4, uTime * 0.03 + fi));
+      #endif
+      float base = 0.09 + fi * 0.065 + 0.05 * bend;
       float above = e - base;
       float curtain = smoothstep(-0.015, 0.02, above) * exp(-max(above, 0.0) * (9.0 - fi * 2.0));
       if (curtain > 0.002) {
-        float rays = snoise(vec3(d.x * 9.0 + fi * 5.0, uTime * 0.12 + fi * 2.0, d.z * 9.0)) * 0.5 + 0.5;
-        rays = rays * sqrt(rays) * (0.6 + 0.4 * snoise(vec3(d.x * 2.5, uTime * 0.05, d.z * 2.5 + fi)));
+        #ifdef LIGHTWEIGHT
+          float rays = (0.58 + 0.42 * sin(d.x * 18.0 + bend * 7.0 + fi + uTime * 0.21));
+          rays *= (0.57 + 0.43 * sin(d.x * 5.5 - d.z * 3.0 + fi * 2.0));
+        #else
+          float rays = snoise(vec3(d.x * 9.0 + fi * 5.0, uTime * 0.12 + fi * 2.0, d.z * 9.0)) * 0.5 + 0.5;
+          rays = rays * sqrt(rays) * (0.6 + 0.4 * snoise(vec3(d.x * 2.5, uTime * 0.05, d.z * 2.5 + fi)));
+        #endif
         vec3 c = mix(cLow, cHigh, smoothstep(0.0, 0.12, above));
         aur += c * curtain * rays * (0.55 - fi * 0.12);
       }
@@ -109,12 +124,13 @@ void main(){
 }
 `;
 
-export function Sky() {
+export function Sky({ mobile }: { mobile: boolean }) {
   const mat = useMemo(
     () =>
       new THREE.ShaderMaterial({
         vertexShader: skyVert,
         fragmentShader: skyFrag,
+        defines: mobile ? { LIGHTWEIGHT: 1 } : {},
         side: THREE.BackSide,
         depthWrite: false,
         uniforms: {
@@ -126,7 +142,7 @@ export function Sky() {
           uDawn: { value: 0 },
         },
       }),
-    []
+    [mobile]
   );
   useSafeFrame((state) => {
     const u = mat.uniforms;
@@ -164,11 +180,15 @@ uniform float uSeed;
 uniform float uScale;
 uniform vec3 uEgg;
 varying vec3 vW;
-${NOISE}
+#ifdef LIGHTWEIGHT
+  uniform sampler2D uMist;
+#else
+  ${NOISE}
+#endif
 void main(){
   // Early-out before evaluating multi-octave 3D noise on fully faded distant/near mist
   float dist = length(vW.xz - cameraPosition.xz);
-  float fade = smoothstep(34.0, 9.0, dist) * smoothstep(0.8, 3.5, dist);
+  float fade = (1.0 - smoothstep(9.0, 34.0, dist)) * smoothstep(0.8, 3.5, dist);
   if (fade * uOpacity < 0.003) {
     gl_FragColor = vec4(0.0);
     return;
@@ -176,8 +196,15 @@ void main(){
 
   vec2 p = vW.xz;
   float t = uTime;
-  float n = fbm(vec3(p * 0.16 * uScale + vec2(t * 0.02, t * 0.012), t * 0.025 + uSeed));
-  float n2 = fbm3(vec3(p * 0.42 * uScale - vec2(t * 0.035, 0.0), t * 0.04 + uSeed * 2.0 + 4.0));
+  #ifdef LIGHTWEIGHT
+    float n = (texture2D(uMist, p * vec2(0.044, 0.066) + vec2(t * 0.008, t * 0.003)).r - 0.5) * 1.36;
+    float n2 = (texture2D(uMist, p.yx * 0.108 + vec2(0.32 - t * 0.013, 0.64)).r - 0.5) * 0.79;
+  #else
+    vec3 slow = vec3(p * 0.16 * uScale + vec2(t * 0.02, t * 0.012), t * 0.025 + uSeed);
+    vec3 detail = vec3(p * 0.42 * uScale - vec2(t * 0.035, 0.0), t * 0.04 + uSeed * 2.0 + 4.0);
+    float n = fbm(slow);
+    float n2 = fbm3(detail);
+  #endif
   float dens = smoothstep(-0.25, 0.65, n * 0.7 + n2 * 0.45);
   vec3 cold = vec3(0.13, 0.2, 0.3);
   vec3 warm = vec3(0.3, 0.11, 0.07);
@@ -192,12 +219,38 @@ void main(){
 }
 `;
 
-function MistLayer({ y, opacity, seed, scale }: { y: number; opacity: number; seed: number; scale: number }) {
+function makeMistMap() {
+  const size = 64;
+  const image = new Uint8Array(size * size);
+  const layers = [3, 7, 13, 25].map((n) => Float32Array.from({ length: n * n }, () => Math.random()));
+  const freq = [3, 7, 13, 25];
+  const ease = (x: number) => x * x * (3 - 2 * x);
+  for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+    let v = 0;
+    for (let j = 0; j < layers.length; j++) {
+      const n = freq[j], px = x * n / size, py = y * n / size;
+      const i = Math.floor(px), k = Math.floor(py), u = ease(px - i), w = ease(py - k);
+      const f = layers[j], i1 = (i + 1) % n, k1 = (k + 1) % n;
+      const top = THREE.MathUtils.lerp(f[k * n + i], f[k * n + i1], u);
+      const bottom = THREE.MathUtils.lerp(f[k1 * n + i], f[k1 * n + i1], u);
+      v += THREE.MathUtils.lerp(top, bottom, w) * (0.56 / (1 << j));
+    }
+    image[y * size + x] = Math.round(v * 240);
+  }
+  const tex = new THREE.DataTexture(image, size, size, THREE.RedFormat);
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+  tex.minFilter = tex.magFilter = THREE.LinearFilter;
+  tex.needsUpdate = true;
+  return tex;
+}
+
+function MistLayer({ y, opacity, seed, scale, mobile }: { y: number; opacity: number; seed: number; scale: number; mobile?: boolean }) {
   const mat = useMemo(
     () =>
       new THREE.ShaderMaterial({
         vertexShader: mistVert,
         fragmentShader: mistFrag,
+        defines: mobile ? { LIGHTWEIGHT: 1 } : {},
         transparent: true,
         depthWrite: false,
         uniforms: {
@@ -207,9 +260,10 @@ function MistLayer({ y, opacity, seed, scale }: { y: number; opacity: number; se
           uSeed: { value: seed },
           uScale: { value: scale },
           uEgg: { value: new THREE.Vector3() },
+          uMist: { value: mobile ? makeMistMap() : null },
         },
       }),
-    [opacity, seed, scale]
+    [opacity, seed, scale, mobile]
   );
   useSafeFrame((state) => {
     const u = mat.uniforms;
@@ -225,7 +279,8 @@ function MistLayer({ y, opacity, seed, scale }: { y: number; opacity: number; se
   );
 }
 
-export function Mist() {
+export function Mist({ mobile }: { mobile: boolean }) {
+  if (mobile) return <MistLayer y={-2.1} opacity={0.93} seed={0} scale={1} mobile />;
   return (
     <group>
       <MistLayer y={-2.25} opacity={0.85} seed={0} scale={1} />

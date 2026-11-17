@@ -1,7 +1,8 @@
 import { useMemo, useRef } from 'react';
 import { useSafeFrame } from './useSafeFrame';
 import * as THREE from 'three';
-import { S } from './sceneState';
+import { S, touchSweep } from './sceneState';
+import { TOUCH_SWEEP } from './glsl';
 import { world } from '../store';
 
 function useBoxGeometry(count: number, box: [number, number, number]) {
@@ -38,6 +39,7 @@ uniform vec3 uBox;
 uniform float uStir;
 varying float vA;
 varying float vSpin;
+${TOUCH_SWEEP}
 void main(){
   vec3 p = position;
   float sp = 0.16 + aRnd.x * 0.3;
@@ -49,13 +51,13 @@ void main(){
   vec2 dm = w.xy - uMouse.xy;
   float md = length(dm);
   float push = (1.0 - smoothstep(0.0, 2.15, md)) * (1.0 - smoothstep(0.0, 3.5, abs(w.z - uMouse.z)));
-  w.xy += normalize(dm + 1e-5) * push * 1.15;
+  w.xy += (dm / max(0.01, md)) * push * 1.15;
   vec4 mv = viewMatrix * w;
-  gl_Position = projectionMatrix * mv;
+  gl_Position = swept(projectionMatrix * mv);
   float depth = -mv.z;
   float edgeFade = 1.0 - smoothstep(uBox.y * 0.38, uBox.y * 0.5, abs(p.y));
   float outA = uOpacity * edgeFade * smoothstep(0.6, 2.4, depth) * (0.35 + 0.65 * aRnd.z);
-  gl_PointSize = outA > 0.003 ? (uSize * (0.35 + aRnd.y * 0.9) * (1.0 + uPetal * 1.5) * uPR / max(depth, 0.1)) : 0.0;
+  gl_PointSize = outA > 0.003 ? min(17.0 * uPR, uSize * (0.35 + aRnd.y * 0.9) * (1.0 + uPetal * 1.5) * uPR / max(depth, 0.1)) : 0.0;
   vA = outA;
   vSpin = aRnd.w * 6.28318 + uTime * (0.4 + aRnd.x) * uPetal;
 }
@@ -79,7 +81,7 @@ void main(){
     float sn = sin(vSpin);
     vec2 q = vec2(c.x * cs - c.y * sn, c.x * sn + c.y * cs);
     q.y *= 1.0 + uPetal * 1.3;
-    float petal = smoothstep(0.42, 0.28, length(q));
+    float petal = (1.0 - smoothstep(0.28, 0.42, length(q)));
     a = mix(soft, petal * 0.85, uPetal);
   }
   gl_FragColor = vec4(uColor, a * vA);
@@ -100,7 +102,7 @@ export function Snow({ count }: { count: number }) {
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
-        uniforms: {
+        uniforms: { uSweep: touchSweep,
           uTime: { value: 0 },
           uSize: { value: 40 },
           uPR: { value: 1 },
@@ -143,6 +145,7 @@ uniform vec3 uCenter;
 uniform vec3 uBox;
 varying float vA;
 varying float vT;
+${TOUCH_SWEEP}
 void main(){
   vec3 p = position;
   float sp = 0.25 + aRnd.x * 0.6;
@@ -159,14 +162,14 @@ void main(){
   p.z += cos(uTime * 1.1 + aRnd.w * 20.0 + p.y) * 0.18;
   vec3 wp = (modelMatrix * vec4(p, 1.0)).xyz;
   vec3 dir = wp - uCenter;
-  wp += normalize(dir + 1e-4) * uBurst * (1.2 + aRnd.x * 2.8);
+  wp += (dir / max(0.01, length(dir))) * uBurst * (1.2 + aRnd.x * 2.8);
   vec4 mv = viewMatrix * vec4(wp, 1.0);
-  gl_Position = projectionMatrix * mv;
+  gl_Position = swept(projectionMatrix * mv);
   float flick = 0.6 + 0.4 * sin(uTime * (6.0 + aRnd.w * 8.0) + aRnd.z * 30.0);
   float depth = -mv.z;
   float life = (p.y + uBox.y * 0.5) / uBox.y;
   float outA = uOpacity * smoothstep(0.0, 0.15, life) * (1.0 - smoothstep(0.6, 1.0, life)) * smoothstep(0.5, 2.0, depth) * flick;
-  gl_PointSize = outA > 0.003 ? (uSize * (0.3 + aRnd.y * 0.9) * flick * (1.0 + uCharge * 0.22) * uPR / max(depth, 0.1)) : 0.0;
+  gl_PointSize = outA > 0.003 ? min(13.0 * uPR, uSize * (0.3 + aRnd.y * 0.9) * flick * (1.0 + uCharge * 0.22) * uPR / max(depth, 0.1)) : 0.0;
   vA = outA;
   vT = aRnd.z;
 }
@@ -181,7 +184,7 @@ varying float vT;
 void main(){
   vec2 c = gl_PointCoord - 0.5;
   float r2 = dot(c, c);
-  if (r2 > 0.25) discard;
+  if (r2 >= 0.25 || vA < 0.002) discard;
   float core = 1.0 - smoothstep(0.0, 0.5, sqrt(r2));
   core *= core;
   vec3 col = mix(uA, uB, min(1.0, vT + uCharge * 0.28)) * (2.2 + uCharge * 0.9);
@@ -202,7 +205,7 @@ export function Embers({ count }: { count: number }) {
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
-        uniforms: {
+        uniforms: { uSweep: touchSweep,
           uTime: { value: 0 },
           uSpin: { value: 0 },
           uSize: { value: 34 },

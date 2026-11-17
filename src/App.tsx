@@ -10,7 +10,7 @@ import { Overcharge } from './components/Overcharge';
 import { Preloader } from './components/Preloader';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { useInput } from './hooks/useInput';
-import { useUI, world } from './store';
+import { PHOENIX_CHAPTER, useUI, world } from './store';
 import { TEXT } from './content';
 import { ambience } from './audio/ambience';
 
@@ -18,6 +18,7 @@ export default function App() {
   const lang = useUI((s) => s.lang);
   const sound = useUI((s) => s.sound);
   const grainRef = useRef<HTMLDivElement>(null);
+  const tx = TEXT[lang];
 
   useSmoothScroll();
   useInput();
@@ -26,7 +27,7 @@ export default function App() {
   // (avoids expensive full-screen live SVG feTurbulence filter evaluation on desktop)
   useEffect(() => {
     const el = grainRef.current;
-    if (!el) return;
+    if (!el || window.matchMedia('(max-width: 767px), (pointer: coarse)').matches) return;
     const c = document.createElement('canvas');
     const S = 160;
     c.width = S;
@@ -74,7 +75,7 @@ export default function App() {
         <Scene />
       </ErrorBoundary>
       <div ref={grainRef} className="grain" aria-hidden />
-      <main className="relative z-10">
+      <main className="portfolio-content relative z-10">
         <Hero />
         <Chronicle />
         <Pillars />
@@ -83,9 +84,7 @@ export default function App() {
         <Strongholds />
         <Realms />
         <Rookery />
-        {/* an empty stretch of sky: here the shell finally breaks and the phoenix rises (see three/Phoenix.tsx) */}
-        <section id="rebirth" data-chapter="11" className="relative h-[140vh]" aria-hidden />
-        
+        <section id="rebirth" data-chapter={PHOENIX_CHAPTER} className="relative h-[140svh]" aria-label={tx.phoenixTitle} />
       </main>
       <Hud />
       <Overcharge />

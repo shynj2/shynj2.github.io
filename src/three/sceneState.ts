@@ -29,9 +29,8 @@ export const S = {
   touch: new THREE.Vector3(0, 1, 0),
   touchAmt: 0,
   stir: 0, // scroll energy — the realm turns and breathes with the wheel
-  relicYaw: 0,
   yawKick: 0,
-  relicShift: new THREE.Vector3(),
+  relicFromWorld: new THREE.Matrix4(),
   egg: new THREE.Vector3(0, 0.28, 0),
   focusScale: 0.8,
   mouse: new THREE.Vector3(0, 0, 0),
@@ -43,6 +42,9 @@ export const S = {
   clickWave: 0,
   mobile: false,
 };
+
+// Shared by all point materials; one write per frame, no per-particle CPU work during a swipe.
+export const touchSweep = { value: new THREE.Vector4(0, 0, 1, 0) };
 
 export const damp = THREE.MathUtils.damp;
 export const smooth = THREE.MathUtils.smoothstep;

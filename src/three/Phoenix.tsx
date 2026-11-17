@@ -1,7 +1,8 @@
 import { useMemo, useRef } from 'react';
 import { useSafeFrame } from './useSafeFrame';
 import * as THREE from 'three';
-import { S } from './sceneState';
+import { S, touchSweep } from './sceneState';
+import { TOUCH_SWEEP } from './glsl';
 import { ParticleSpringField } from './particlePhysics';
 import { world } from '../store';
 
@@ -31,6 +32,7 @@ varying float vScatter;
 float h1(float n){ return fract(sin(n * 91.345 + 1.7) * 43758.5453); }
 vec2 rot(vec2 p, float a){ float c = cos(a); float s = sin(a); return vec2(p.x * c - p.y * s, p.x * s + p.y * c); }
 
+${TOUCH_SWEEP}
 void main(){
   float t = uTime;
   float h = uHatch;
@@ -127,8 +129,8 @@ void main(){
   // living flame: every mote drifts upward and fades, staying bright while scattered so reformation reads crisply
   float life = fract(t * (0.25 + aRnd.x * 0.5) + aRnd.y * 7.0);
   float driftMask = 1.0 - scatter * 0.72;
-  pos.y += life * 0.2 * (0.25 + tone) * driftMask;
-  pos.x += sin(t * 2.0 + aRnd.z * 40.0) * 0.012;
+  pos.y += life * 0.13 * (0.25 + tone) * driftMask;
+  pos.x += sin(t * 2.0 + aRnd.z * 40.0) * 0.01;
   alpha *= mix(1.0 - life * 0.75, 0.78 + 0.22 * (1.0 - life), scatter * 0.85);
 
   // born inside the egg, then it rises above the broken shell
@@ -140,11 +142,11 @@ void main(){
   pos += aDisp;
 
   vec4 mv = modelViewMatrix * vec4(pos, 1.0);
-  gl_Position = projectionMatrix * mv;
+  gl_Position = swept(projectionMatrix * mv);
   float flick = 0.75 + 0.25 * sin(t * 8.0 + aRnd.z * 60.0);
-  float outA = alpha * smoothstep(0.36, 0.5, h) * flick;
+  float outA = alpha * smoothstep(0.36, 0.5, h) * flick * smoothstep(0.22, 1.4, -mv.z);
   float sparkGrow = 1.0 + uHeat * 0.26 + scatter * 0.16;
-  gl_PointSize = outA > 0.003 ? (uSize * size * flick * sparkGrow * uPR / max(-mv.z, 0.1)) : 0.0;
+  gl_PointSize = outA > 0.003 ? min(15.0 * uPR, uSize * size * flick * sparkGrow * uPR / max(-mv.z, 0.1)) : 0.0;
   vA = outA;
   vTone = tone;
   vScatter = scatter;
@@ -184,15 +186,15 @@ export function Phoenix({ mobile }: { mobile: boolean }) {
   const points = useRef<THREE.Points>(null);
 
   const sim = useMemo(() => {
-    const q = mobile ? 0.55 : 1;
-    const parts: { kind: number; idx: number; n: number; uv: () => [number, number] }[] = [
-      { kind: 0, idx: 0, n: 1300, uv: () => [Math.random(), 0] },
-      { kind: 1, idx: 0, n: 420, uv: () => [Math.random(), 0] },
-      { kind: 2, idx: 0, n: 380, uv: () => [Math.random(), 0] },
-      { kind: 3, idx: 0, n: 90, uv: () => [Math.random(), 0] },
-      ...[0, 1, 2, 3].map((k) => ({ kind: 4, idx: k, n: 90, uv: (): [number, number] => [Math.random(), 0] })),
-      ...[-1, 1].map((s) => ({ kind: 5, idx: s, n: 3800, uv: (): [number, number] => [Math.random(), Math.pow(Math.random(), 1.05)] })),
-      ...[0, 1, 2, 3, 4, 5, 6].map((k) => ({ kind: 6, idx: k, n: 560, uv: (): [number, number] => [Math.pow(Math.random(), 0.85), Math.random()] })),
+    const q = mobile ? 0.57 : 1;
+    const parts = [
+      { kind: 0, idx: 0, n: 1580 },
+      { kind: 1, idx: 0, n: 510 },
+      { kind: 2, idx: 0, n: 460 },
+      { kind: 3, idx: 0, n: 110 },
+      ...[0, 1, 2, 3].map((k) => ({ kind: 4, idx: k, n: 110 })),
+      ...[-1, 1].map((s) => ({ kind: 5, idx: s, n: 4750 })),
+      ...[0, 1, 2, 3, 4, 5, 6].map((k) => ({ kind: 6, idx: k, n: 640 })),
     ];
     const total = parts.reduce((a, p) => a + Math.round(p.n * q), 0);
 
@@ -218,9 +220,11 @@ export function Phoenix({ mobile }: { mobile: boolean }) {
       for (let j = 0; j < n; j++, idx++) {
         aKind[idx] = p.kind;
         aIdx[idx] = p.idx;
-        const [u, v] = p.uv();
-        aUV[idx * 2] = u;
-        aUV[idx * 2 + 1] = v;
+        // Distribute each feather evenly along its length and across its width.
+        const u = (j + 0.5) / n;
+        const v = ((j + 0.5) * 0.61803398875 + (p.idx + 1) * 0.173) % 1;
+        aUV[idx * 2] = p.kind === 6 ? Math.pow(u, 0.9) : u;
+        aUV[idx * 2 + 1] = p.kind === 5 ? Math.pow(v, 1.05) : v;
         const rx = Math.random();
         const ry = Math.random();
         const rz = Math.random();
@@ -359,9 +363,9 @@ export function Phoenix({ mobile }: { mobile: boolean }) {
 
     const field = new ParticleSpringField(total, {
       screenRadius: 0.22,
-      spring: 10.4,
-      damping: 5.15,
-      maxDisp: 3.6,
+      spring: 12.3,
+      damping: 5.55,
+      maxDisp: 3.2,
       clickPower: 1.05,
     });
 
@@ -380,10 +384,10 @@ export function Phoenix({ mobile }: { mobile: boolean }) {
       depthWrite: false,
       depthTest: false,
       blending: THREE.AdditiveBlending,
-      uniforms: {
+      uniforms: { uSweep: touchSweep,
         uTime: { value: 0 },
         uHatch: { value: 0 },
-        uSize: { value: 62 },
+        uSize: { value: mobile ? 56 : 60 },
         uPR: { value: 1 },
         uHeat: { value: 0 },
       },
@@ -493,13 +497,13 @@ export function Phoenix({ mobile }: { mobile: boolean }) {
     u.uTime.value = t;
     u.uHatch.value = h;
     u.uPR.value = state.gl.getPixelRatio();
-    u.uHeat.value = Math.min(1.6, world.charge + world.burst * 0.85 + S.blind * 1.5);
+    u.uHeat.value = Math.min(1.6, world.charge + world.burst * 0.85 + world.phoenixCharge * 0.36 + S.blind * 1.5);
 
     if (sim.field.beginStep(0, 0.55, -0.12, 3.85)) {
-      sim.fillHome(t, h);
+      if (sim.field.needsHome) sim.fillHome(t, h);
       sim.field.step(delta);
     }
   });
 
-  return <points ref={points} geometry={sim.geo} material={sim.mat} frustumCulled={false} renderOrder={5} />;
+  return <points ref={points} name="Phoenix plumage" geometry={sim.geo} material={sim.mat} frustumCulled={false} renderOrder={5} />;
 }

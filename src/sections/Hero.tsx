@@ -128,6 +128,7 @@ export function Hero() {
 
       <motion.div {...show(2.6)} className="absolute inset-x-0 bottom-4 flex flex-col items-center gap-2.5">
         <span className="hidden font-mono text-[10px] uppercase tracking-[0.35em] text-white/40 sm:block">{tx.scrollHint}</span>
+        <span className="font-mono text-[10px] text-white/50 sm:hidden">{tx.touchHint}</span>
         <span className="relative block h-9 w-px overflow-hidden bg-white/10">
           <span className="scroll-drip absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-transparent to-[var(--accent)]" />
         </span>

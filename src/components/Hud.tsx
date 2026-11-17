@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useUI, world } from '../store';
+import { PHOENIX_MAX_TEMP, phoenixTemperature, useUI, world } from '../store';
 import { CHAPTERS, TEXT } from '../content';
 import { scrollToId, scrollToTop } from '../hooks/useSmoothScroll';
 import { ambience } from '../audio/ambience';
@@ -87,8 +87,9 @@ export function Hud() {
     const loop = () => {
       if (!document.hidden) {
         const h = Math.max(0, world.heat);
-        // the hold-to-heat overcharge overrides it and runs all the way up to 4000°
-        const temp = Math.round(Math.min(4000, Math.max(-38 + 1250 * Math.pow(h, 2.2), world.temp)));
+        const temp = world.phoenixReady || (world.igniting && !world.resetDone)
+          ? phoenixTemperature()
+          : Math.min(PHOENIX_MAX_TEMP - 1, Math.round(-38 + 1250 * Math.pow(h, 2.2)));
         if (temp !== lastTemp && tempRef.current) {
           lastTemp = temp;
           tempRef.current.textContent = `${temp > 0 ? '+' : temp < 0 ? '−' : ''}${nf.format(Math.abs(temp))}°C`;
@@ -106,9 +107,10 @@ export function Hud() {
   }, [lang]);
 
   useEffect(() => {
-    const on = () => setFlash((f) => f + 1);
-    window.addEventListener('dracarys', on);
-    return () => window.removeEventListener('dracarys', on);
+    let next = 0;
+    const on = () => setFlash(++next);
+    window.addEventListener('relic-release', on);
+    return () => window.removeEventListener('relic-release', on);
   }, []);
 
   const ch = CHAPTERS[chapter] ?? CHAPTERS[0];
@@ -300,19 +302,19 @@ export function Hud() {
         )}
       </AnimatePresence>
 
-      {/* DRACARYS */}
+      {/* The relic responds to a warm release. The finale has its own effect. */}
       <AnimatePresence>
         {flash > 0 && (
           <motion.div
             key={flash}
             initial={{ opacity: 0, scale: 0.92, filter: 'blur(14px)' }}
             animate={{ opacity: [0, 1, 1, 0], scale: [0.92, 1, 1.02, 1.08], filter: ['blur(14px)', 'blur(0px)', 'blur(0px)', 'blur(10px)'] }}
-            transition={{ duration: 1.9, ease: EASE, times: [0, 0.18, 0.6, 1] }}
-            onAnimationComplete={() => setFlash(0)}
+            transition={{ duration: 2.7, ease: EASE, times: [0, 0.15, 0.73, 1] }}
+            onAnimationComplete={() => setFlash((current) => current === flash ? 0 : current)}
             className="pointer-events-none fixed inset-0 z-[55] grid place-items-center"
           >
-            <span className="font-deco text-[clamp(2.6rem,9vw,8rem)] tracking-[0.18em] text-[#ffd9a0] drop-shadow-[0_0_40px_#ff6a1a]">
-              {tx.dracarys}
+            <span data-heat-release lang="en" dir="ltr" className="font-deco text-[clamp(2.6rem,9vw,8rem)] tracking-[0.18em] text-[#ffd9a0] drop-shadow-[0_0_40px_#ff6a1a]">
+              shyn
             </span>
           </motion.div>
         )}

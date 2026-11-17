@@ -35,10 +35,10 @@ const EN = {
   menu: 'Menu',
   close: 'Close',
   langBtn: 'فا',
-  dracarys: 'Dracarys',
   // overcharge
-  heatLabel: 'Relic temperature',
-  heatHint: 'Hold on the phoenix — 4000°',
+  phoenixTitle: 'The Phoenix',
+  heatLabel: 'Phoenix temperature',
+  heatHint: 'Hold the phoenix to reach 4,000°C',
   reborn: 'What is dead may never die',
   // hero
   heroKicker: 'Portfolio · MMXXVI — A Song of Ice & Code',
@@ -52,6 +52,7 @@ const EN = {
   scrollHint: 'Scroll — the relic turns',
   holdHint: 'Hover the relic, or hold',
   holdHint2: 'it answers your hand',
+  touchHint: 'Swipe anywhere · The relic follows your touch',
   heroMeta: '7 pillars · 10 sworn swords · 6 strongholds',
   // about
   aboutKicker: 'Chapter I — The Chronicle',
@@ -127,10 +128,10 @@ const FA: Dict = {
   menu: 'منو',
   close: 'بستن',
   langBtn: 'EN',
-  dracarys: 'دراکاریس',
   // overcharge
-  heatLabel: 'دمای تخم',
-  heatHint: 'روی ققنوس نگه دار — ۴۰۰۰°',
+  phoenixTitle: 'ققنوس',
+  heatLabel: 'دمای ققنوس',
+  heatHint: 'روی ققنوس نگه دار تا به ۴۰۰۰ درجه برسد',
   reborn: 'آن‌چه مردنی است نمی‌میرد',
   heroKicker: 'نمونه‌کار و رزومه · ۲۰۲۶ — آوای یخ و کد',
   heroFirst: 'شایان',
@@ -143,6 +144,7 @@ const FA: Dict = {
   scrollHint: 'اسکرول کن تا اثر بچرخد',
   holdHint: 'موس را روی اثر ببر، یا نگه دار',
   holdHint2: 'اثر جواب دستت را می‌دهد',
+  touchHint: 'هر جای صفحه بکش؛ ذرات به لمست واکنش نشان می‌دهند',
   heroMeta: '۷ پایه · ۱۰ شمشیر سوگندخورده · ۶ دژ',
   aboutKicker: 'فصل یکم — وقایع‌نامه',
   aboutTitle: ['وقت‌شناس،', 'اصولی،', 'دقیق.'],

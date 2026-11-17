@@ -47,7 +47,7 @@ void main(){
   gl_Position = projectionMatrix * mv;
   float r = clamp(uReveal * 8.0 - aIndex, 0.0, 1.0);
   vA = r * (0.8 + 0.2 * sin(uTime * 3.0 + aIndex));
-  gl_PointSize = 260.0 * uPR / max(-mv.z, 0.1);
+  gl_PointSize = min(54.0 * uPR, 260.0 * uPR / max(-mv.z, 0.1));
 }
 `;
 
@@ -56,9 +56,10 @@ uniform vec3 uCol;
 varying float vA;
 void main(){
   vec2 c = gl_PointCoord - 0.5;
-  float d = length(c);
-  float a = exp(-d * d * 40.0) + exp(-d * d * 400.0) * 0.8;
-  gl_FragColor = vec4(uCol * 1.6, a * vA);
+  float r2 = dot(c, c);
+  if (r2 >= 0.25 || vA < 0.003) discard;
+  float a = exp(-r2 * 40.0) + exp(-r2 * 400.0) * 0.8;
+  gl_FragColor = vec4(uCol * 1.6, a * vA * (1.0 - smoothstep(0.14, 0.25, r2)));
 }
 `;
 

@@ -49,6 +49,13 @@ export const useUI = create<UIState>((set) => ({
   setMenu: (menu) => set({ menu }),
 }));
 
+export const PHOENIX_CHAPTER = 11;
+export const PHOENIX_MAX_TEMP = 4000;
+const PHOENIX_IDLE_TEMP = 1480;
+
+export type ScreenEllipse = { x: number; y: number; rx: number; ry: number };
+const ellipse = (): ScreenEllipse => ({ x: 0, y: 0, rx: 0, ry: 0 });
+
 /** Mutable per-frame state shared between DOM and WebGL (never triggers React renders). */
 export const world = {
   chapter: 0,
@@ -58,9 +65,13 @@ export const world = {
   pointer: { x: 0, y: 0 },
   pointerPx: { x: -200, y: -200 },
   pointerActive: false,
+  touching: false,
+  touchDragging: false,
+  touchFling: false,
   clickShock: 0,
   clickWave: 0,
   holding: false,
+  pressStartedAt: 0,
   charge: 0,
   burst: 0,
   heat: 0,
@@ -68,8 +79,12 @@ export const world = {
   mobile: false,
   reduced: false,
   ravenSent: -100,
-  /** Press & hold overcharge, in °C. Reaches 4000 and the world starts over. */
-  temp: 0,
+  relicTarget: ellipse(),
+  phoenixReady: false,
+  phoenixPress: false,
+  phoenixTargets: [ellipse(), ellipse()],
+  /** Only the hatched phoenix can build up this extra charge (0–1). */
+  phoenixCharge: 0,
   /** True while the 4000° white-out is playing. */
   igniting: false,
   /** Seconds since the white-out began. */
@@ -79,3 +94,24 @@ export const world = {
   /** The world has already been wound back to the frozen egg. */
   resetDone: false,
 };
+
+function insideEllipse({ x: cx, y: cy, rx, ry }: ScreenEllipse, x: number, y: number) {
+  if (rx <= 0 || ry <= 0) return false;
+  const nx = (x - cx) / rx;
+  const ny = (y - cy) / ry;
+  return nx * nx + ny * ny <= 1;
+}
+
+export function isOnRelic(x: number, y: number) {
+  return insideEllipse(world.relicTarget, x, y);
+}
+
+export function isOnPhoenix(x: number, y: number) {
+  if (!world.phoenixReady || world.chapter < PHOENIX_CHAPTER || world.igniting) return false;
+  return insideEllipse(world.phoenixTargets[0], x, y) || insideEllipse(world.phoenixTargets[1], x, y);
+}
+
+export function phoenixTemperature() {
+  const risen = Math.floor((PHOENIX_MAX_TEMP - PHOENIX_IDLE_TEMP) * world.phoenixCharge);
+  return PHOENIX_IDLE_TEMP + risen;
+}

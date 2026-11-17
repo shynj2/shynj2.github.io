@@ -1,7 +1,8 @@
 import { useMemo, useRef } from 'react';
 import { useSafeFrame } from './useSafeFrame';
 import * as THREE from 'three';
-import { S } from './sceneState';
+import { S, touchSweep } from './sceneState';
+import { TOUCH_SWEEP } from './glsl';
 import { ParticleSpringField } from './particlePhysics';
 import { world } from '../store';
 
@@ -37,6 +38,7 @@ vec3 spine(float s){
 }
 float h1(float n){ return fract(sin(n * 91.345) * 43758.5453); }
 
+${TOUCH_SWEEP}
 void main(){
   // Steady, unhurried orbit & wingbeat — unaffected by hold-to-heat
   float head = uTime * 0.3;
@@ -83,12 +85,12 @@ void main(){
   pos += aDisp;
 
   vec4 mv = modelViewMatrix * vec4(pos, 1.0);
-  gl_Position = projectionMatrix * mv;
+  gl_Position = swept(projectionMatrix * mv);
   float flick = 0.7 + 0.3 * sin(uTime * 9.0 + aSeed * 60.0);
   float baseFade = mix(1.0 - aT * 0.7, 0.55, isWing);
-  float outA = em * uVisible * mix(baseFade, max(baseFade, 0.8), scatter * 0.7);
+  float outA = em * uVisible * mix(baseFade, max(baseFade, 0.8), scatter * 0.7) * smoothstep(0.25, 1.6, -mv.z);
   float grow = 1.0 + uHeat * 0.25 + scatter * 0.18;
-  gl_PointSize = outA > 0.003 ? (uSize * size * flick * grow * uPR / max(-mv.z, 0.1)) : 0.0;
+  gl_PointSize = outA > 0.003 ? min(13.0 * uPR, uSize * size * flick * grow * uPR / max(-mv.z, 0.1)) : 0.0;
   vA = outA;
   vT = tBody;
   vW = isWing;
@@ -248,7 +250,7 @@ export function SpiritDragon({ mobile }: { mobile: boolean }) {
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
-      uniforms: {
+      uniforms: { uSweep: touchSweep,
         uTime: { value: 0 },
         uVisible: { value: 0 },
         uSize: { value: 30 },
@@ -409,7 +411,7 @@ export function SpiritDragon({ mobile }: { mobile: boolean }) {
     u.uHeat.value = Math.min(1.6, world.charge + world.burst * 0.85 + S.blind * 1.5);
 
     if (sim.field.beginStep(0, 0.35, 0, 5.2)) {
-      sim.fillHome(t, vis);
+      if (sim.field.needsHome) sim.fillHome(t, vis);
       sim.field.step(delta);
     }
   });

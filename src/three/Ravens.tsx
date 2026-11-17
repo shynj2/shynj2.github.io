@@ -36,7 +36,7 @@ function setFlap(mesh: THREE.Mesh, f: number, prev: { p0: number; p1: number }) 
   prev.p1 = i1;
 }
 
-export function Ravens() {
+export function Ravens({ mobile }: { mobile: boolean }) {
   const { scene } = useGLTF(ravenUrl);
   const base = useMemo(() => {
     let m: THREE.Mesh | null = null;
@@ -60,7 +60,7 @@ export function Ravens() {
       if (m.morphTargetInfluences) m.morphTargetInfluences.fill(0);
       return m;
     };
-    const list: Bird[] = Array.from({ length: 7 }, () => ({
+    const list: Bird[] = Array.from({ length: mobile ? 4 : 7 }, () => ({
       mesh: make(),
       r: 6.5 + Math.random() * 5,
       y: 2.3 + Math.random() * 2.2,
@@ -76,7 +76,7 @@ export function Ravens() {
     msg.scale.setScalar(0);
     msg.visible = false;
     return { birds: list, messenger: msg };
-  }, [base, mat]);
+  }, [base, mat, mobile]);
 
   const tmp = useMemo(() => new THREE.Vector3(), []);
   const look = useMemo(() => new THREE.Vector3(), []);

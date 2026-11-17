@@ -1,4 +1,6 @@
-import { useMemo, useRef } from 'react';
+import { Suspense, useMemo, useRef } from 'react';
+import { useLoader } from '@react-three/fiber';
+import iceSurfaceUrl from '../assets/ice-shell.webp?inline';
 import { useSafeFrame } from './useSafeFrame';
 import * as THREE from 'three';
 import { NOISE, VORONOI } from './glsl';
@@ -8,9 +10,13 @@ import { world } from '../store';
 /** Same scale-cell lookup in the vertex and fragment shader, so every scale can break off as one shard. */
 const CELLS = /* glsl */ `
 vec3 cellSpace(vec3 s){
-  vec3 q = s * vec3(2.9, 2.2, 2.9);
-  q += 0.2 * vec3(snoise(s * 1.6), snoise(s * 1.6 + 11.3), snoise(s * 1.6 + 23.9));
-  return q;
+  #ifdef BAKED_SHELL
+    return s * vec3(3.55, 2.65, 3.55) + 0.16 * sin(3.9 * s.yzx + 2.3 * s.zxy + vec3(0.7, 1.8, 3.1));
+  #else
+    vec3 q = s * vec3(2.9, 2.2, 2.9);
+    q += 0.2 * vec3(snoise(s * 1.6), snoise(s * 1.6 + 11.3), snoise(s * 1.6 + 23.9));
+    return q;
+  #endif
 }
 `;
 
@@ -23,6 +29,9 @@ uniform float uShatter;
 uniform vec3 uTouch;
 uniform float uTouchAmt;
 uniform float uRipple;
+#ifdef BAKED_SHELL
+  varying vec2 vShellUv;
+#endif
 varying vec3 vObj;
 varying vec3 vWorld;
 varying vec3 vNormalW;
@@ -55,7 +64,11 @@ vec3 deform(vec3 s){
   // egg silhouette: narrower crown, fuller base
   p.xz *= 1.0 - 0.17 * p.y;
   p.y *= 1.3;
-  float n = snoise(s * 1.5 + vec3(0.0, uTime * 0.11, 0.0));
+  #ifdef BAKED_SHELL
+    float n = sin(s.x * 6.0 + s.y * 2.5) * sin(s.z * 5.0 - s.y * 3.5 + uTime * 0.36) * 0.53;
+  #else
+    float n = snoise(s * 1.5 + vec3(0.0, uTime * 0.11, 0.0));
+  #endif
   float breathe = sin(uTime * 1.05) * 0.012;
   float tremble = uCharge * 0.012 * sin(uTime * 23.0 + s.y * 9.0) + uCrack * 0.012 * sin(uTime * 17.0 + s.y * 7.0);
   p += s * (n * 0.028 + breathe + tremble + uBurst * 0.05 + uCrack * 0.03);
@@ -64,27 +77,40 @@ vec3 deform(vec3 s){
 
 void main(){
   vec3 s = normalize(position);
-  vec3 up = abs(s.y) > 0.99 ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
-  vec3 t = normalize(cross(up, s));
-  vec3 b = normalize(cross(s, t));
-  float e = 0.01;
   vec3 p0 = deform(s);
-  vec3 p1 = deform(normalize(s + t * e));
-  vec3 p2 = deform(normalize(s + b * e));
-  vec3 n = normalize(cross(p1 - p0, p2 - p0));
-  if (dot(n, p0) < 0.0) n = -n;
+  #ifdef BAKED_SHELL
+    // Analytic normal of the tapered ellipsoid. Fine relief is provided by the atlas.
+    const float taper = 0.17;
+    float w = 1.0 - taper * s.y;
+    vec3 n = normalize(vec3(s.x / w, (s.y + taper * (1.0 - s.y * s.y) / w) / 1.3, s.z / w));
+    vShellUv = uv;
+  #else
+    vec3 up = abs(s.y) > 0.99 ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
+    vec3 t = normalize(cross(up, s));
+    vec3 b = normalize(cross(s, t));
+    vec3 p1 = deform(normalize(s + t * 0.01));
+    vec3 p2 = deform(normalize(s + b * 0.01));
+    vec3 n = normalize(cross(p1 - p0, p2 - p0));
+    if (dot(n, p0) < 0.0) n = -n;
+  #endif
 
   // the shell swells under the hand, and a click sends a ring across the scales
   float td = distance(s, uTouch);
   float touch = uTouchAmt * (1.0 - smoothstep(0.1, 0.62, td));
-  float wave = exp(-pow((td - uRipple * 1.5) * 7.5, 2.0)) * smoothstep(0.02, 0.1, uRipple) * (1.0 - smoothstep(0.25, 1.0, uRipple));
+  float rippleD = (td - uRipple * 1.5) * 7.5;
+  float wave = exp(-rippleD * rippleD) * smoothstep(0.02, 0.1, uRipple) * (1.0 - smoothstep(0.25, 1.0, uRipple));
   p0 += n * (touch * 0.055 + wave * 0.09);
 
   // the shell breaks: every scale flies off as one piece (crown first), drifting up and around
   vShard = 0.0;
   if (uShatter > 0.0005){
     vec4 cell = cellAt(cellSpace(s));
-    vec3 dir = normalize(cell.xyz / vec3(2.9, 2.2, 2.9));
+    #ifdef BAKED_SHELL
+      vec3 center = cell.xyz / vec3(3.55, 2.65, 3.55);
+    #else
+      vec3 center = cell.xyz / vec3(2.9, 2.2, 2.9);
+    #endif
+    vec3 dir = center / max(0.01, length(center));
     float delay = 0.22 * (0.5 - 0.5 * dir.y) + 0.18 * cell.w;
     float local = clamp((uShatter - delay) / 0.6, 0.0, 1.0);
     local = local * local * (3.0 - 2.0 * local);
@@ -119,13 +145,20 @@ uniform vec3 uFireB;
 uniform vec3 uIce;
 uniform vec3 uRim;
 uniform vec3 uHolo;
+uniform float uShatter;
+#ifdef BAKED_SHELL
+  uniform sampler2D uSurface;
+  varying vec2 vShellUv;
+#endif
 varying vec3 vObj;
 varying vec3 vWorld;
 varying vec3 vNormalW;
 varying float vShard;
-${NOISE}
-${VORONOI}
-${CELLS}
+#ifndef BAKED_SHELL
+  ${NOISE}
+  ${VORONOI}
+  ${CELLS}
+#endif
 
 vec3 bump(vec3 pos, vec3 n, float h, float k){
   vec3 dx = dFdx(pos);
@@ -134,7 +167,9 @@ vec3 bump(vec3 pos, vec3 n, float h, float k){
   vec3 r2 = cross(n, dx);
   float det = dot(dx, r1);
   vec3 grad = sign(det) * (dFdx(h) * r1 + dFdy(h) * r2);
-  return normalize(abs(det) * n - k * grad);
+  vec3 blended = abs(det) * n - k * grad;
+  float m = dot(blended, blended);
+  return m > 1e-22 ? blended * inversesqrt(m) : n;
 }
 
 void main(){
@@ -144,22 +179,35 @@ void main(){
   float heat = clamp(uHeat + uCharge * 0.75 + uBurst * 0.75, 0.0, 1.85);
   float heat01 = clamp(heat, 0.0, 1.0);
 
-  // dragon scales — organic voronoi cells on the shell
-  vec3 vr = voronoi3(cellSpace(vObj));
-  float edge = vr.y - vr.x;
-  float cell = vr.z;
+  // The packed shell carries the seam distance, scale relief and multi-octave frost.
+  #ifdef BAKED_SHELL
+    vec3 surface = texture2D(uSurface, vShellUv).rgb;
+    float edge = surface.r * 0.8;
+    float cell = clamp(surface.b * 1.62 - 0.27, 0.0, 1.0);
+    float relief = surface.g * 1.2;
+  #else
+    vec3 vr = voronoi3(cellSpace(vObj));
+    float edge = vr.y - vr.x;
+    float cell = vr.z;
+    float relief = vr.x;
+  #endif
+  float seamAA = max(0.003, fwidth(edge) * 0.6);
+  float interior = smoothstep(0.015, 0.3, edge);
+  float dome = 1.0 - smoothstep(0.0, 0.95, relief);
+  float h = interior * (0.5 + 0.5 * dome);
+  vec3 Nb = bump(vWorld, N, h, 0.034);
 
-  // broken shell: gaps open along the seams, then each shard burns away
+  // Keep the shader variant stable through hatching. Evaluate derivatives before discarding.
+  if (!gl_FrontFacing && uShatter < 0.001) discard;
   if (vShard > 0.0005){
     if (edge < 0.17 * smoothstep(0.0, 0.08, vShard)) discard;
-    float burn = snoise(vObj * 7.0 + 3.1) * 0.5 + 0.5;
+    #ifdef BAKED_SHELL
+      float burn = clamp(surface.b * 1.25 - 0.12, 0.0, 1.0);
+    #else
+      float burn = snoise(vObj * 7.0 + 3.1) * 0.5 + 0.5;
+    #endif
     if (burn < smoothstep(0.45, 1.0, vShard)) discard;
   }
-
-  float interior = smoothstep(0.015, 0.3, edge);
-  float dome = 1.0 - smoothstep(0.0, 0.95, vr.x);
-  float h = interior * (0.5 + 0.5 * dome);
-  vec3 Nb = bump(vWorld, N, h, 0.045);
 
   // lighting
   vec3 L1 = normalize(vec3(-0.55, 0.75, 0.55));
@@ -168,7 +216,7 @@ void main(){
   float d2 = max(dot(Nb, L2), 0.0);
   vec3 H1 = normalize(L1 + V);
   float s1 = pow(max(dot(Nb, H1), 0.0), 60.0);
-  float ndv = max(dot(Nb, V), 0.0);
+  float ndv = clamp(dot(Nb, V), 0.0, 1.0);
   float fres = pow(1.0 - ndv, 3.0);
 
   // obsidian with thin-film iridescence
@@ -182,23 +230,33 @@ void main(){
   // the hand melts frost and lights the scales it rests on
   float td = distance(vObj, uTouch);
   float touch = uTouchAmt * (1.0 - smoothstep(0.02, 0.55, td));
-  float wave = exp(-pow((td - uRipple * 1.5) * 8.0, 2.0)) * smoothstep(0.02, 0.1, uRipple) * (1.0 - uRipple);
+  float rippleD = (td - uRipple * 1.5) * 8.0;
+  float wave = exp(-rippleD * rippleD) * smoothstep(0.02, 0.1, uRipple) * (1.0 - uRipple);
 
   // frost — skips 5× 3D simplex noise calls when the shell has thawed, and melts softly under held heat
   float effFrost = uFrost * (1.0 - uCharge * 0.38) * (1.0 - touch * 0.92);
   if (effFrost > 0.002) {
-    float fr = fbm(vObj * 4.5) * 0.5 + 0.5;
-    float frost = effFrost * smoothstep(0.4, 0.7, fr + (1.0 - interior) * 0.3 + vObj.y * 0.1);
-    vec3 frostCol = vec3(0.6, 0.76, 0.92) * (0.25 + 0.75 * d1) + vec3(0.85, 0.95, 1.0) * s1 * 0.5;
-    col = mix(col, frostCol, frost * 0.5);
-    float glint = pow(max(snoise(vObj * 55.0 + V * 3.0), 0.0), 10.0);
+    #ifdef BAKED_SHELL
+      float fr = surface.b;
+      float glint = smoothstep(0.57, 0.78, fr) * (s1 + d2 * 0.28);
+    #else
+      float fr = fbm(vObj * 4.5) * 0.5 + 0.5;
+      float glint = pow(max(snoise(vObj * 55.0 + V * 3.0), 0.0), 10.0);
+    #endif
+    float frost = effFrost * smoothstep(0.4, 0.73, fr + (1.0 - interior) * 0.22 + vObj.y * 0.07);
+    vec3 frostCol = vec3(0.59, 0.77, 0.96) * (0.25 + 0.75 * d1) + vec3(0.85, 0.95, 1.0) * s1 * 0.5;
+    col = mix(col, frostCol, frost * 0.53);
     col += vec3(0.85, 0.95, 1.0) * glint * frost * 3.0;
   }
 
   // molten seams between scales (hair-thin & soft while frozen, wide & molten when hot)
   float seamW = 0.03 + 0.085 * heat01 + 0.06 * uCrack;
-  float seam = 1.0 - smoothstep(0.0, seamW, edge);
-  float flow = snoise(vObj * 2.4 + vec3(0.0, -uTime * 0.35, uTime * 0.12)) * 0.5 + 0.5;
+  float seam = 1.0 - smoothstep(0.0, seamW + seamAA, edge);
+  #ifdef BAKED_SHELL
+    float flow = 0.5 + 0.28 * sin(vObj.y * 7.3 + vObj.z * 2.2 - uTime * 0.8 + surface.b * 4.0);
+  #else
+    float flow = snoise(vObj * 2.4 + vec3(0.0, -uTime * 0.35, uTime * 0.12)) * 0.5 + 0.5;
+  #endif
   float pulse = 0.7 + 0.3 * sin(uTime * 2.1 + cell * 6.28318);
   vec3 fire = mix(uFireA, uFireB, flow * flow);
   float hot = smoothstep(0.05, 0.4, heat);
@@ -212,7 +270,8 @@ void main(){
   col += fire * sss * heat * heat * 0.4;
 
   // neon rim
-  float rim = pow(1.0 - max(dot(N, V), 0.0), 4.0);
+  float facing = 1.0 - clamp(dot(N, V), 0.0, 1.0);
+  float rim = facing * facing * facing * facing;
   vec3 rimCol = mix(uRim, mix(uFireA, uHolo, 0.3), smoothstep(0.35, 1.0, heat));
   col += rimCol * rim * (0.85 + uCharge * 1.6);
 
@@ -261,26 +320,31 @@ uniform vec3 uFire;
 varying vec2 vUv;
 void main(){
   vec2 p = vUv - 0.5;
-  float r = length(p);
-  float g = exp(-r * r * 22.0);
-  float ring = exp(-pow((r - 0.2 - 0.01 * sin(uTime)) * 28.0, 2.0)) * 0.25;
+  float r2 = dot(p, p);
+  if (r2 >= 0.25) discard;
+  float r = sqrt(r2);
+  float g = exp(-r2 * 22.0);
+  float d = (r - 0.2 - 0.01 * sin(uTime)) * 28.0;
+  float ring = exp(-d * d) * 0.25;
   vec3 col = mix(uIce, uFire, clamp(uHeat + uCharge * 0.72, 0.0, 1.0));
-  float a = (g * (0.16 + 0.45 * uHeat + 0.65 * uCharge) + ring * uCharge) * uReveal;
+  float a = (g * (0.16 + 0.45 * uHeat + 0.65 * uCharge) + ring * uCharge) * uReveal * (1.0 - smoothstep(0.17, 0.25, r2));
   gl_FragColor = vec4(col, a);
 }
 `;
 
-export function DragonEgg() {
+function Shell({ surface }: { surface?: THREE.Texture }) {
   const mesh = useRef<THREE.Mesh>(null);
   const halo = useRef<THREE.Mesh>(null);
-  const geo = useMemo(() => new THREE.SphereGeometry(1, 128, 96), []);
+  const geo = useMemo(() => new THREE.SphereGeometry(1, surface ? 100 : 128, surface ? 72 : 96), [surface]);
   const mat = useMemo(
     () =>
       new THREE.ShaderMaterial({
         vertexShader: eggVert,
         fragmentShader: eggFrag,
-        side: THREE.FrontSide,
+        defines: surface ? { BAKED_SHELL: 1 } : {},
+        side: THREE.DoubleSide,
         uniforms: {
+          uSurface: { value: surface ?? null },
           uTime: { value: 0 },
           uHeat: { value: 0 },
           uFrost: { value: 1 },
@@ -301,7 +365,7 @@ export function DragonEgg() {
           uHolo: { value: new THREE.Color('#ff2bd6') },
         },
       }),
-    []
+    [surface]
   );
   const haloMat = useMemo(
     () =>
@@ -332,9 +396,6 @@ export function DragonEgg() {
     const u = mat.uniforms;
     const reveal = smooth(S.intro, 0.02, 0.7);
     const shatter = smooth(S.hatch, 0.36, 0.8);
-    // Only render backfaces while the shell is actually breaking open into flying shards
-    const targetSide = shatter > 0.001 ? THREE.DoubleSide : THREE.FrontSide;
-    if (mat.side !== targetSide) mat.side = targetSide;
     u.uTime.value = t;
     u.uHeat.value = S.heat + S.hover * 0.12 + S.blind * 1.2;
     u.uFrost.value = S.frost;
@@ -380,7 +441,21 @@ export function DragonEgg() {
       <mesh ref={halo} material={haloMat} renderOrder={-1}>
         <planeGeometry args={[6, 6]} />
       </mesh>
-      <mesh ref={mesh} geometry={geo} material={mat} frustumCulled={false} />
+      <mesh ref={mesh} name="Dragon egg shell" geometry={geo} material={mat} frustumCulled={false} />
     </group>
   );
+}
+
+function MobileShell() {
+  const surface = useLoader(THREE.TextureLoader, iceSurfaceUrl);
+  useMemo(() => {
+    surface.wrapS = THREE.RepeatWrapping;
+    surface.anisotropy = 4;
+    surface.needsUpdate = true;
+  }, [surface]);
+  return <Shell surface={surface} />;
+}
+
+export function DragonEgg({ mobile }: { mobile: boolean }) {
+  return mobile ? <Suspense fallback={null}><MobileShell /></Suspense> : <Shell />;
 }

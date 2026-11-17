@@ -97,6 +97,23 @@ vec3 voronoi3(vec3 x){
 }
 `;
 
+/** Screen-space finger wake. Keeping this on the GPU lets the scroll and dense fields share a frame. */
+export const TOUCH_SWEEP = /* glsl */ `
+uniform vec4 uSweep;
+vec4 swept(vec4 clip){
+  if (uSweep.w > 0.002 && clip.w > 0.12) {
+    vec2 metric = vec2(uSweep.z, 1.0);
+    vec2 d = (clip.xy / clip.w - uSweep.xy) * metric;
+    float r = length(d);
+    float falloff = 1.0 - smoothstep(0.04, 0.27, r);
+    vec2 n = d / max(0.032, r);
+    vec2 curl = vec2(-n.y, n.x);
+    clip.xy += (n * 0.158 + curl * 0.047) * (falloff * uSweep.w * clip.w) / metric;
+  }
+  return clip;
+}
+`;
+
 /** Simple vertex shader passing uv / world normal / world position. */
 export const BASIC_VERT = /* glsl */ `
 varying vec2 vUv;

@@ -64,6 +64,8 @@ export class ParticleSpringField {
   private shock = 0;
   private rayNear = false;
 
+  get needsHome() { return this.rayNear; }
+
   constructor(count: number, cfg: FieldConfig = {}) {
     this.count = count;
     this.home = new Float32Array(count * 3);
@@ -97,6 +99,10 @@ export class ParticleSpringField {
    * so callers can skip evaluating `home` positions altogether.
    */
   beginStep(cx: number, cy: number, cz: number, boundRadius: number, space: 'focus' | 'relic' = 'focus'): boolean {
+    if (!S.rayActive || world.touchDragging) {
+      this.rayNear = false;
+      return !this.sleeping;
+    }
     const invS = 1 / Math.max(S.focusScale, 0.05);
     let rox = (S.rayOrigin.x - S.egg.x) * invS;
     let roy = (S.rayOrigin.y - S.egg.y) * invS;
@@ -107,23 +113,21 @@ export class ParticleSpringField {
     let velX = S.rayVel.x;
     let velY = S.rayVel.y;
     let velZ = S.rayVel.z;
-    // Relic children live in a yawed, slightly shifted frame — fold the cursor ray back into it
+    // Transform with the actual model matrix, including the relic's lean and offset.
     if (space === 'relic') {
-      const c = Math.cos(S.relicYaw);
-      const s = Math.sin(S.relicYaw);
-      const ox = rox;
-      const oz = roz;
-      rox = ox * c - oz * s - S.relicShift.x;
-      roy -= S.relicShift.y;
-      roz = ox * s + oz * c - S.relicShift.z;
-      const dx = rdx;
-      const dz = rdz;
-      rdx = dx * c - dz * s;
-      rdz = dx * s + dz * c;
-      const wx = velX;
-      const wz = velZ;
-      velX = wx * c - wz * s;
-      velZ = wx * s + wz * c;
+      const e = S.relicFromWorld.elements;
+      const { x, y, z } = S.rayOrigin;
+      rox = e[0] * x + e[4] * y + e[8] * z + e[12];
+      roy = e[1] * x + e[5] * y + e[9] * z + e[13];
+      roz = e[2] * x + e[6] * y + e[10] * z + e[14];
+      const dx = rdx, dy = rdy, dz = rdz;
+      rdx = (e[0] * dx + e[4] * dy + e[8] * dz) * S.focusScale;
+      rdy = (e[1] * dx + e[5] * dy + e[9] * dz) * S.focusScale;
+      rdz = (e[2] * dx + e[6] * dy + e[10] * dz) * S.focusScale;
+      const vx = velX, vy = velY, vz = velZ;
+      velX = (e[0] * vx + e[4] * vy + e[8] * vz) * S.focusScale;
+      velY = (e[1] * vx + e[5] * vy + e[9] * vz) * S.focusScale;
+      velZ = (e[2] * vx + e[6] * vy + e[10] * vz) * S.focusScale;
     }
 
     const dcx = cx - rox;
@@ -132,7 +136,7 @@ export class ParticleSpringField {
     const centerAlong = Math.max(1.5, dcx * rdx + dcy * rdy + dcz * rdz);
 
     const motionScale = world.reduced ? 0.55 : 1;
-    const fovK = TAN_HALF_FOV * this.screenRadius * motionScale;
+    const fovK = TAN_HALF_FOV * this.screenRadius * motionScale * (world.touching ? 1.22 : 1);
     const holdMul = 1 + world.charge * 0.48 + S.clickWave * 0.32;
     const shock = S.clickShock * this.clickPower * motionScale;
     const maxAlong = centerAlong + boundRadius;
@@ -371,7 +375,7 @@ export class ParticleSpringField {
       }
     }
 
-    this.attr.needsUpdate = true;
+    if (awake || !this.sleeping) this.attr.needsUpdate = true;
     this.sleeping = !awake;
   }
 
