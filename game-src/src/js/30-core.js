@@ -70,7 +70,8 @@ function loadSave() {
     G.ach = d.ach || {};
     G.score = Math.max(0, Number(d.score) || 0);
     G.zone = d.zone || 'workshop';
-    G.det = d.det == null ? 5 : d.det;
+    G.det = d.det == null ? ((typeof Roster !== 'undefined') ? Roster.hp() : 5) : d.det;
+    if (typeof Roster !== 'undefined') G.det = Math.min(G.det, Roster.hp());   // an older save cannot out-heart the body
     G.attempt = d.attempt || 0;
     if (G.flags.mercy && G.flags.named == null) G.flags.named = true;      // a save from before Round 9 that had finished the Throne: the name is already earned
     G.hasGame = true;

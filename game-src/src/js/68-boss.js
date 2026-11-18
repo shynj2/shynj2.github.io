@@ -153,7 +153,6 @@ const Fight = {
     b.poiseMax = 100 + b.phase * 20; b.poise = b.poiseMax; b.state = 'idle'; b.t = 0; b.atk = null; b.dead = false; b.ov = false;
     b.poiseWait = 0; b.wait = 1; b.flash = 0; b.repose = 0; b.dashV = 0; b.dashT = 0; b.bleedT = 0; b.bleedTick = 0; b.pose = 'idle';
     b.haz.length = b.minions.length = b.sched.length = b.last.length = b.orbs.length = 0;
-    if (typeof BossMusic !== 'undefined' && G.flags.sound !== false) BossMusic.start();   // the score follows his phase (22-boss-violin.js)
     b.hide = false; b.lift = 0; b.inv = false; b.mark = null; b.cue = null; b.bleedN = 0; b.aggr = 1; b.frozen = false; b.clock = 0; b.hits = 0;
     Combat.reset(); bossSync(); Ally.start();
     el('stage').classList.add('fighting'); FightUI.labels(); FightUI.hint(null);
@@ -387,7 +386,8 @@ const Boss = {
   /* ---------------- what he reads, and how he chooses ---------------- */
   read() {
     const pcx = P.x + P.w / 2, s = Combat.seen, id = Arsenal.cur();
-    return { pcx, d: Math.abs(BOSS.x - pcx), side: pcx < BOSS.x ? -1 : 1, spam: s.atk.length, guard: s.guard, still: s.still, tow: s.dodgeToward, away: s.dodgeAway,
+    const maxhp = (typeof Roster !== 'undefined') ? Roster.hp() : 5;
+    return { pcx, d: Math.abs(BOSS.x - pcx), maxhp, side: pcx < BOSS.x ? -1 : 1, spam: s.atk.length, guard: s.guard, still: s.still, tow: s.dodgeToward, away: s.dodgeAway,
       lastDodge: s.lastDodge, wp: id, ranged: id === 'staff', php: G.det, mash: s.press.length / 2, hurtAgo: G.time - s.hurtAt, facing: P.face };
   },
   pick(c) {
@@ -397,7 +397,8 @@ const Boss = {
       let w = a.w(c); if (w <= 0) continue;
       if (b.last[0] === id) w *= .2; else if (b.last[1] === id) w *= .55;      // never a fixed loop
       if (b.phase === 2 && (id === 'glitch' || id === 'pen' || id === 'wait')) w *= 1.25;
-      if (c.php <= 2 && a.kind === 'unblock') w *= .6;                         // a visitor on their last breath is not hunted with the one thing they cannot guard
+      const lastBreath = c.php <= Math.max(1, Math.round(c.maxhp * .4));
+      if (lastBreath && a.kind === 'unblock') w *= .6;                         // a visitor on their last breath is not hunted with the one thing they cannot guard
       opts.push([id, w]); sum += w;
     }
     if (!opts.length) return 'slash';
@@ -448,7 +449,7 @@ const Boss = {
     b.aggr = clamp(b.aggr + (Math.random() - .5) * .4, .75, 1.3);
     let w = [1.05, .8, .58][b.phase] / b.aggr + Math.random() * .3;
     if (b.eased) w *= 1.3;
-    if (c.php <= 2) w *= 1.15;
+    if (c.php <= Math.max(1, Math.round(c.maxhp * .4))) w *= 1.15;
     if (b.phase === 2 && Math.random() < .38) w = .12;                       // in the last phase he often follows one attack straight with another
     if (b.phase === 2 && b.hp / b.max < PHASE_AT[3]) w = Math.min(w, .5);    // the terminal phase has no breaths in it
     b.state = 'idle'; b.t = 0; b.wait = w; b.pose = 'idle'; b.lift = 0; FightUI.hint(null);
@@ -521,7 +522,7 @@ function bossResume() {
   if (!G.flags.resync) { Resync.rescue(); return; }       // the first defeat: the visitor wakes beside RE-sync instead (66-resync.js)
   el('attempt').classList.remove('on');
   el('stage').classList.remove('void');
-  setDet(5, true);
+  setDet((typeof Roster !== 'undefined' ? Roster.hp() : 5), true);
   Fight.end(); BOSS.cp = 0;
   BOSS.active = true; BOSS.x = ZONES.arena.bossX; BOSS.pose = 'idle';
   G.scene = 'boss';

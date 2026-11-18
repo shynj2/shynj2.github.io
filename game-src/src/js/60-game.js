@@ -352,7 +352,7 @@ function mercyScene(yielded) {
     G.flags.mercy = true;
     G.scene = 'world';
     el('stage').classList.remove('void');
-    setDet(5, true);
+    setDet((typeof Roster !== 'undefined' ? Roster.hp() : 5), true);
     addScore(99);
     unlock('purpose');
     Sound.win();

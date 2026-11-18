@@ -143,7 +143,7 @@ const Goblin = {
     this.t = -1; this.cracks = null; this.crackN = 0; this.laughT = 4.2;
     P.x = z.startX - P.w / 2; P.vx = P.vy = 0; P.face = 1; P.hurt = 0; P.visible = true;
     P.act = 'materialize'; if (P.anim) animPlay(P.anim, 'materialize', true);
-    setDet(5, true);
+    setDet((typeof Roster !== 'undefined' ? Roster.hp() : 5), true);
     G.scene = 'world'; G.fade = 1; G.fadeDir = -1;
     Sound.ambience(z.mood, .85);
     hudSync(); save();

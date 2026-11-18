@@ -37,7 +37,7 @@ const Ally = {
     Dlg.open([{ who: 'who.resync', cls: 'npc', lines: ['resync_ally.1', 'resync_ally.2', 'resync_ally.3'] }], done);
   },
   next() {
-    const hurt = 5 - G.det, opts = [];
+    const hurt = ((typeof Roster !== 'undefined' ? Roster.hp() : 5) - G.det), opts = [];
     if (hurt >= 2 || (hurt === 1 && this.n % 2 === 0)) opts.push('heal');
     if (!opts.length) { if (this.power <= 1) opts.push('power'); if (!this.shield) opts.push('shield'); if (Combat.stam < 45) opts.push('stam'); }
     if (!opts.length) opts.push(hurt ? 'heal' : 'power');

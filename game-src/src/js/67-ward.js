@@ -41,7 +41,7 @@ const Ward = {
   rise() {
     if (G.scene !== 'smite' || performance.now() - this.t0 < 1700) return;
     this.dom().classList.remove('on');
-    P.x = P.safeX; P.y = P.safeY; P.vx = P.vy = 0; P.visible = true; setDet(5, true);
+    P.x = P.safeX; P.y = P.safeY; P.vx = P.vy = 0; P.visible = true; setDet((typeof Roster !== 'undefined' ? Roster.hp() : 5), true);
     P.act = 'materialize'; if (P.anim) animPlay(P.anim, 'materialize', true);
     G.scene = 'world'; Sound.open(); save();
   },

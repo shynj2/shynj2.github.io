@@ -290,7 +290,6 @@ function update(dt) {
     for (let i = 0; i < ps.length; i++) if (ps[i].anim) npcAnim(ps[i], dt);
   }
   if (G.scene === 'boss') { Fight.update(dt); Ally.update(dt); showPrompt(null); }
-  BossMusic.start();                                   // the score exists from the first hall; it is quiet until the throne
   Ward.tick(dt);
   Enemy.update(dt); Enemy.stepBolts(dt);
   Override.tick(dt);

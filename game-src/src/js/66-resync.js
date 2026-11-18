@@ -19,7 +19,7 @@ const Resync = {
     G.flags.resync = true;
     el('attempt').classList.remove('on'); el('stage').classList.remove('void');
     Fight.end(); BOSS.cp = 0; BOSS.pose = 'idle'; BossMusic.stop();
-    setDet(5, true); G.scene = 'world'; G.fadeDir = 0; save();
+    setDet((typeof Roster !== 'undefined' ? Roster.hp() : 5), true); G.scene = 'world'; G.fadeDir = 0; save();
     Art.need(ZONES.catacombs).then(() => fadeTo(() => {
       loadZone('catacombs', 'left');
       const p = this.prop();
