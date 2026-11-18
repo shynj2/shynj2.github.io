@@ -38,8 +38,8 @@ const ETYPES = {
     hits: [{ at: .02, reach: 36, dmg: 1 }, { at: .28, reach: 36, dmg: 1 }]        // a two-cut flurry: step back or guard both
   },
   mote: {
-    rig: 'stalker', ghost: true, scale: .8, glow: 'ember3', name: 'foe.mote.name', hp: 16, dmg: 1, reach: 0, spd: 48, cd: 1.6, sight: 260, tell: .48, act: .1, rec: .5,
-    kind: 'unblock', poise: 3, drop: 16, shards: [1, 1], fly: 40, keep: 40,
+    rig: 'stalker', ghost: true, scale: .62, glow: 'ember3', name: 'foe.mote.name', hp: 16, dmg: 1, reach: 0, spd: 48, cd: 1.6, sight: 260, tell: .48, act: .1, rec: .5,
+    kind: 'unblock', poise: 3, drop: 16, shards: [1, 1], fly: 40, keep: 108,
     shot: { speed: 168, dmg: 1, gravity: 0, aim: true }                     // spits a cinder at wherever you are
   },
   brute: {
@@ -49,7 +49,7 @@ const ETYPES = {
   },
   wisp: {
     rig: 'stalker', ghost: true, scale: .95, glow: 'rune3', name: 'foe.wisp.name', hp: 22, dmg: 1, reach: 0, spd: 20, cd: 1.15, sight: 300, tell: .40, act: .1, rec: .45,
-    kind: 'unblock', poise: 4, drop: 20, shards: [1, 2], fly: 54, keep: 50,
+    kind: 'unblock', poise: 4, drop: 20, shards: [1, 2], fly: 54, keep: 124,
     shot: { speed: 190, dmg: 1, gravity: 0, aim: true }
   },
   echo: {
@@ -74,15 +74,19 @@ const Enemy = {
   ghost(kind, key) {
     if (this._pool[key]) return this._pool[key];
     const R = Art.rigs[ETYPES[kind].rig]; if (!R) return null;
-    const n = R.def.fw, h = R.def.fh, c = mk(n, h), g = c.getContext('2d');
-    g.drawImage(R.cv[0][0], 0, 0);                       // idle frame 0, right-facing
-    const px = g.getImageData(0, 0, n, h), d = px.data;
-    const col = { ember3: [232, 115, 74], rune3: [122, 82, 214], cold3: [79, 160, 200] }[ETYPES[kind].glow] || [122, 82, 214];
-    for (let i = 0; i < d.length; i += 4) {
-      if (d[i + 3] < 90) { d[i + 3] = 0; continue; }
-      const a = d[i + 3] / 255;
-      d[i] = Math.round((d[i] * .35 + col[0] * .65) * a); d[i + 1] = Math.round((d[i + 1] * .35 + col[1] * .65) * a); d[i + 2] = Math.round((d[i + 2] * .35 + col[2] * .65) * a);
-      d[i + 3] = 190;
+    // the whole sheet is tinted, so every clip of the borrowed rig still works on the ghost
+    const d = R.def, sheet = R.cv[0][0], c = mk(sheet.width, sheet.height), g = c.getContext('2d');
+    g.drawImage(sheet, 0, 0);
+    const px = g.getImageData(0, 0, c.width, c.height), bits = px.data;
+    const col = { ember3: [232, 115, 74], rune3: [128, 92, 226], cold3: [79, 160, 200] }[ETYPES[kind].glow] || [128, 92, 226];
+    for (let i = 0; i < bits.length; i += 4) {
+      if (bits[i + 3] < 90) { bits[i + 3] = 0; continue; }
+      const lit = (bits[i] + bits[i + 1] + bits[i + 2]) / 765;   // 0 shadow … 1 highlight of the original body
+      const k = .55 + lit * .8;
+      bits[i] = Math.min(255, Math.round(bits[i] * .34 + col[0] * k));
+      bits[i + 1] = Math.min(255, Math.round(bits[i + 1] * .34 + col[1] * k));
+      bits[i + 2] = Math.min(255, Math.round(bits[i + 2] * .34 + col[2] * k));
+      bits[i + 3] = 210;
     }
     g.putImageData(px, 0, 0);
     return (this._pool[key] = c);
@@ -91,10 +95,10 @@ const Enemy = {
   echoRig() {
     if (this._pool.echo) return this._pool.echo;
     const R = Art.rigs.recruiter; if (!R) return null;
-    const c = mk(R.cv[0][0].width, R.cv[0][0].height), g = c.getContext('2d');
-    g.drawImage(R.cv[0][0], 0, 0);
-    const px = g.getImageData(0, 0, c.width, c.height), d = px.data;
-    for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 40) { d[i + 3] = 0; continue; } d[i] = Math.min(255, d[i] * .55 + 90); d[i + 1] = Math.round(d[i + 1] * .5); d[i + 2] = Math.min(255, d[i + 2] * .6 + 70); d[i + 3] = 235; }
+    const sheet = R.cv[0][0], c = mk(sheet.width, sheet.height), g = c.getContext('2d');
+    g.drawImage(sheet, 0, 0);
+    const px = g.getImageData(0, 0, c.width, c.height), bits = px.data;
+    for (let i = 0; i < bits.length; i += 4) { if (bits[i + 3] < 40) { bits[i + 3] = 0; continue; } bits[i] = Math.min(255, bits[i] * .55 + 90); bits[i + 1] = Math.round(bits[i + 1] * .5); bits[i + 2] = Math.min(255, bits[i + 2] * .6 + 70); bits[i + 3] = 235; }
     g.putImageData(px, 0, 0);
     return (this._pool.echo = c);
   },
@@ -109,7 +113,8 @@ const Enemy = {
       const kind = Array.isArray(f) ? f[0] : f.kind;
       if (!ETYPES[kind]) return;
       const col = Array.isArray(f) ? f[1] : f.at != null ? f.at : (f.x / TILE);
-      const x = col * TILE + 8;
+      let x = col * TILE + 8;
+      if (typeof World !== 'undefined' && World.m) { const gy = World.groundNear(x); if (!World.solid(Math.floor(x / TILE), Math.floor((gy + 4) / TILE))) { for (let d = 1; d < 24; d++) { const l = x - d * 16, r = x + d * 16; if (World.solid(Math.floor(l / TILE), Math.floor((World.groundNear(l) + 4) / TILE))) { x = l; break; } if (World.solid(Math.floor(r / TILE), Math.floor((World.groundNear(r) + 4) / TILE))) { x = r; break; } } } }
       this._spawn.push({ kind, x, lane: (Array.isArray(f) ? f[2] : f.opts) || {}, id: 'f' + i, at: x });
     });
     this._spawn.sort((a, b) => a.x - b.x);
@@ -196,7 +201,9 @@ const Enemy = {
         e.gy = gy; e.y = gy - T.fly + Math.sin(e.age * 2.4 + e.seed) * 4;
       }
       const canStep = T.fly || this.stepOk(e, e.face);
-      if (ad > (T.reach ? T.reach * .8 : 110) && canStep) e.x += e.face * T.spd * dt * (e.hurt > 0 ? .3 : 1);
+      const near = T.reach ? T.reach * .8 : (T.keep || 90);        // the distance it wants to keep
+      if (ad > near && canStep) e.x += e.face * T.spd * dt * (e.hurt > 0 ? .3 : 1);
+      else if (ad < near * .65 && T.fly) e.x -= e.face * T.spd * .8 * dt;   // a caster backs off when crowded
       else if (!T.fly) e.x += e.face * T.spd * .35 * dt;
       if (!T.fly) e.gy = World.groundNear(e.x + e.face * 8);
       e.cd -= dt;
@@ -339,7 +346,7 @@ const Enemy = {
         for (let i = 0; i < 5; i++) { g.fillStyle = i & 1 ? PIX.rune4 : PIX.ember4; g.fillRect(Math.round(e.x - cx + (hash2(i, (t * 8) | 0, 3) * 14 - 7)), Math.round(footY - cy - 40 * k - i * 7), 1, 2); }
         continue;
       }
-      g.globalAlpha = a;
+      g.globalAlpha = a * (T.ghost ? .82 : 1);
       if (e.kind === 'echo' || e.kind === 'mote' || e.kind === 'wisp') {
         const c = e.kind === 'echo' ? this.echoRig() : this.ghost(e.kind, e.kind);
         if (c) {

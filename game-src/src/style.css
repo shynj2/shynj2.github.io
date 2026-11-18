@@ -479,3 +479,7 @@ a.artifact{text-decoration:none;color:inherit}
 #roster .rs-foot #rsBack{font-size:.55em;opacity:.7;min-width:0}
 @media (orientation:portrait){#roster .rs{padding-top:.8em}#roster .rs-card{width:5.6em}#roster .rs-h b{font-size:1.1em}#roster .rs-h i{font-size:.52em}#roster .rs-line{font-size:.55em}}
 @media (max-width:520px){#roster .rs-card{width:4.9em}#roster .rs-h b{font-size:.95em;letter-spacing:.2em}}
+
+/* a body with more than the Recruiter's five hearts: the row wraps instead of running off the stage */
+#hudDet{flex-wrap:wrap;justify-content:center;max-width:min(24em,86vw);row-gap:.2em}
+#hudDet.rich i{color:#ffe0a0;text-shadow:0 0 8px rgba(255,190,90,.9)}

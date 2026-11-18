@@ -43,7 +43,7 @@ const PENDING_ZONES = {
     spawn: { left: [6, FG], right: [190, FG] },
     puzzle: { 1: 'pz_forest' }, puzzleHint: 'ui.hint.forest',
     /* the hollows: [kind, tile column] — see 68-enemies.js */
-    foes: [['mote', 52], ['stalker', 76], ['mote', 98], ['stalker', 118], ['brute', 158]],
+    foes: [['mote', 40], ['stalker', 78], ['mote', 104], ['stalker', 126], ['brute', 152]],
     // undergrowth is scattered over every patch of ground by a seeded hash: [sprite, chance, layer]
     scatter: [['grass_a', .26, 'front'], ['grass_b', .2], ['grass_c', .1], ['fern', .09], ['flower', .05], ['mush', .035], ['rock', .03], ['bush_a', .05, 'back']], vines: .34,
     props: [
@@ -184,7 +184,7 @@ const PENDING_ZONES = {
     mood: 'repository', map: 'repository', atlas: 'workshop', lut: 'repository', ambient: [74, 66, 98],
     spawn: { left: [6, RF], right: [206, RF] },
     puzzle: { 1: '!pz_repo', 2: 'pz_repo' }, puzzleHint: 'ui.hint.repository',
-    foes: [['echo', 62], ['stalker', 105], ['echo', 142], ['wisp', 176], ['brute', 191]],
+    foes: [['echo', 60], ['stalker', 100], ['echo', 122], ['wisp', 178], ['brute', 200]],
     props: [
       { t: 'note', at: [19, RF], id: 'r1', dlg: 'note_repo_1', label: 'ui.read_the_chalk', dy: 13 },
       { t: 'npc', at: [52, RF], look: 'bot', name: 'who.bot', dlg: 'bot_repo', id: 'bot' },

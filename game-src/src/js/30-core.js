@@ -106,6 +106,7 @@ function hudSync() {
     d.innerHTML = '';
     for (let i = 0; i < maxDet; i++) d.appendChild(document.createElement('i'));
   }
+  d.classList.toggle('rich', maxDet > 5);
   [...d.children].forEach((n, i) => {
     n.textContent = '◆';
     n.classList.toggle('lost', i >= G.det);
