@@ -58,6 +58,9 @@ const Roster = {
   hp() { return this.cur().hp || 5; },
   op() { return !!this.cur().op; },
 
+  /** warm the rigs before the visitor is asked to choose (the intro calls this while the first sentence plays) */
+  warm() { if (typeof Art !== 'undefined' && Art.need && (!Art.rigs || !Art.rigs.recruiter)) Art.need(ZONES.workshop).catch(() => {}); },
+
   /* ---------------- the card art: a portrait cut from the rig ---------------- */
   _por: {},
   portrait(r) {
@@ -81,7 +84,14 @@ const Roster = {
 
   /* ---------------- the screen ---------------- */
   show(after, back) {
-    if (!Art.rigs.recruiter) { if (after) after(); return; }
+    // the cards need the rigs decoded: on a cold boot they are not in yet, so decode them and come back
+    if (!Art.rigs || !Art.rigs.recruiter) {
+      const want = { workshop: 'workshop' };
+      const go = () => { Art.rigsReady = true; this.show(after, back); };
+      if (Art.need) Art.need(ZONES.workshop).then(go).catch(() => { if (after) after(); });
+      else if (after) after();
+      return;
+    }
     let d = el('roster');
     if (!d) {
       d = document.createElement('div'); d.id = 'roster'; d.className = 'ov'; d.setAttribute('data-noi18n', '');

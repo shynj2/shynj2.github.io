@@ -525,7 +525,7 @@ function runIntro(returning) {
   const wrap = el('introLines'), form = el('nameform');
   wrap.innerHTML = '';
   form.classList.remove('on'); form.style.display = 'none';
-  if (!Gate.done) { Gate.show(() => runIntro(returning)); return; }     // language + first tap (unlocks sound)
+  if (!Gate.done) { if (typeof Roster !== 'undefined') Roster.warm(); Gate.show(() => runIntro(returning)); return; }     // language + first tap (unlocks sound); the rigs decode meanwhile
   // then the body: a brand-new pilgrimage never starts as somebody the visitor did not choose (66-roster.js)
   if (!returning && typeof Roster !== 'undefined' && !Roster.chosen) { Roster.chosen = true; Roster.pick = null; Roster.show(() => runIntro(false)); return; }
   const lines = returning
