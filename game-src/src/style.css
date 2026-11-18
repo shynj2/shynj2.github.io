@@ -467,7 +467,7 @@ a.artifact{text-decoration:none;color:inherit}
 #roster .rs-por{width:3.9em;height:3.9em;margin-top:.1em;background-size:100% 100%;image-rendering:pixelated;border:1px solid rgba(150,120,220,.5);background-color:#120c1e}
 #roster .rs-n{font-size:.66em;margin-top:.25em;letter-spacing:.1em;text-transform:uppercase;color:#f0e9ff;line-height:1.1;text-align:center}
 #roster .rs-s{font-size:.5em;color:#9c8fc0;line-height:1.15;text-align:center;min-height:2.3em}
-#roster .rs-tag{position:absolute;top:0;left:0;right:0;font-size:.42em;letter-spacing:.18em;padding:.4em 0 .28em;background:linear-gradient(180deg,#f2c46a,#b57b26);color:#1c1004;font-weight:700;text-transform:uppercase}
+#roster .rs-tag{position:absolute;top:0;left:0;right:0;font-size:.42em;letter-spacing:.18em;padding:.4em 0 .3em;background:linear-gradient(180deg,#f2c46a,#b57b26);color:#1c1004;font-weight:700;text-transform:uppercase;z-index:2;border-bottom:1px solid rgba(60,36,8,.6)}
 #roster .rs-bars{display:flex;flex-direction:column;gap:.15em;width:100%;margin-top:.2em}
 #roster .rs-bars em{display:flex;gap:.14em;justify-content:center}
 #roster .rs-bars u{width:.55em;height:.22em;border:1px solid rgba(150,120,220,.5);text-decoration:none;display:block}

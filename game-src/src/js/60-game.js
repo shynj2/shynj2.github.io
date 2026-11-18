@@ -599,10 +599,12 @@ function enterWorld(resume) {
   Sound.resume(); Sound.boot();
   G.scene = 'world'; G.hasGame = true;
   if (!resume) {
-    G.score = 0; G.notes = {}; G.flags = {}; G.ach = {}; G.det = 5;
+    const body = typeof Roster !== 'undefined' ? Roster.cur().id : null;   // the body chosen before the name (66-roster.js)
+    G.score = 0; G.notes = {}; G.flags = {}; G.ach = {}; G.det = typeof Roster !== 'undefined' ? Roster.hp() : 5;
     G.attempt = 0; G.zone = 'workshop';
     BOSS.active = false; BOSS.phase = 0; BOSS.pose = 'idle'; BOSS.cp = 0;
     Knight.enlist(G.name);                          // Round 9 §8.5 (64-knight.js)
+    if (body && typeof Roster !== 'undefined') { G.flags.body = body; Roster.apply(Roster.entry(body)); G.flags.bodyNew = body; }
   }
   Knight.apply();
   unlock('seeker');

@@ -110,10 +110,40 @@ function sprE(g, name, x, y, frame) { const r = sprRect(name, frame); if (r) g.d
 
 /* ---------------- character animation ---------------- */
 function Anim(rigName) { return { rigName, rig: null, name: '', clip: null, i: 0, t: 0, f: 0, done: false }; }
+/* a body whose rig has no locomotion (Shyn: idle, cast, slash, dash — no run, no jump) borrows the nearest pose it owns,
+   so the Architect still moves like a walker instead of freezing mid-stride */
+const CLIP_FALLBACK = {
+  run: ['idle', 'read'], run_start: ['idle', 'read'], run_stop: ['idle', 'read'], idle_look: ['idle', 'read'],
+  jump_up: ['idle', 'cast'], jump_apex: ['idle', 'cast'], fall: ['idle', 'cast'], land: ['idle', 'read'], land_hard: ['idle', 'hurt'],
+  materialize: ['idle', 'cast'], hurt: ['stagger', 'idle', 'cast']
+};
+const ONE_SHOT = { materialize: 1, hurt: 1, land: 1, land_hard: 1, run_start: 1, run_stop: 1 };   // these must end
+/* Shyn's own sheet has no locomotion at all; the Recruiter wears the same skeleton, so his legs stand in.
+   Only the pose is borrowed — the parts, the palette and the coat stay Shyn's (the clips are bone rotations). */
+const BORROW_RIG = { shyn: 'recruiter' };
+function clipFor(def, name, rigName) {
+  if (def.clips[name]) return def.clips[name];
+  const donor = BORROW_RIG[rigName] && Art.rigs[BORROW_RIG[rigName]];
+  if (donor && donor.def.clips[name] && !ONE_SHOT[name]) return donor.def.clips[name];
+  const fb = CLIP_FALLBACK[name]; if (!fb) return null;
+  for (const k of fb) {
+    const c = def.clips[k]; if (!c) continue;
+    if (!ONE_SHOT[name] || !c.loop) return c;
+    // a borrowed looping clip stands in for a one-shot: it is copied as a single play-through so the act can end
+    if (!c._once) { c._once = { f: c.f, fps: c.fps, loop: false }; }
+    return c._once;
+  }
+  // still nothing: a one-shot made of the first pose, so the moment passes instead of freezing the player
+  if (ONE_SHOT[name] && def.clips.idle) {
+    if (!def._still) def._still = { f: [[def.clips.idle.f[0][0], .18]], fps: 1, loop: false };
+    return def._still;
+  }
+  return null;
+}
 function animPlay(a, name, restart) {
   if (!a.rig) a.rig = Art.rigs[a.rigName];
   if (!a.rig || (a.name === name && !restart)) return;
-  const c = a.rig.def.clips[name]; if (!c) return;
+  const c = clipFor(a.rig.def, name, a.rigName); if (!c) return;
   a.name = name; a.clip = c; a.i = 0; a.t = 0; a.done = false; a.f = c.f[0][0];
 }
 /** advance; returns the event name fired on a newly shown frame ('step', 'land', ...) or 0 */
