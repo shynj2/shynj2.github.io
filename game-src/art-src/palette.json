@@ -1,0 +1,567 @@
+{
+ "_doc": "MASTER PALETTE of Veyrath. Every pixel of every baked atlas is one of these colours. Ramps run dark -> light. A colour is addressed as <ramp><step>, e.g. stone2, rune4. 'soot' (warm black stone) is the only ramp added to the brief's table.",
+ "ramps": {
+  "void": [
+   "#040208",
+   "#0a0612",
+   "#130c1e"
+  ],
+  "stone": [
+   "#1c1626",
+   "#2a2236",
+   "#3b3149",
+   "#51465f",
+   "#6d6180"
+  ],
+  "rune": [
+   "#2b1a55",
+   "#4b2c8f",
+   "#7a52d6",
+   "#a67cff",
+   "#d4bcff",
+   "#f3ebff"
+  ],
+  "ember": [
+   "#2a0a10",
+   "#5a1220",
+   "#8f1e2e",
+   "#c23a3a",
+   "#e8734a"
+  ],
+  "gold": [
+   "#3a2410",
+   "#6b4518",
+   "#a8742a",
+   "#d9a441",
+   "#f2d27a"
+  ],
+  "bone": [
+   "#3a2b2a",
+   "#6e5448",
+   "#a88468",
+   "#d3b295",
+   "#ecd9bf"
+  ],
+  "moss": [
+   "#0f1c18",
+   "#1d3a2c",
+   "#2f5e43",
+   "#4f8a5c"
+  ],
+  "cold": [
+   "#0e1a2b",
+   "#173452",
+   "#2a5b86",
+   "#4fa0c8",
+   "#9fe0f0"
+  ],
+  "iron": [
+   "#2a2a33",
+   "#45454f",
+   "#6a6a78",
+   "#9a9aaa"
+  ],
+  "soot": [
+   "#150e12",
+   "#22171a",
+   "#33221f",
+   "#4a3029",
+   "#6b4636"
+  ]
+ },
+ "_rigs_doc": "Character sprites are authored in ROLES (one letter each), never RGB. 'ol' = which role outlines a role (selective coloured outlines). Change a colour here and every frame re-bakes.",
+ "rigs": {
+  "recruiter": {
+   "roles": {
+    "K": "void1",
+    "n": "cold0",
+    "N": "cold1",
+    "b": "cold2",
+    "w": "bone4",
+    "W": "bone3",
+    "t": "ember3",
+    "T": "ember2",
+    "s": "bone2",
+    "S": "bone3",
+    "h": "bone4",
+    "H": "bone0",
+    "g": "bone1",
+    "L": "gold0",
+    "l": "gold1",
+    "y": "gold3",
+    "o": "void2",
+    "O": "iron0",
+    "e": "void2",
+    "v": "rune3",
+    "V": "rune5"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "H",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2"
+   },
+   "default_ol": "K"
+  },
+  "librarian": {
+   "roles": {
+    "K": "void1",
+    "d": "stone2",
+    "m": "stone3",
+    "l": "stone4",
+    "r": "bone3",
+    "D": "iron0",
+    "M": "iron1",
+    "L": "iron2",
+    "s": "bone1",
+    "S": "bone2",
+    "h": "bone3",
+    "e": "bone0",
+    "v": "rune2",
+    "V": "rune3",
+    "W": "rune4",
+    "g": "gold1",
+    "G": "gold2",
+    "y": "gold3",
+    "p": "bone3",
+    "P": "bone4",
+    "c": "ember1",
+    "C": "ember2",
+    "b": "cold1",
+    "B": "cold2"
+   },
+   "ol": {
+    "s": "e",
+    "S": "e",
+    "h": "e",
+    "v": "rune0",
+    "V": "rune1",
+    "W": "rune1",
+    "p": "bone1",
+    "P": "bone1",
+    "g": "gold0",
+    "G": "gold0",
+    "y": "gold0"
+   },
+   "default_ol": "K"
+  },
+  "shade": {
+   "roles": {
+    "K": "void0",
+    "d": "void1",
+    "m": "void2",
+    "l": "stone0",
+    "r": "stone1",
+    "v": "rune2",
+    "V": "rune4"
+   },
+   "ol": {},
+   "default_ol": "K"
+  },
+  "shyn": {
+   "roles": {
+    "K": "void1",
+    "d": "void2",
+    "m": "rune0",
+    "l": "rune1",
+    "r": "rune3",
+    "D": "void2",
+    "M": "iron1",
+    "L": "iron2",
+    "s": "stone3",
+    "S": "stone4",
+    "h": "bone3",
+    "n": "bone1",
+    "N": "bone3",
+    "o": "bone4",
+    "v": "rune2",
+    "V": "rune4",
+    "W": "rune5",
+    "b": "gold0",
+    "g": "gold1",
+    "G": "gold2",
+    "y": "gold3"
+   },
+   "ol": {
+    "v": "rune0",
+    "V": "rune1",
+    "W": "rune1",
+    "g": "gold0",
+    "G": "gold0",
+    "y": "gold0",
+    "b": "void1"
+   },
+   "default_ol": "K"
+  },
+  "knight": {
+   "roles": {
+    "K": "void1",
+    "n": "iron0",
+    "N": "iron2",
+    "b": "iron3",
+    "w": "bone4",
+    "W": "bone3",
+    "t": "ember3",
+    "T": "ember2",
+    "s": "bone2",
+    "S": "bone3",
+    "h": "bone4",
+    "H": "iron1",
+    "g": "iron3",
+    "L": "ember0",
+    "l": "ember2",
+    "y": "gold3",
+    "o": "iron0",
+    "O": "iron2",
+    "e": "void1",
+    "v": "rune3",
+    "V": "rune5",
+    "p": "ember3"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "H",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2",
+    "p": "ember1"
+   },
+   "default_ol": "K"
+  },
+  "resync": {
+   "roles": {
+    "K": "void1",
+    "n": "iron1",
+    "N": "iron2",
+    "b": "iron3",
+    "w": "cold3",
+    "W": "cold2",
+    "t": "moss3",
+    "T": "moss3",
+    "s": "bone2",
+    "S": "bone3",
+    "h": "bone4",
+    "H": "iron1",
+    "g": "iron3",
+    "L": "cold1",
+    "l": "cold2",
+    "y": "moss3",
+    "o": "void1",
+    "O": "iron1",
+    "e": "moss3",
+    "v": "rune3",
+    "V": "rune5",
+    "p": "moss3"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "H",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2",
+    "p": "moss1"
+   },
+   "default_ol": "K"
+  },
+  "miku": {
+   "roles": {
+    "K": "void0",
+    "o": "void1",
+    "d": "stone0",
+    "D": "stone1",
+    "v": "iron1",
+    "V": "iron2",
+    "w": "iron3",
+    "W": "bone4",
+    "s": "bone2",
+    "S": "bone3",
+    "f": "bone4",
+    "b": "ember4",
+    "c": "cold1",
+    "C": "cold2",
+    "q": "cold3",
+    "Q": "cold4",
+    "r": "ember1",
+    "R": "ember3",
+    "p": "ember4",
+    "g": "gold2",
+    "G": "gold3",
+    "E": "rune5",
+    "H": "cold0",
+    "N": "bone0"
+   },
+   "ol": {
+    "s": "N",
+    "S": "N",
+    "f": "N",
+    "b": "N",
+    "c": "H",
+    "C": "H",
+    "q": "H",
+    "Q": "H",
+    "r": "o",
+    "R": "r",
+    "p": "r",
+    "w": "o",
+    "W": "v",
+    "V": "o",
+    "E": "H"
+   },
+   "default_ol": "K"
+  },
+  "meiko": {
+   "roles": {
+    "K": "void1",
+    "O": "gold0",
+    "B": "bone1",
+    "N": "bone0",
+    "s": "bone2",
+    "S": "bone3",
+    "f": "bone4",
+    "p": "ember4",
+    "w": "stone3",
+    "W": "bone2",
+    "i": "bone3",
+    "I": "bone4",
+    "P": "rune5",
+    "g": "gold1",
+    "G": "gold2",
+    "y": "gold3",
+    "Y": "gold4",
+    "r": "ember2",
+    "R": "ember3",
+    "v": "rune3",
+    "V": "rune4"
+   },
+   "ol": {
+    "s": "N",
+    "S": "N",
+    "f": "N",
+    "p": "N",
+    "w": "B",
+    "W": "B",
+    "i": "B",
+    "I": "B",
+    "P": "G",
+    "g": "O",
+    "G": "O",
+    "y": "O",
+    "Y": "O",
+    "r": "O",
+    "R": "r",
+    "v": "N",
+    "V": "N"
+   },
+   "default_ol": "O"
+  },
+  "warden": {
+   "roles": {
+    "K": "void1",
+    "n": "iron0",
+    "N": "iron1",
+    "b": "iron2",
+    "w": "moss3",
+    "W": "moss2",
+    "t": "ember3",
+    "T": "ember2",
+    "s": "gold1",
+    "S": "gold2",
+    "h": "iron3",
+    "H": "iron0",
+    "g": "iron2",
+    "L": "void2",
+    "l": "iron1",
+    "y": "gold3",
+    "o": "void0",
+    "O": "iron2",
+    "e": "ember4",
+    "v": "rune3",
+    "V": "rune5"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "H",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2"
+   },
+   "default_ol": "K"
+  },
+  "stalker": {
+   "roles": {
+    "K": "void0",
+    "n": "stone0",
+    "N": "stone1",
+    "b": "stone2",
+    "w": "bone2",
+    "W": "bone3",
+    "t": "cold2",
+    "T": "cold3",
+    "s": "void1",
+    "S": "stone1",
+    "h": "stone1",
+    "H": "stone0",
+    "g": "stone2",
+    "L": "void2",
+    "l": "stone1",
+    "y": "rune3",
+    "o": "void0",
+    "O": "void1",
+    "e": "cold4",
+    "v": "cold3",
+    "V": "cold4"
+   },
+   "ol": {
+    "s": "b",
+    "S": "b",
+    "h": "stone2",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2",
+    "w": "b",
+    "W": "b",
+    "e": "V"
+   },
+   "default_ol": "K"
+  },
+  "brute": {
+   "roles": {
+    "K": "void1",
+    "n": "soot1",
+    "N": "soot2",
+    "b": "soot3",
+    "w": "bone2",
+    "W": "bone3",
+    "t": "ember3",
+    "T": "ember2",
+    "s": "gold2",
+    "S": "gold3",
+    "h": "gold3",
+    "H": "stone2",
+    "g": "gold3",
+    "L": "ember1",
+    "l": "ember2",
+    "y": "gold2",
+    "o": "void0",
+    "O": "iron1",
+    "e": "ember4",
+    "v": "rune3",
+    "V": "rune5",
+    "p": "ember4"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "H",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2",
+    "p": "ember1",
+    "e": "V"
+   },
+   "default_ol": "K"
+  },
+  "shynj2": {
+   "roles": {
+    "K": "void1",
+    "n": "rune0",
+    "N": "rune2",
+    "b": "rune3",
+    "w": "bone4",
+    "W": "bone4",
+    "t": "gold2",
+    "T": "gold3",
+    "s": "bone3",
+    "S": "bone4",
+    "h": "gold4",
+    "H": "gold1",
+    "g": "gold3",
+    "L": "void2",
+    "l": "gold1",
+    "y": "gold4",
+    "o": "void0",
+    "O": "iron2",
+    "e": "gold4",
+    "v": "rune3",
+    "V": "rune5"
+   },
+   "ol": {
+    "s": "H",
+    "S": "H",
+    "h": "gold0",
+    "L": "void1",
+    "l": "L",
+    "v": "rune1",
+    "V": "rune2",
+    "t": "gold0",
+    "T": "gold0"
+   },
+   "default_ol": "K"
+  }
+ },
+ "_luts_doc": "Zone LUTs remap master colours -> master colours at load time (index-based recolouring, no re-authoring). 'ramp' entries shift a whole ramp onto another; steps are matched dark->light.",
+ "luts": {
+  "identity": {},
+  "forest": {
+   "ramp": {
+    "soot": "moss",
+    "ember": "moss",
+    "gold": "moss"
+   }
+  },
+  "cathedral": {
+   "ramp": {
+    "soot": "gold",
+    "ember": "gold"
+   }
+  },
+  "catacombs": {
+   "ramp": {
+    "soot": "cold",
+    "ember": "cold",
+    "gold": "cold"
+   }
+  },
+  "repository": {
+   "ramp": {
+    "soot": "stone",
+    "ember": "rune",
+    "gold": "stone"
+   }
+  },
+  "arena": {
+   "ramp": {
+    "soot": "stone",
+    "ember": "rune",
+    "gold": "rune"
+   }
+  },
+  "room499": {
+   "ramp": {
+    "soot": "gold"
+   }
+  },
+  "mercy": {
+   "ramp": {
+    "soot": "stone",
+    "ember": "stone",
+    "gold": "stone",
+    "bone": "stone",
+    "moss": "stone",
+    "cold": "stone",
+    "iron": "stone"
+   }
+  }
+ }
+}

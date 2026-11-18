@@ -1,0 +1,110 @@
+<div id="app">
+<div id="stage">
+  <canvas id="cv" width="480" height="270"></canvas>
+
+  <div class="hud">
+    <div class="nameplate">
+      <b id="hudName">ARASH</b>
+      <i data-i18n="ui.seeker_of_talent">Seeker of Talent</i>
+      <em id="hudObj"></em>
+    </div>
+    <div class="score"><span data-i18n="ui.score">Score</span> <b id="hudScore">0</b></div>
+    <div class="det" id="hudDet"></div>
+  </div>
+
+  <div id="prompt"><kbd>E</kbd><span id="promptTxt"></span></div>
+
+  <div id="dlg">
+    <div class="inner">
+      <canvas class="por" id="dlgPor" width="46" height="46"></canvas>
+      <div>
+        <div class="head"><span class="who" id="dlgWho"></span></div>
+        <div class="txt" id="dlgTxt"></div>
+        <div class="choices" id="dlgChoices"></div>
+      </div>
+    </div>
+    <div class="next" id="dlgNext">▼</div>
+  </div>
+
+  <div id="zonecard"><div class="in">
+    <div class="zt" id="ztTitle"></div>
+    <div class="rule"></div>
+    <div class="zs" id="ztSub"></div>
+  </div></div>
+
+  <div id="toast"><span class="ic">✦</span><span class="t"></span><span class="s"></span></div>
+
+  <div id="fight">
+    <div class="bossbar">
+      <div class="bn" data-i18n="zone.throne.boss.name"></div>
+      <div class="track"><div class="fill" id="bossFill"></div></div>
+      <div class="pips" id="bossPips"></div>
+    </div>
+  </div>
+
+  <div class="ov" id="intro">
+    <div class="center">
+      <div class="lines" id="introLines"></div>
+      <form id="nameform" autocomplete="off">
+        <label for="pn" data-i18n="intro.name_prompt">Speak your name, Recruiter.</label>
+        <input id="pn" maxlength="14" placeholder="ARASH" autocomplete="off" spellcheck="false">
+        <button class="btn pri" type="submit" data-i18n="ui.begin">Begin</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="ov" id="codex">
+    <div class="book">
+      <div class="spine"></div>
+      <nav id="chapNav"><div class="title" data-i18n="ui.codex">Codex</div></nav>
+      <div class="page" id="codexPage"></div>
+    </div>
+    <button class="btn codex-close" id="codexClose" data-i18n="ui.close">Close ✦ Esc</button>
+  </div>
+
+  <div class="ov" id="pause">
+    <div class="center">
+      <h2 data-i18n="ui.veyrath_is_still">Veyrath is still</h2>
+      <div class="menu">
+        <button class="btn" data-act="codex" data-i18n="ui.codex">Codex</button>
+        <button class="btn" data-act="ach" data-i18n="ui.achievements">Achievements</button>
+        <button class="btn" data-act="continue" data-i18n="ui.pause_continue">Resume the Pilgrimage</button>
+        <button class="btn" data-act="leave" data-i18n="ui.leave_veyrath">Leave Veyrath</button>
+      </div>
+      <div class="foot" data-i18n="ui.esc_return">Esc — return</div>
+    </div>
+  </div>
+
+  <div class="ov" id="attempt">
+    <div class="center">
+      <div class="n" data-i18n="ui.attempt">Attempt</div>
+      <div class="num" id="attNum">#1</div>
+      <div class="l1" id="attL1"></div>
+      <div class="l2" id="attL2"></div>
+      <div class="ret" id="attRet" data-i18n="ui.press_e_to_return">Press E to return</div>
+    </div>
+  </div>
+
+  <div class="ov" id="ending">
+    <div class="center">
+      <div class="fin" id="endFin"></div>
+      <div class="sig" data-i18n="ui.signature"></div>
+    </div>
+  </div>
+
+  <div id="touch">
+    <div class="dpad">
+      <button data-dir="left">◀</button>
+      <button data-dir="right">▶</button>
+    </div>
+    <div class="right">
+      <button class="jmp" data-act="jump">▲</button>
+      <button data-act="act">✦</button>
+    </div>
+  </div>
+
+  <button id="mute" data-i18n-title="ui.sound" title="Sound (M)" aria-label="Sound (M)">♪</button>
+  <button id="menuBtn" data-i18n-title="ui.menu" title="Menu (Esc)" aria-label="Menu (Esc)">☰</button>
+  <div id="hintPortrait" data-i18n="ui.rotate">Turn your device for the full view</div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+import { chromium } from 'playwright';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const browser = await chromium.launch();
+const page = await (await browser.newContext({ viewport: { width: 1280, height: 720 } })).newPage();
+await page.goto('file://' + path.join(ROOT, 'rune-architect.html')); await page.waitForTimeout(400);
+const go = async () => { await page.evaluate(async () => { G.name = 'ARASH'; hudSync(); el('intro').classList.remove('on'); G.scene = 'world'; await Art.need(ZONES.workshop); loadZone('workshop', 'left'); G.fade = 0; P.x = 44 * 16; P.y = World.floorBelow(44 * 16 + 8, 48, false) - P.h; camSnap(); P.act = ''; });
+  await page.keyboard.down('ArrowRight'); await page.evaluate(() => { Perf.n = 0; Perf.i = 0; Perf.buf.fill(0); }); await page.waitForTimeout(4000); await page.keyboard.up('ArrowRight');
+  return page.evaluate(() => { const b = Array.from(Perf.buf.slice(0, Math.min(Perf.n, 600))).sort((a, c) => a - c); return [b.length, b[b.length >> 1].toFixed(2), b[(b.length * .95) | 0].toFixed(2)]; }); };
+const cdp = await page.context().newCDPSession(page); await cdp.send('Profiler.enable'); await cdp.send('Profiler.setSamplingInterval', { interval: 200 }); await cdp.send('Profiler.start');
+console.log((await go()).join(' '));
+const { profile } = await cdp.send('Profiler.stop');
+const self = {}; const dt = profile.timeDeltas, idIdx = {}; profile.nodes.forEach((n) => { idIdx[n.id] = n; });
+profile.samples.forEach((id, i) => { const n = idIdx[id], k = n.callFrame.functionName + ':' + n.callFrame.lineNumber; self[k] = (self[k] || 0) + dt[i]; });
+const tot = Object.values(self).reduce((a, b) => a + b, 0);
+console.log(Object.entries(self).sort((a, b) => b[1] - a[1]).slice(0, 16).map(([k, v]) => k + ' ' + (v / tot * 100).toFixed(1) + '%').join('\n'));
+await browser.close();

@@ -1,0 +1,3634 @@
+[
+ {
+  "id": "who.shyn_full",
+  "lang": "en",
+  "old": "Shyn, the Rune Architect",
+  "new": "{N}, Keeper of the Root Code",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn_full",
+  "lang": "fa",
+  "old": "شایان، معمارِ رون",
+  "new": "{N}، نگهبان کد ریشه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn_full",
+  "lang": "ar",
+  "old": "شايان، معمار الرونات",
+  "new": "{N}، حارس الشفرة الجذرية",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn_full",
+  "lang": "ru",
+  "old": "Шайн, Зодчий Рун",
+  "new": "{N}, Хранитель Корневого Кода",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn_full",
+  "lang": "ja",
+  "old": "ルーンの建築家、シャイン",
+  "new": "根源コードの守護者、{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn",
+  "lang": "en",
+  "old": "Shyn",
+  "new": "{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn",
+  "lang": "fa",
+  "old": "شایان",
+  "new": "{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn",
+  "lang": "ar",
+  "old": "شايان",
+  "new": "{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn",
+  "lang": "ru",
+  "old": "Шайн",
+  "new": "{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.shyn",
+  "lang": "ja",
+  "old": "シャイン",
+  "new": "{N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.I",
+  "lang": "en",
+  "old": "The Architect's Record · I",
+  "new": "The Keeper's Record · I",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.I",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · یک",
+  "new": "کارنامهٔ نگهبان · یک",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.I",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ١",
+  "new": "سجلّ الحارس · ١",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.I",
+  "lang": "ru",
+  "old": "Свиток Зодчего · I",
+  "new": "Свиток Хранителя · I",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.I",
+  "lang": "ja",
+  "old": "建築家の記録 · I",
+  "new": "守り手の記録 · I",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.II",
+  "lang": "en",
+  "old": "The Architect's Record · II",
+  "new": "The Keeper's Record · II",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.II",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · دو",
+  "new": "کارنامهٔ نگهبان · دو",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.II",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ٢",
+  "new": "سجلّ الحارس · ٢",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.II",
+  "lang": "ru",
+  "old": "Свиток Зодчего · II",
+  "new": "Свиток Хранителя · II",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.II",
+  "lang": "ja",
+  "old": "建築家の記録 · II",
+  "new": "守り手の記録 · II",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.III",
+  "lang": "en",
+  "old": "The Architect's Record · III",
+  "new": "The Keeper's Record · III",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.III",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · سه",
+  "new": "کارنامهٔ نگهبان · سه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.III",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ٣",
+  "new": "سجلّ الحارس · ٣",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.III",
+  "lang": "ru",
+  "old": "Свиток Зодчего · III",
+  "new": "Свиток Хранителя · III",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.III",
+  "lang": "ja",
+  "old": "建築家の記録 · III",
+  "new": "守り手の記録 · III",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.IV",
+  "lang": "en",
+  "old": "The Architect's Record · IV",
+  "new": "The Keeper's Record · IV",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.IV",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · چهار",
+  "new": "کارنامهٔ نگهبان · چهار",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.IV",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ٤",
+  "new": "سجلّ الحارس · ٤",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.IV",
+  "lang": "ru",
+  "old": "Свиток Зодчего · IV",
+  "new": "Свиток Хранителя · IV",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.IV",
+  "lang": "ja",
+  "old": "建築家の記録 · IV",
+  "new": "守り手の記録 · IV",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.V",
+  "lang": "en",
+  "old": "The Architect's Record · V",
+  "new": "The Keeper's Record · V",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.V",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · پنج",
+  "new": "کارنامهٔ نگهبان · پنج",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.V",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ٥",
+  "new": "سجلّ الحارس · ٥",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.V",
+  "lang": "ru",
+  "old": "Свиток Зодчего · V",
+  "new": "Свиток Хранителя · V",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.V",
+  "lang": "ja",
+  "old": "建築家の記録 · V",
+  "new": "守り手の記録 · V",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.VI",
+  "lang": "en",
+  "old": "The Architect's Record · VI",
+  "new": "The Keeper's Record · VI",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.VI",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار · شش",
+  "new": "کارنامهٔ نگهبان · شش",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.VI",
+  "lang": "ar",
+  "old": "سجلّ المعمار · ٦",
+  "new": "سجلّ الحارس · ٦",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.VI",
+  "lang": "ru",
+  "old": "Свиток Зодчего · VI",
+  "new": "Свиток Хранителя · VI",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "who.record.VI",
+  "lang": "ja",
+  "old": "建築家の記録 · VI",
+  "new": "守り手の記録 · VI",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.sub",
+  "lang": "en",
+  "old": "Where the Architect was hammered into being, among tools and ash",
+  "new": "Where a builder was hammered into being, among tools and ash",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.sub",
+  "lang": "fa",
+  "old": "جایی که معمار میانِ ابزار و خاکستر، شکل گرفت",
+  "new": "جایی که سازنده‌ای در میان ابزار و خاکستر چکش خورد و شکل گرفت",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.sub",
+  "lang": "ar",
+  "old": "حيث طُرق المعمار على السندان بين الأدوات والرماد",
+  "new": "حيث طُرق بنّاءٌ حتى صار، بين الأدوات والرماد",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.sub",
+  "lang": "ru",
+  "old": "Здесь Зодчего выковали среди инструментов и пепла",
+  "new": "Где мастера выковали среди инструментов и пепла",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.sub",
+  "lang": "ja",
+  "old": "道具と灰のあいだで、建築家が鍛え上げられた場所",
+  "new": "道具と灰のあいだで、ひとりの作り手が鍛えられた場所",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.obj",
+  "lang": "en",
+  "old": "Only the Throne grants an audience with the Architect.",
+  "new": "Only the Throne grants an audience with the Keeper.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.obj",
+  "lang": "fa",
+  "old": "تنها سریر، دیدار با معمار را روا می‌دارد.",
+  "new": "تنها سریر است که به دیدار نگهبان راه می‌دهد.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.obj",
+  "lang": "ar",
+  "old": "وحده العرش يمنح مقابلة المعمار.",
+  "new": "العرش وحده يمنح لقاء الحارس.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.obj",
+  "lang": "ru",
+  "old": "Лишь Трон дарует встречу с Зодчим.",
+  "new": "Лишь Трон дарует встречу с Хранителем.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.workshop.obj",
+  "lang": "ja",
+  "old": "建築家に謁見できるのは、玉座のみ。",
+  "new": "守り手への謁見を許すのは、玉座のみ。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.name",
+  "lang": "en",
+  "old": "Throne of the Rune Architect",
+  "new": "Throne of the Root Code",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.name",
+  "lang": "fa",
+  "old": "سریرِ معمارِ رون",
+  "new": "سریر کد ریشه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.name",
+  "lang": "ar",
+  "old": "عرش معمار الرونات",
+  "new": "عرش الشفرة الجذرية",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.name",
+  "lang": "ru",
+  "old": "Трон Зодчего Рун",
+  "new": "Трон Корневого Кода",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.name",
+  "lang": "ja",
+  "old": "ルーンの建築家の玉座",
+  "new": "根源コードの玉座",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.boss.name",
+  "lang": "en",
+  "old": "Shyn — Keeper of the Root Code",
+  "new": "{N} — Keeper of the Root Code",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.boss.name",
+  "lang": "fa",
+  "old": "شایان — نگهبانِ کُدِ ریشه",
+  "new": "{N} — نگهبان کد ریشه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.boss.name",
+  "lang": "ar",
+  "old": "شايان — حارس الشفرة الجذرية",
+  "new": "{N} — حارس الشفرة الجذرية",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.boss.name",
+  "lang": "ru",
+  "old": "Шайн — Хранитель Корневого Кода",
+  "new": "{N} — Хранитель Корневого Кода",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "zone.throne.boss.name",
+  "lang": "ja",
+  "old": "シャイン――根源コードの守護者",
+  "new": "{N}――根源コードの守護者",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_workshop.3",
+  "lang": "en",
+  "old": "The Architect was not born in a palace.\nHe rose from the anvil, through ash.",
+  "new": "{N} was not born in a palace.\nHe rose from the anvil, through ash.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_workshop.3",
+  "lang": "fa",
+  "old": "معمار در کاخ زاده نشد.\nاز سندان برخاست، از میانِ خاکستر.",
+  "new": "{N} در کاخ زاده نشد.\nاز سندان برخاست، از میان خاکستر.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_workshop.3",
+  "lang": "ar",
+  "old": "لم يُولد المعمار في قصر.\nبل نهض من السندان، عبر الرماد.",
+  "new": "لم يولد {N} في قصر.\nبل نهض من السندان، عبر الرماد.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_workshop.3",
+  "lang": "ru",
+  "old": "Зодчий родился не во дворце.\nОн поднялся от наковальни, сквозь пепел.",
+  "new": "{N} не родился во дворце.\nОн поднялся от наковальни, сквозь пепел.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_workshop.3",
+  "lang": "ja",
+  "old": "建築家は宮殿に生まれなかった。\n金床から、灰を越えて立ち上がった。",
+  "new": "{N}は宮殿に生まれたのではない。\n金床から、灰をくぐって立ち上がった。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.1",
+  "lang": "en",
+  "old": "To speak with the Architect,\nyou must reach his Throne.",
+  "new": "To speak with the Keeper,\nyou must reach his Throne.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.1",
+  "lang": "fa",
+  "old": "برای سخن گفتن با معمار،\nباید به سریرش برسی.",
+  "new": "برای سخن گفتن با نگهبان،\nباید به سریرش برسی.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.1",
+  "lang": "ar",
+  "old": "لتكلّم المعمار\nعليك أن تبلغ عرشه.",
+  "new": "لتكلّم الحارس،\nعليك أن تبلغ عرشه.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.1",
+  "lang": "ru",
+  "old": "Чтобы говорить с Зодчим,\nты должен дойти до его Трона.",
+  "new": "Чтобы говорить с Хранителем,\nты должен дойти до его Трона.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.1",
+  "lang": "ja",
+  "old": "建築家と語らうなら、\n玉座にたどり着かねばならぬ。",
+  "new": "守り手と語らうには、\nその玉座に辿り着かねばならぬ。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.2",
+  "lang": "en",
+  "old": "Three gates will bar your way.\nThe last of them is he.",
+  "new": "Four ways lie asleep before you.\nThe last gate is he.",
+  "why": "said \"three gates\", but four sleeping ways (forest, cathedral, machine halls, ossuary) lie before the Throne",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.2",
+  "lang": "fa",
+  "old": "سه دروازه راهت را خواهند بست.\nواپسینشان خودِ اوست.",
+  "new": "چهار راه پیش رویت خفته‌اند.\nواپسین دروازه خود اوست.",
+  "why": "said \"three gates\", but four sleeping ways (forest, cathedral, machine halls, ossuary) lie before the Throne",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.2",
+  "lang": "ar",
+  "old": "ثلاث بوابات ستسدّ دربك.\nوآخرها هو نفسه.",
+  "new": "أربعة دروبٍ نائمةٌ أمامك.\nوالبوابة الأخيرة هو نفسه.",
+  "why": "said \"three gates\", but four sleeping ways (forest, cathedral, machine halls, ossuary) lie before the Throne",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.2",
+  "lang": "ru",
+  "old": "Трое врат преградят тебе путь.\nПоследние из них — он сам.",
+  "new": "Четыре пути спят перед тобой.\nПоследние врата — он сам.",
+  "why": "said \"three gates\", but four sleeping ways (forest, cathedral, machine halls, ossuary) lie before the Throne",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_workshop_4.2",
+  "lang": "ja",
+  "old": "三つの門が汝の道を阻む。\n最後の門は、彼自身。",
+  "new": "四つの道が、汝の前に眠っている。\n最後の門は、彼そのものだ。",
+  "why": "said \"three gates\", but four sleeping ways (forest, cathedral, machine halls, ossuary) lie before the Throne",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_cathedral.2",
+  "lang": "en",
+  "old": "The Architect learned that users\nhave no use for brilliance.",
+  "new": "{N} learned that users\nhave no use for brilliance.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_cathedral.2",
+  "lang": "fa",
+  "old": "معمار آموخت که کاربران\nنیازی به درخشش ندارند.",
+  "new": "{N} آموخت که کاربران\nنیازی به درخشش ندارند.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_cathedral.2",
+  "lang": "ar",
+  "old": "تعلّم المعمار أنّ المستخدمين\nلا يعبؤون بالبهرجة.",
+  "new": "تعلّم {N} أنّ المستخدمين\nلا حاجة لهم بالبراعة.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_cathedral.2",
+  "lang": "ru",
+  "old": "Зодчий усвоил: пользователям\nдо блеска нет дела.",
+  "new": "{N} понял: пользователям\nне нужен блеск.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "librarian_cathedral.2",
+  "lang": "ja",
+  "old": "建築家は知った。使う者は\n輝きなど気にかけぬと。",
+  "new": "{N}は学んだ。使う者たちに\n才気など要らぬのだと。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_catacomb_3.2",
+  "lang": "en",
+  "old": "The Architect does not sleep.",
+  "new": "Sleep: not found.",
+  "why": "\"The Architect does not sleep\" under a 404 made no joke; now the 404 itself is the joke",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_catacomb_3.2",
+  "lang": "fa",
+  "old": "معمار نمی‌خوابد.",
+  "new": "خواب: یافت نشد.",
+  "why": "\"The Architect does not sleep\" under a 404 made no joke; now the 404 itself is the joke",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_catacomb_3.2",
+  "lang": "ar",
+  "old": "المعمار لا ينام.",
+  "new": "النوم: غير موجود.",
+  "why": "\"The Architect does not sleep\" under a 404 made no joke; now the 404 itself is the joke",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_catacomb_3.2",
+  "lang": "ru",
+  "old": "Зодчий не спит.",
+  "new": "Сон: не найден.",
+  "why": "\"The Architect does not sleep\" under a 404 made no joke; now the 404 itself is the joke",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_catacomb_3.2",
+  "lang": "ja",
+  "old": "建築家は眠らぬ。",
+  "new": "眠り：見つかりません。",
+  "why": "\"The Architect does not sleep\" under a 404 made no joke; now the 404 itself is the joke",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_repo_5.1",
+  "lang": "en",
+  "old": "The Architect completed fewer projects\nthan he imagined.",
+  "new": "He finished fewer works\nthan he imagined.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_repo_5.1",
+  "lang": "fa",
+  "old": "معمار کمتر از آنچه می‌پنداشت\nپروژه به پایان برد.",
+  "new": "او کمتر از آنچه می‌پنداشت\nکار به پایان برد.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_repo_5.1",
+  "lang": "ar",
+  "old": "أتمّ المعمار مشاريعَ\nأقلّ مما تخيّل.",
+  "new": "أتمّ من الأعمال\nأقلّ ممّا تخيّل.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_repo_5.1",
+  "lang": "ru",
+  "old": "Зодчий завершил меньше замыслов,\nчем воображал.",
+  "new": "Он завершил меньше работ,\nчем воображал.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "note_repo_5.1",
+  "lang": "ja",
+  "old": "建築家が完成させたものは、\n思い描いたより少ない。",
+  "new": "彼が完成させたものは、\n思い描いたより少ない。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "gate_arena.1",
+  "lang": "en",
+  "old": "Beyond this gate stands\nThe Rune Architect.",
+  "new": "Beyond this gate stands\nthe Keeper of the Root Code.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "gate_arena.1",
+  "lang": "fa",
+  "old": "آن‌سوی این دروازه\nمعمارِ رون ایستاده است.",
+  "new": "آن‌سوی این دروازه\nنگهبان کد ریشه ایستاده است.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "gate_arena.1",
+  "lang": "ar",
+  "old": "خلف هذه البوابة يقف\nمعمار الرونات.",
+  "new": "خلف هذه البوابة يقف\nحارس الشفرة الجذرية.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "gate_arena.1",
+  "lang": "ru",
+  "old": "За этими вратами стоит\nЗодчий Рун.",
+  "new": "За этими вратами стоит\nХранитель Корневого Кода.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "gate_arena.1",
+  "lang": "ja",
+  "old": "この門の向こうに立つのは、\nルーンの建築家。",
+  "new": "この門の向こうに立つは、\n根源コードの守護者。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "sealed_contact.3",
+  "lang": "en",
+  "old": "The Architect may be reached\nonly by one who has broken him —\nand then chose mercy.",
+  "new": "{N} may be reached only by one\nwho has stood before him\nto the very end.",
+  "why": "promised \"break him, then choose mercy\": the fight no longer works that way, and the dash dangled at the line end in Persian and Arabic",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "sealed_contact.3",
+  "lang": "fa",
+  "old": "تنها کسی به معمار می‌رسد\nکه او را شکسته —\nو آنگاه رحمت برگزیده.",
+  "new": "تنها کسی به {N} می‌رسد\nکه تا واپسین دم\nروبه‌رویش ایستاده باشد.",
+  "why": "promised \"break him, then choose mercy\": the fight no longer works that way, and the dash dangled at the line end in Persian and Arabic",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "sealed_contact.3",
+  "lang": "ar",
+  "old": "لا يبلغ المعمارَ\nإلا من كسره —\nثم اختار الرحمة.",
+  "new": "لا يبلغ {N} إلا من\nوقف أمامه\nحتى النهاية.",
+  "why": "promised \"break him, then choose mercy\": the fight no longer works that way, and the dash dangled at the line end in Persian and Arabic",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "sealed_contact.3",
+  "lang": "ru",
+  "old": "До Зодчего дойдёт лишь тот,\nкто мог сокрушить его —\nи выбрал милость.",
+  "new": "До него дойдёт лишь тот,\nкто выстоял перед ним\nдо самого конца.",
+  "why": "promised \"break him, then choose mercy\": the fight no longer works that way, and the dash dangled at the line end in Persian and Arabic",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "sealed_contact.3",
+  "lang": "ja",
+  "old": "建築家に届くのは、\n彼を打ち砕き得たのに\n慈悲を選んだ者のみ。",
+  "new": "{N}に届くのは、\n最後まで彼の前に\n立ち続けた者だけだ。",
+  "why": "promised \"break him, then choose mercy\": the fight no longer works that way, and the dash dangled at the line end in Persian and Arabic",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.1",
+  "lang": "en",
+  "old": "Shayan Mirkhani.\nWeb designer. SEO specialist.\nDigital marketer.",
+  "new": "{N}.\nWeb designer. SEO specialist.\nDigital marketer.",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.1",
+  "lang": "fa",
+  "old": "شایان میرخانی.\nطراح وب. متخصص سئو.\nمارکتر دیجیتال.",
+  "new": "{N}.\nطراح وب. متخصص سئو.\nمارکتر دیجیتال.",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.1",
+  "lang": "ar",
+  "old": "شايان ميرخاني.\nمصمّم ويب. أخصائي SEO.\nمسوّق رقمي.",
+  "new": "{N}.\nمصمّم ويب. أخصائي SEO.\nمسوّق رقمي.",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.1",
+  "lang": "ru",
+  "old": "Шаян Мирхани.\nВеб-дизайнер. SEO-специалист.\nДиджитал-маркетолог.",
+  "new": "{N}.\nВеб-дизайнер. SEO-специалист.\nДиджитал-маркетолог.",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.1",
+  "lang": "ja",
+  "old": "シャヤン・ミルハニ。\nウェブデザイナー。SEOスペシャリスト。\nデジタルマーケター。",
+  "new": "{N}。\nウェブデザイナー。SEOスペシャリスト。\nデジタルマーケター。",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.2",
+  "lang": "fa",
+  "old": "او سایت‌های وردپرس و المنتور را\nبا HTML و CSS پاک می‌سازد —",
+  "new": "او سایت‌های وردپرس و المنتور را\nبا HTML و CSS پاکیزه می‌سازد،",
+  "why": "a dash left hanging at the end of a right-to-left line (owner's screenshot); \"پاک می‌سازد\" also read as \"wipes clean\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv_workshop.2",
+  "lang": "ar",
+  "old": "يبني مواقع WordPress وElementor\nبـ HTML وCSS نظيفين —",
+  "new": "يبني مواقع WordPress وElementor\nبـ HTML وCSS نظيفين،",
+  "why": "a dash left hanging at the end of a right-to-left line (owner's screenshot); \"پاک می‌سازد\" also read as \"wipes clean\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv.go_further",
+  "lang": "fa",
+  "old": "اگر می‌خواهی با او سخن بگویی —\nپیش‌تر برو.",
+  "new": "اگر می‌خواهی با او سخن بگویی،\nپیش‌تر برو.",
+  "why": "dash left hanging at the end of a right-to-left line",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "cv.go_further",
+  "lang": "ar",
+  "old": "إن أردتَ محادثته —\nفتقدّم أكثر.",
+  "new": "إن أردتَ محادثته،\nفتقدّم أكثر.",
+  "why": "dash left hanging at the end of a right-to-left line",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.lead",
+  "lang": "en",
+  "old": "Shayan Mirkhani — Web Designer · SEO Specialist · Digital Marketer",
+  "new": "{N} — Web Designer · SEO Specialist · Digital Marketer",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.lead",
+  "lang": "fa",
+  "old": "شایان میرخانی — طراح وب · متخصص سئو · مارکتر دیجیتال",
+  "new": "{N} — طراح وب · متخصص سئو · مارکتر دیجیتال",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.lead",
+  "lang": "ar",
+  "old": "شايان ميرخاني — مصمّم ويب · أخصائي SEO · مسوّق رقمي",
+  "new": "{N} — مصمّم ويب · أخصائي SEO · مسوّق رقمي",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.lead",
+  "lang": "ru",
+  "old": "Шаян Мирхани — веб-дизайнер · SEO-специалист · диджитал-маркетолог",
+  "new": "{N} — веб-дизайнер · SEO-специалист · диджитал-маркетолог",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.lead",
+  "lang": "ja",
+  "old": "シャヤン・ミルハニ — ウェブデザイナー · SEOスペシャリスト · デジタルマーケター",
+  "new": "{N} — ウェブデザイナー · SEOスペシャリスト · デジタルマーケター",
+  "why": "first name only (§4)",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_intro.3",
+  "lang": "en",
+  "old": "You came for the discount. Of course you did.\n500 points — and 500,000 Toman\noff the Architect's first salary.",
+  "new": "You came for the discount. Of course.\nReach 500 points, and 500,000 Toman\ncomes off {N}'s first salary.",
+  "why": "the owner's example: what is discounted, and for what, was unclear; \"Architect\" removed",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_intro.3",
+  "lang": "fa",
+  "old": "برای تخفیف آمده‌ای. معلوم است.\n۵۰۰ امتیاز — و ۵۰۰٬۰۰۰ تومان\nاز اولین حقوقِ معمار کم می‌شود.",
+  "new": "برای تخفیف آمده‌ای. معلوم است.\nبه ۵۰۰ امتیاز برسی، ۵۰۰٬۰۰۰ تومان\nاز اولین حقوق {N} کم می‌شود.",
+  "why": "the owner's example: what is discounted, and for what, was unclear; \"Architect\" removed",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_intro.3",
+  "lang": "ar",
+  "old": "جئتَ من أجل الخصم. بالطبع.\n٥٠٠ نقطة — وخمسمئة ألف تومان\nتُحسم من أول راتب للمعمار.",
+  "new": "جئتَ من أجل الخصم. بالطبع.\nابلغ ٥٠٠ نقطة، فيُحسم ٥٠٠٬٠٠٠ تومان\nمن أول راتبٍ يتقاضاه {N}.",
+  "why": "the owner's example: what is discounted, and for what, was unclear; \"Architect\" removed",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_intro.3",
+  "lang": "ru",
+  "old": "Ты пришёл за скидкой. Конечно.\n500 очков — и 500 000 томанов\nс первого жалованья Зодчего.",
+  "new": "Ты пришёл за скидкой. Конечно.\nНаберёшь 500 очков — и из первого жалованья,\nчто получит {N}, вычтут 500 000 томанов.",
+  "why": "the owner's example: what is discounted, and for what, was unclear; \"Architect\" removed",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_intro.3",
+  "lang": "ja",
+  "old": "割引目当てですな。当然です。\n500ポイントで、建築家の初任給から\n50万トマンが引かれます。",
+  "new": "割引目当てですな。当然です。\n500ポイントに届けば、{N}の初任給から\n50万トマンが引かれます。",
+  "why": "the owner's example: what is discounted, and for what, was unclear; \"Architect\" removed",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_zero.3",
+  "lang": "en",
+  "old": "Nobody buys the Architect\nat a discount.\nNot even in hell. I asked.",
+  "new": "Nobody buys {N}\nat a discount.\nNot even in hell. I asked.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_zero.3",
+  "lang": "fa",
+  "old": "هیچ‌کس معمار را\nبا تخفیف نمی‌خرد.\nحتی در جهنم. پرسیدم.",
+  "new": "هیچ‌کس {N} را\nبا تخفیف نمی‌خرد.\nحتی در جهنم. پرسیدم.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_zero.3",
+  "lang": "ar",
+  "old": "لا أحد يشتري المعمار\nبخصم.\nولا حتى في الجحيم. سألتُ.",
+  "new": "لا أحد يشتري {N}\nبخصم.\nولا حتى في الجحيم. سألتُ.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_zero.3",
+  "lang": "ru",
+  "old": "Зодчего не покупают\nсо скидкой.\nДаже в аду. Я спрашивал.",
+  "new": "{N} не продаётся\nсо скидкой.\nДаже в аду. Я спрашивал.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_zero.3",
+  "lang": "ja",
+  "old": "建築家は割引では買えません。\n地獄ですら。聞いてきました。",
+  "new": "{N}を割引で\n買える者はおりません。\n地獄でさえ。確認済みです。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_after.2",
+  "lang": "en",
+  "old": "The Architect is in the Codex.\nBehind you. Always behind you.\nLike an invoice.",
+  "new": "{N} is in the Codex.\nBehind you. Always behind you.\nLike an invoice.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_after.2",
+  "lang": "fa",
+  "old": "معمار در کدکس است.\nپشتِ سرت. همیشه پشتِ سرت.\nمثل یک صورت‌حساب.",
+  "new": "{N} در کدکس است.\nپشت سرت. همیشه پشت سرت.\nمثل یک صورت‌حساب.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_after.2",
+  "lang": "ar",
+  "old": "المعمار في المخطوط.\nخلفك. دائمًا خلفك.\nمثل فاتورة.",
+  "new": "{N} في المخطوط.\nخلفك. دائمًا خلفك.\nمثل فاتورة.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_after.2",
+  "lang": "ru",
+  "old": "Зодчий — в Кодексе.\nЗа твоей спиной. Всегда за спиной.\nКак счёт к оплате.",
+  "new": "{N} — в Кодексе.\nЗа спиной. Всегда за спиной.\nКак счёт к оплате.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin_after.2",
+  "lang": "ja",
+  "old": "建築家は写本の中におります。\nお前の背後に。常に背後に。\n請求書のように。",
+  "new": "{N}は写本の中に。\n背後に。いつも背後に。\n請求書のように。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin.final.2",
+  "lang": "en",
+  "old": "The Rune Architect sealed this loophole\nthree versions ago.",
+  "new": "{N} sealed this loophole\nthree versions ago.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin.final.2",
+  "lang": "fa",
+  "old": "معمارِ رون این روزنه را\nسه نسخه پیش مُهر کرد.",
+  "new": "{N} این روزنه را\nسه نسخه پیش مهر کرد.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin.final.2",
+  "lang": "ar",
+  "old": "ختم معمار الرونات هذه الثغرة\nقبل ثلاثة إصدارات.",
+  "new": "{N} سدّ هذه الثغرة\nقبل ثلاثة إصدارات.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin.final.2",
+  "lang": "ru",
+  "old": "Зодчий Рун запечатал эту лазейку\nтри версии назад.",
+  "new": "{N} закрыл эту лазейку\nтри версии назад.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "goblin.final.2",
+  "lang": "ja",
+  "old": "ルーンの建築家は、この抜け穴を\n三つ前の版で塞いである。",
+  "new": "{N}はこの抜け穴を\n三つ前の版で塞ぎました。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.read_the_architects_record",
+  "lang": "en",
+  "old": "Read the Architect's record",
+  "new": "Read the Keeper's record",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.read_the_architects_record",
+  "lang": "fa",
+  "old": "کارنامهٔ معمار را بخوان",
+  "new": "کارنامهٔ نگهبان را بخوان",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.read_the_architects_record",
+  "lang": "ar",
+  "old": "اقرأ سجلّ المعمار",
+  "new": "اقرأ سجلّ الحارس",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.read_the_architects_record",
+  "lang": "ru",
+  "old": "Прочесть свиток Зодчего",
+  "new": "Прочесть свиток Хранителя",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.read_the_architects_record",
+  "lang": "ja",
+  "old": "建築家の記録を読む",
+  "new": "守り手の記録を読む",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.speak_with_the_architect",
+  "lang": "en",
+  "old": "Speak with the Architect",
+  "new": "Speak with {N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.speak_with_the_architect",
+  "lang": "fa",
+  "old": "با معمار سخن بگو",
+  "new": "با {N} سخن بگو",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.speak_with_the_architect",
+  "lang": "ar",
+  "old": "حدّث المعمار",
+  "new": "تحدّث إلى {N}",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.speak_with_the_architect",
+  "lang": "ru",
+  "old": "Говорить с Зодчим",
+  "new": "Говорить с Хранителем",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.speak_with_the_architect",
+  "lang": "ja",
+  "old": "建築家と語る",
+  "new": "{N}と話す",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.challenge_the_rune_architect",
+  "lang": "en",
+  "old": "Challenge the Rune Architect",
+  "new": "Challenge the Keeper",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.challenge_the_rune_architect",
+  "lang": "fa",
+  "old": "معمارِ رون را به نبرد بخوان",
+  "new": "نگهبان را به نبرد بخوان",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.challenge_the_rune_architect",
+  "lang": "ar",
+  "old": "تحدَّ معمار الرونات",
+  "new": "تحدَّ الحارس",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.challenge_the_rune_architect",
+  "lang": "ru",
+  "old": "Бросить вызов Зодчему Рун",
+  "new": "Бросить вызов Хранителю",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.challenge_the_rune_architect",
+  "lang": "ja",
+  "old": "ルーンの建築家に挑む",
+  "new": "守り手に挑む",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.signature",
+  "lang": "en",
+  "old": "Veyrath · The Rune Architect",
+  "new": "Veyrath · The Keeper of the Root Code",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.signature",
+  "lang": "fa",
+  "old": "وِیرَث · معمارِ رون",
+  "new": "ویراث · نگهبان کد ریشه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.signature",
+  "lang": "ar",
+  "old": "فيرَث · معمار الرونات",
+  "new": "فيراث · حارس الشفرة الجذرية",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.signature",
+  "lang": "ru",
+  "old": "Вейрат · Зодчий Рун",
+  "new": "Вейрат · Хранитель Корневого Кода",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.signature",
+  "lang": "ja",
+  "old": "ヴェイラス・ルーンの建築家",
+  "new": "ヴェイラス・根源コードの守護者",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.sign",
+  "lang": "en",
+  "old": "If you would have Shyn, the Rune Architect, on your team, you must first overcome him at his own trial.",
+  "new": "If you would have {N} on your team, you must first overcome him at his own trial.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.sign",
+  "lang": "fa",
+  "old": "اگر شایان، معمارِ رون، را در تیمت می‌خواهی، نخست باید او را در آزمونِ خودش پشت سر بگذاری.",
+  "new": "اگر {N} را در تیمت می‌خواهی، نخست باید او را در آزمون خودش شکست دهی.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.sign",
+  "lang": "ar",
+  "old": "إن أردتَ شايان، معمار الرونات، في فريقك، فعليك أولًا أن تغلبه في محنته هو.",
+  "new": "إن أردتَ {N} في فريقك، فعليك أولًا أن تغلبه في محنته هو.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.sign",
+  "lang": "ru",
+  "old": "Если хочешь видеть Шайна, Зодчего Рун, в своей команде, сперва одолей его в его собственном испытании.",
+  "new": "Хочешь, чтобы {N} был в твоей команде? Сперва одолей его в его собственном испытании.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.sign",
+  "lang": "ja",
+  "old": "ルーンの建築家シャインを仲間に迎えたくば、まず彼自身の試練で打ち勝て。",
+  "new": "{N}を仲間に迎えたくば、まず彼自身の試練で打ち勝て。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.codex.title",
+  "lang": "en",
+  "old": "Architect Codex",
+  "new": "The Keeper's Codex",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.codex.title",
+  "lang": "fa",
+  "old": "کُدکسِ معمار",
+  "new": "کدکس نگهبان",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.codex.title",
+  "lang": "ar",
+  "old": "مخطوط المعمار",
+  "new": "مخطوط الحارس",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.codex.title",
+  "lang": "ru",
+  "old": "Кодекс Зодчего",
+  "new": "Кодекс Хранителя",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.codex.title",
+  "lang": "ja",
+  "old": "建築家の写本",
+  "new": "守り手の写本",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.audience.sub",
+  "lang": "en",
+  "old": "The Architect has your message.",
+  "new": "{N} has your message.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.audience.sub",
+  "lang": "fa",
+  "old": "پیامت به دستِ معمار رسید.",
+  "new": "پیامت به {N} رسید.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.audience.sub",
+  "lang": "ar",
+  "old": "وصلت رسالتك إلى المعمار.",
+  "new": "رسالتك عند {N}.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.audience.sub",
+  "lang": "ru",
+  "old": "Зодчий получил твоё послание.",
+  "new": "{N} получил твоё послание.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ach.audience.sub",
+  "lang": "ja",
+  "old": "建築家は汝の言葉を受け取った。",
+  "new": "伝言は{N}に届いた。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.tab.architect",
+  "lang": "en",
+  "old": "The Architect",
+  "new": "The Keeper",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.tab.architect",
+  "lang": "fa",
+  "old": "معمار",
+  "new": "نگهبان",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.tab.architect",
+  "lang": "ar",
+  "old": "المعمار",
+  "new": "الحارس",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.tab.architect",
+  "lang": "ru",
+  "old": "Зодчий",
+  "new": "Хранитель",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.tab.architect",
+  "lang": "ja",
+  "old": "建築家",
+  "new": "守り手",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.h2",
+  "lang": "en",
+  "old": "The Rune Architect",
+  "new": "The Keeper of the Root Code",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.h2",
+  "lang": "fa",
+  "old": "معمارِ رون",
+  "new": "نگهبان کد ریشه",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.h2",
+  "lang": "ar",
+  "old": "معمار الرونات",
+  "new": "حارس الشفرة الجذرية",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.h2",
+  "lang": "ru",
+  "old": "Зодчий Рун",
+  "new": "Хранитель Корневого Кода",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.architect.h2",
+  "lang": "ja",
+  "old": "ルーンの建築家",
+  "new": "根源コードの守護者",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.who",
+  "lang": "en",
+  "old": "Who seeks the Architect?",
+  "new": "Who seeks him?",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.who",
+  "lang": "fa",
+  "old": "چه کسی معمار را می‌جوید؟",
+  "new": "چه کسی او را می‌جوید؟",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.who",
+  "lang": "ar",
+  "old": "من يطلب المعمار؟",
+  "new": "من يطلبه؟",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.who",
+  "lang": "ru",
+  "old": "Кто ищет Зодчего?",
+  "new": "Кто ищет его?",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.who",
+  "lang": "ja",
+  "old": "建築家を求めるのは誰か",
+  "new": "彼を求めるのは誰か？",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.locked_quote",
+  "lang": "en",
+  "old": "The Architect does not read letters from strangers.<br>He reads the ones who reached the Throne.",
+  "new": "He does not read letters from strangers.<br>He reads the ones who reached the Throne.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.locked_quote",
+  "lang": "fa",
+  "old": "معمار نامهٔ ناشناسان را نمی‌خواند.<br>نامهٔ آنان را می‌خواند که به سریر رسیدند.",
+  "new": "او نامهٔ بیگانگان را نمی‌خواند.<br>نامهٔ آنان را می‌خواند که به سریر رسیده‌اند.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.locked_quote",
+  "lang": "ar",
+  "old": "لا يقرأ المعمار رسائل الغرباء.<br>يقرأ رسائل من بلغوا العرش.",
+  "new": "هو لا يقرأ رسائل الغرباء.<br>يقرأ رسائل من بلغوا العرش.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.locked_quote",
+  "lang": "ru",
+  "old": "Зодчий не читает писем чужаков.<br>Он читает письма тех, кто дошёл до Трона.",
+  "new": "Он не читает писем от чужих.<br>Он читает тех, кто дошёл до Трона.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.contact.locked_quote",
+  "lang": "ja",
+  "old": "建築家は見知らぬ者の手紙を読まぬ。<br>玉座に至った者のものだけを読む。",
+  "new": "彼は見知らぬ者の手紙を読まない。<br>玉座に辿り着いた者の手紙だけを読む。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.sent.answer",
+  "lang": "en",
+  "old": "{0} — the Architect will answer.",
+  "new": "{0} — {N} will answer.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.sent.answer",
+  "lang": "fa",
+  "old": "{0} — معمار پاسخ خواهد داد.",
+  "new": "{0} — {N} پاسخ خواهد داد.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.sent.answer",
+  "lang": "ar",
+  "old": "{0} — سيجيب المعمار.",
+  "new": "{0} — سيجيبك {N}.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.sent.answer",
+  "lang": "ru",
+  "old": "{0} — Зодчий ответит.",
+  "new": "{0} — {N} ответит.",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "codex.sent.answer",
+  "lang": "ja",
+  "old": "{0}――建築家は応えるだろう。",
+  "new": "{0}――{N}が答えるだろう。",
+  "why": "\"Architect\" removed (§4); the name is first name only, redacted until the boss falls",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "candlekeeper.2",
+  "lang": "en",
+  "old": "So he learned to ask as one prays — exactly.",
+  "new": "So he learned to ask\nthe way one draws a plan: exactly.",
+  "why": "contradiction: here he \"asks as one prays\", while the wall two steps on says \"A prompt is not a prayer. It is a blueprint.\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "candlekeeper.2",
+  "lang": "fa",
+  "old": "پس آموخت چون نیایش پرسد — دقیق.",
+  "new": "پس آموخت چنان بپرسد\nکه نقشه می‌کشند: دقیق.",
+  "why": "contradiction: here he \"asks as one prays\", while the wall two steps on says \"A prompt is not a prayer. It is a blueprint.\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "candlekeeper.2",
+  "lang": "ar",
+  "old": "فتعلّم أن يسأل كمن يصلّي — بدقّة.",
+  "new": "فتعلّم أن يسأل\nكما تُرسم المخطّطات: بدقّة.",
+  "why": "contradiction: here he \"asks as one prays\", while the wall two steps on says \"A prompt is not a prayer. It is a blueprint.\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "candlekeeper.2",
+  "lang": "ru",
+  "old": "И он научился спрашивать, как молятся, — точно.",
+  "new": "И он научился спрашивать так,\nкак чертят план, — точно.",
+  "why": "contradiction: here he \"asks as one prays\", while the wall two steps on says \"A prompt is not a prayer. It is a blueprint.\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "candlekeeper.2",
+  "lang": "ja",
+  "old": "ゆえに彼は、祈るように、正確に問うことを学んだ。",
+  "new": "ゆえに彼は学んだ。図面を引くように、\n正確に問うことを。",
+  "why": "contradiction: here he \"asks as one prays\", while the wall two steps on says \"A prompt is not a prayer. It is a blueprint.\"",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.ledger_promise",
+  "lang": "en",
+  "old": "Play, and earn his discount: reach 500 points and 500,000 Toman is struck from his first salary. Below 500, nothing. The Goblin keeps the books.",
+  "new": "Every wall you read earns points. Reach 500 and 500,000 Toman is struck from his first salary. Below 500, nothing. The Goblin keeps the books.",
+  "why": "never said what earns points",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.ledger_promise",
+  "lang": "fa",
+  "old": "بازی کن و تخفیفش را به دست آور: به ۵۰۰ امتیاز برس تا ۵۰۰٬۰۰۰ تومان از اولین حقوقش کم شود. کمتر از ۵۰۰، هیچ. دفتردارش گابلین است.",
+  "new": "هر نوشته‌ای که بخوانی امتیاز دارد. به ۵۰۰ امتیاز برس تا ۵۰۰٬۰۰۰ تومان از اولین حقوقش کم شود. کمتر از ۵۰۰، هیچ. دفتردارش گابلین است.",
+  "why": "never said what earns points",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.ledger_promise",
+  "lang": "ar",
+  "old": "العب واكسب خصمه: بلوغ ٥٠٠ نقطة يحسم ٥٠٠٬٠٠٠ تومان من أول راتب له. أقلّ من ٥٠٠، لا شيء. والعفريت يمسك الدفاتر.",
+  "new": "كلّ نقشٍ تقرؤه يُكسبك نقاطًا. ابلغ ٥٠٠ نقطة يُحسم ٥٠٠٬٠٠٠ تومان من أول راتب له. أقلّ من ٥٠٠، لا شيء. والعفريت يمسك الدفاتر.",
+  "why": "never said what earns points",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.ledger_promise",
+  "lang": "ru",
+  "old": "Играй и заслужи скидку: набери 500 очков — и 500 000 томанов вычтут из его первого жалованья. Меньше 500 — ничего. Книги ведёт Гоблин.",
+  "new": "Каждая прочитанная надпись приносит очки. Набери 500 — и 500 000 томанов вычтут из его первого жалованья. Меньше 500 — ничего. Книги ведёт Гоблин.",
+  "why": "never said what earns points",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "ui.ledger_promise",
+  "lang": "ja",
+  "old": "遊んで割引を勝ち取れ。500ポイントで、初任給から50万トマンが引かれる。500未満なら、何もない。帳簿はゴブリンが握っている。",
+  "new": "読んだ碑文はすべて点になる。500ポイントで、初任給から50万トマンが引かれる。500未満なら、何もない。帳簿はゴブリンが握っている。",
+  "why": "never said what earns points",
+  "file": "01-name-title.mjs"
+ },
+ {
+  "id": "intro.1",
+  "lang": "en",
+  "old": "In a land where knowledge was made a privilege...",
+  "new": "In a land where knowledge was made a privilege, the doors of every library were chained, and the keys were given to the few.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.1",
+  "lang": "fa",
+  "old": "در سرزمینی که دانایی، امتیازِ برگزیدگان شد...",
+  "new": "در سرزمینی که دانش را امتیاز کرده بودند، بر در هر کتابخانه زنجیر زدند و کلیدها را به اندک‌شماری سپردند.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.1",
+  "lang": "ar",
+  "old": "في أرضٍ صارت فيها المعرفة امتيازًا...",
+  "new": "في أرضٍ جُعلت فيها المعرفة امتيازًا، قُيّدت أبواب المكتبات بالسلاسل، وسُلّمت المفاتيح إلى القلّة.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.1",
+  "lang": "ru",
+  "old": "В краю, где знание стало привилегией...",
+  "new": "В краю, где знание сделали привилегией, двери библиотек заковали в цепи, а ключи раздали немногим.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.1",
+  "lang": "ja",
+  "old": "知が特権と成り果てた地にて……",
+  "new": "知が特権とされた地で、あらゆる書庫の扉は鎖で閉ざされ、鍵はわずかな者だけに渡された。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.2",
+  "lang": "en",
+  "old": "One architect knelt to no one.",
+  "new": "They buried what they knew beneath ruins, and bound power to bloodlines, so that no one born outside the walls would ever learn to build.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.2",
+  "lang": "fa",
+  "old": "معماری بود که برابرِ هیچ‌کس زانو نزد.",
+  "new": "آنچه می‌دانستند زیر ویرانه‌ها دفن کردند و قدرت را به تبار بستند، تا هیچ‌کس که بیرون دیوارها زاده شده، ساختن نیاموزد.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.2",
+  "lang": "ar",
+  "old": "معماريٌّ واحد أبى أن يركع.",
+  "new": "دفنوا ما عرفوه تحت الأطلال، وربطوا السلطة بالأنساب، كي لا يتعلّم البناءَ أحدٌ وُلد خارج الأسوار.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.2",
+  "lang": "ru",
+  "old": "Один зодчий не преклонил колен.",
+  "new": "Они погребли своё знание под руинами и привязали власть к родословным, чтобы никто, рождённый за стенами, не научился строить.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.2",
+  "lang": "ja",
+  "old": "ひとりの建築家だけが、膝を折らなかった。",
+  "new": "彼らは知るすべてを廃墟の下に埋め、力を血筋に縛りつけた。壁の外に生まれた者が、築く術を学ばぬように。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.3",
+  "lang": "en",
+  "old": "They entombed knowledge beneath ruins.",
+  "new": "But far from any palace, a boy sat before a small glowing screen, and taught himself the first of the runes.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.3",
+  "lang": "fa",
+  "old": "دانایی را در گورِ ویرانه‌ها نهادند.",
+  "new": "اما دور از هر کاخی، پسری برابر صفحه‌ای کوچک و روشن نشست و نخستین رون‌ها را به خود آموخت.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.3",
+  "lang": "ar",
+  "old": "دفنوا المعرفة تحت الأنقاض.",
+  "new": "لكنْ بعيدًا عن كلّ قصر، جلس صبيٌّ أمام شاشةٍ صغيرةٍ مضيئة، وعلّم نفسه أولى الرونات.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.3",
+  "lang": "ru",
+  "old": "Знание погребли под руинами.",
+  "new": "Но вдали от дворцов мальчик сел перед маленьким светящимся экраном и сам выучил первые руны.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.3",
+  "lang": "ja",
+  "old": "知は廃墟の下に葬られた。",
+  "new": "だが、どの宮殿からも遠い場所で、ひとりの少年が小さく光る画面の前に座り、最初のルーンを独りで学んだ。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.4",
+  "lang": "en",
+  "old": "They chained power to bloodlines.",
+  "new": "By night he learned the grammar of machines. By day he learned the patience of the blade, and of the open hand.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.4",
+  "lang": "fa",
+  "old": "و قدرت را به زنجیرِ تبار بستند.",
+  "new": "شب‌ها دستور زبان ماشین‌ها را آموخت. روزها شکیبایی تیغ را، و شکیبایی دست گشوده را.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.4",
+  "lang": "ar",
+  "old": "وقيّدوا السلطة بسلاسل الأنساب.",
+  "new": "في الليل تعلّم نحوَ الآلات. وفي النهار تعلّم صبرَ النصل، وصبرَ اليد المفتوحة.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.4",
+  "lang": "ru",
+  "old": "Власть заковали в цепи родовой крови.",
+  "new": "Ночами он постигал грамматику машин. Днями — терпение клинка и терпение открытой ладони.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.4",
+  "lang": "ja",
+  "old": "力は血統の鎖に繋がれた。",
+  "new": "夜には機械の文法を学び、昼には刃の忍耐と、開いた手の忍耐を学んだ。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.5",
+  "lang": "en",
+  "old": "Yet one builder kept searching in the dark.",
+  "new": "He built for strangers. He failed in front of them. And each time, he gathered the pieces, and built again.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.5",
+  "lang": "fa",
+  "old": "اما سازنده‌ای در تاریکی از جُستن باز نایستاد.",
+  "new": "برای بیگانگان ساخت. پیش چشمشان شکست خورد. و هر بار تکه‌ها را گرد آورد و از نو ساخت.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.5",
+  "lang": "ar",
+  "old": "غير أن بنّاءً ظلّ يبحث في العتمة.",
+  "new": "بنى للغرباء. وأخفق أمام أعينهم. وفي كلّ مرّةٍ جمع القطع، وبنى من جديد.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.5",
+  "lang": "ru",
+  "old": "Но один строитель продолжал искать во тьме.",
+  "new": "Он строил для чужих. Он терпел неудачи у них на глазах. И каждый раз собирал обломки и строил заново.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.5",
+  "lang": "ja",
+  "old": "だが一人の造り手は、闇の中で探し続けた。",
+  "new": "彼は見知らぬ者のために築き、その目の前でしくじり、そのたびに欠片を拾い集めて、また築いた。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.6",
+  "lang": "en",
+  "old": "His name was lost to ash.",
+  "new": "When the machines began to speak, he did not fear them. He learned to ask them exactly, and to build with what they answered.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.6",
+  "lang": "fa",
+  "old": "نامش در خاکستر گم شد.",
+  "new": "وقتی ماشین‌ها زبان گشودند، از آن‌ها نترسید. آموخت که دقیق بپرسد، و با پاسخشان بسازد.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.6",
+  "lang": "ar",
+  "old": "ضاع اسمه في الرماد.",
+  "new": "ولمّا بدأت الآلات تتكلّم، لم يخفها. تعلّم أن يسألها بدقّة، وأن يبني بما تجيب.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.6",
+  "lang": "ru",
+  "old": "Имя его стало пеплом.",
+  "new": "Когда машины заговорили, он не испугался. Он научился спрашивать их точно и строить из их ответов.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.6",
+  "lang": "ja",
+  "old": "その名は灰となった。",
+  "new": "機械が語りはじめたとき、彼は恐れなかった。正確に問うことを学び、その答えで築くことを学んだ。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.7",
+  "lang": "en",
+  "old": "His work endures.",
+  "new": "They struck his name from every record. It is still there, beneath the ink, for the one who earns the right to read it.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.7",
+  "lang": "fa",
+  "old": "کارش ماند.",
+  "new": "نامش را از هر دفتری خط زدند. اما هنوز همان‌جاست، زیر جوهر، برای آن‌که حق خواندنش را به دست آورد.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.7",
+  "lang": "ar",
+  "old": "وبقي عمله.",
+  "new": "شطبوا اسمه من كلّ سجلّ. لكنّه ما زال هناك، تحت الحبر، لمن ينال حقّ قراءته.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.7",
+  "lang": "ru",
+  "old": "Но дело его живёт.",
+  "new": "Его имя вычеркнули из всех записей. Но оно всё ещё там, под чернилами, — для того, кто заслужит право его прочесть.",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "intro.7",
+  "lang": "ja",
+  "old": "されど、その仕事は遺る。",
+  "new": "彼の名はあらゆる記録から消された。だが名は今もそこにある。墨の下に――読む資格を得た者のために。",
+  "why": "longer opening, told as one story (§2, §3); \"architect\" removed (§4)",
+  "file": "02-intro.mjs"
+ },
+ {
+  "id": "who.librarian",
+  "lang": "fa",
+  "old": "کتابدارِ نابینا",
+  "new": "کتابدار نابینا",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.wall",
+  "lang": "fa",
+  "old": "وردِ دیوار",
+  "new": "ورد دیوار",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.pilgrim_tablet",
+  "lang": "fa",
+  "old": "لوحِ زائر",
+  "new": "لوح زائر",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.bark",
+  "lang": "fa",
+  "old": "نوشتهٔ پوستِ درخت",
+  "new": "نوشتهٔ پوست درخت",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.overgrown",
+  "lang": "fa",
+  "old": "نشانِ خزه‌گرفته",
+  "new": "نشان خزه‌گرفته",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.great_tablet",
+  "lang": "fa",
+  "old": "لوحِ بزرگ",
+  "new": "لوح بزرگ",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.acolyte",
+  "lang": "fa",
+  "old": "یادداشتِ شاگرد",
+  "new": "یادداشت شاگرد",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.prompt_keeper",
+  "lang": "fa",
+  "old": "نگهبانِ پرسش‌ها",
+  "new": "نگهبان پرسش‌ها",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.glyph",
+  "lang": "fa",
+  "old": "نقشِ روی مجرا",
+  "new": "نقش روی مجرا",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.engine_wall",
+  "lang": "fa",
+  "old": "دیوارِ موتور",
+  "new": "دیوار موتور",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.bot",
+  "lang": "fa",
+  "old": "رباتِ ازیادرفته",
+  "new": "ربات ازیادرفته",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.refactor",
+  "lang": "fa",
+  "old": "بازنویسیِ بی‌پایان",
+  "new": "بازنویسی بی‌پایان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.archive_wall",
+  "lang": "fa",
+  "old": "دیوارِ بایگانی",
+  "new": "دیوار بایگانی",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.sealed_door",
+  "lang": "fa",
+  "old": "درِ مُهرشده",
+  "new": "در مهرشده",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "who.goblin",
+  "lang": "fa",
+  "old": "گابلینِ بودجه",
+  "new": "گابلین بودجه",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.workshop.name",
+  "lang": "fa",
+  "old": "کارگاهِ فراموش‌شده",
+  "new": "کارگاه فراموش‌شده",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.forest.name",
+  "lang": "fa",
+  "old": "جنگلِ خارها · فرانت‌اند",
+  "new": "جنگل خارها · فرانت‌اند",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.cathedral.name",
+  "lang": "fa",
+  "old": "کلیسای جامعِ طراحی",
+  "new": "کلیسای جامع طراحی",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.cathedral.sub",
+  "lang": "fa",
+  "old": "زیبایی بی‌غایت، جز زیورِ سنگ‌گور نیست",
+  "new": "زیبایی بی‌غایت، جز زیور سنگ‌گور نیست",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.machine.name",
+  "lang": "fa",
+  "old": "تالارهای ذهنِ ماشین",
+  "new": "تالارهای ذهن ماشین",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.repository.name",
+  "lang": "fa",
+  "old": "استودانِ آفریده‌های گم‌شده",
+  "new": "استودان آفریده‌های گم‌شده",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.throne.sub",
+  "lang": "fa",
+  "old": "صنعتِ کهن و جادو، پیوسته در یک تن",
+  "new": "صنعت کهن و جادو، پیوسته در یک تن",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.throne.obj.after",
+  "lang": "fa",
+  "old": "سریر خاموش است. درِ مُهرشده گشوده است — به سوی خاور.",
+  "new": "سریر خاموش است. در مهرشده گشوده است — به سوی خاور.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.chamber.sub",
+  "lang": "fa",
+  "old": "تالارِ دفتر حساب · چانه‌زنیِ حقوق",
+  "new": "تالار دفتر حساب · چانه‌زنی حقوق",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.chamber.obj.coin",
+  "lang": "fa",
+  "old": "یک سکه. یک امتیاز. مالِ توست.",
+  "new": "یک سکه. یک امتیاز. مال توست.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "librarian_workshop.1",
+  "lang": "fa",
+  "old": "خوش آمدی، ای توبه‌کار، به کارگاهِ فراموش‌شده.",
+  "new": "خوش آمدی، ای توبه‌کار، به کارگاه فراموش‌شده.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "librarian_workshop.2",
+  "lang": "fa",
+  "old": "بسیارند که برابرِ فرمانروایان زانو می‌زنند.\nاندکند که سازندگان را به یاد دارند.",
+  "new": "بسیارند که برابر فرمانروایان زانو می‌زنند.\nاندکند که سازندگان را به یاد دارند.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "note_workshop_1.1",
+  "lang": "fa",
+  "old": "هر شاهکار\nقربانیِ شکسته‌ای آغاز می‌شود.",
+  "new": "هر شاهکار\nقربانی شکسته‌ای آغاز می‌شود.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "note_cathedral_3.2",
+  "lang": "fa",
+  "old": "آن‌سوی استودان — خودِ او.",
+  "new": "آن‌سوی استودان — خود او.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "candlekeeper.4",
+  "lang": "fa",
+  "old": "سه رون پلِ پیش‌رو را بیدار می‌کنند.\nآن‌ها را چنان بگو که او می‌گفت.",
+  "new": "سه رون پل پیش‌رو را بیدار می‌کنند.\nآن‌ها را چنان بگو که او می‌گفت.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "proto_repo.1",
+  "lang": "fa",
+  "old": "یک بازنگریِ دیگر.",
+  "new": "یک بازنگری دیگر.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "proto_repo.2",
+  "lang": "fa",
+  "old": "یک بهبودِ دیگر.",
+  "new": "یک بهبود دیگر.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "note_arena_1.2",
+  "lang": "fa",
+  "old": "او نگهبانِ دانایی نیست.\nنگهبانِ عزم است.",
+  "new": "او نگهبان دانایی نیست.\nنگهبان عزم است.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "sealed_contact.1",
+  "lang": "fa",
+  "old": "کُدِ ریشه این در را بسته نگه می‌دارد.",
+  "new": "کد ریشه این در را بسته نگه می‌دارد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "shyn_first.2",
+  "lang": "fa",
+  "old": "از میانِ شکست‌هایم گذشتی.\nاز رؤیاهایم.\nاز جهان‌های ناتمامم.",
+  "new": "از میان شکست‌هایم گذشتی.\nاز رؤیاهایم.\nاز جهان‌های ناتمامم.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "shyn_first.4",
+  "lang": "fa",
+  "old": "بگو.\nآیا این زیارت ارزشِ وقتت را داشت؟",
+  "new": "بگو.\nآیا این زیارت ارزش وقتت را داشت؟",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "shyn_mercy.6.1",
+  "lang": "fa",
+  "old": "درِ خاورِ این سریر اکنون گشوده است.",
+  "new": "در خاور این سریر اکنون گشوده است.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "cv_forest.2",
+  "lang": "fa",
+  "old": "و اسکیما، تنیده در زیرِ صفحه\nجایی که تنها ماشین‌ها می‌خوانندش.",
+  "new": "و اسکیما، تنیده در زیر صفحه\nجایی که تنها ماشین‌ها می‌خوانندش.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "cv_catacombs.1",
+  "lang": "fa",
+  "old": "او با ذهن‌های ماشینی\nبه دستورِ خودشان سخن می‌گوید.",
+  "new": "او با ذهن‌های ماشینی\nبه دستور خودشان سخن می‌گوید.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "cv_catacombs.3",
+  "lang": "fa",
+  "old": "نیتِ روشن. ساختارِ سخت.\nآزموده تا برجا بماند.",
+  "new": "نیت روشن. ساختار سخت.\nآزموده تا برجا بماند.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "cv_repository.2",
+  "lang": "fa",
+  "old": "گروهِ دیجیتال مارکتینگِ آیدبکس. ۲۰۲۲ – ۲۰۲۳.\nسرپرست طراحی وب. مشاور سئو.",
+  "new": "گروه دیجیتال مارکتینگ آیدبکس. ۲۰۲۲ – ۲۰۲۳.\nسرپرست طراحی وب. مشاور سئو.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "cv_arena.3",
+  "lang": "fa",
+  "old": "صداقت. شرف. وفاداری.\nوقت‌شناسی. شجاعت.\nسخت‌کوشی. اصولِ اخلاقیِ استوار.",
+  "new": "صداقت. شرف. وفاداری.\nوقت‌شناسی. شجاعت.\nسخت‌کوشی. اصول اخلاقی استوار.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin_intro.4",
+  "lang": "fa",
+  "old": "زیر ۵۰۰ تخفیف صفر است.\nیک تومان هم نه. دو بار چک کردم،\nیک بار با حضورِ کشیش.",
+  "new": "زیر ۵۰۰ تخفیف صفر است.\nیک تومان هم نه. دو بار چک کردم،\nیک بار با حضور کشیش.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin_coin.2",
+  "lang": "fa",
+  "old": "برای تو؟ البته.\nاین سه‌ماه، فصلِ سخاوت است.\nعملاً قدیسم.",
+  "new": "برای تو؟ البته.\nاین سه‌ماه، فصل سخاوت است.\nعملاً قدیسم.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin_coin.3",
+  "lang": "fa",
+  "old": "بفرما. تازه ضرب‌شده، سه‌شنبه تبرک شد.\nبرش دار. مالِ توست.\n(ریزنوشته‌ها را نخوان.)",
+  "new": "بفرما. تازه ضرب‌شده، سه‌شنبه تبرک شد.\nبرش دار. مال توست.\n(ریزنوشته‌ها را نخوان.)",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin.ui.one_coin_one_point_it_is_yours",
+  "lang": "fa",
+  "old": "یک سکه. یک امتیاز. مالِ توست.",
+  "new": "یک سکه. یک امتیاز. مال توست.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin.final.1",
+  "lang": "fa",
+  "old": "تلاشِ خوبی بود، ای توبه‌کار.",
+  "new": "تلاش خوبی بود، ای توبه‌کار.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "goblin.final.4",
+  "lang": "fa",
+  "old": "شاید نگه داشتنِ توسعه‌دهندهٔ مستعد\nارزان‌تر از جایگزین کردنش باشد.",
+  "new": "شاید نگه داشتن توسعه‌دهندهٔ مستعد\nارزان‌تر از جایگزین کردنش باشد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_pilgrims_tablet",
+  "lang": "fa",
+  "old": "لوحِ زائر را بخوان",
+  "new": "لوح زائر را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_great_tablet",
+  "lang": "fa",
+  "old": "لوحِ بزرگ را بخوان",
+  "new": "لوح بزرگ را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_acolytes_note",
+  "lang": "fa",
+  "old": "یادداشتِ شاگرد را بخوان",
+  "new": "یادداشت شاگرد را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_furnace_wall",
+  "lang": "fa",
+  "old": "دیوارِ کوره را بخوان",
+  "new": "دیوار کوره را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_archive_wall",
+  "lang": "fa",
+  "old": "دیوارِ بایگانی را بخوان",
+  "new": "دیوار بایگانی را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.read_the_engine_wall",
+  "lang": "fa",
+  "old": "دیوارِ موتور را بخوان",
+  "new": "دیوار موتور را بخوان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "fa",
+  "old": "رونِ ریشه را بشکن",
+  "new": "رون ریشه را بشکن",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.woke.default",
+  "lang": "fa",
+  "old": "سنگِ خفته شکلش را به یاد می‌آورد.",
+  "new": "سنگ خفته شکلش را به یاد می‌آورد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.woke.forest",
+  "lang": "fa",
+  "old": "آن‌سوی دره، پُلی از برگ شکلش را به یاد می‌آورد.",
+  "new": "آن‌سوی دره، پلی از برگ شکلش را به یاد می‌آورد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.woke.cathedral_b",
+  "lang": "fa",
+  "old": "در زیر، کفِ شکسته دوباره یکپارچه شد.",
+  "new": "در زیر، کف شکسته دوباره یکپارچه شد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.hint.forest",
+  "lang": "fa",
+  "old": "رونی در تاجِ درخت بزرگ خفته است.",
+  "new": "رونی در تاج درخت بزرگ خفته است.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.hint.cathedral",
+  "lang": "fa",
+  "old": "یک رون پلکانی را بیدار می‌کند. پلکان به رونِ دوم می‌رسد.",
+  "new": "یک رون پلکانی را بیدار می‌کند. پلکان به رون دوم می‌رسد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.hint.repository",
+  "lang": "fa",
+  "old": "اهرمِ روی جزیره، شاخه را می‌گرداند.",
+  "new": "اهرم روی جزیره، شاخه را می‌گرداند.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.veyrath_is_still",
+  "lang": "fa",
+  "old": "وِیرَث ایستاده است",
+  "new": "ویرث ایستاده است",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.leave_veyrath",
+  "lang": "fa",
+  "old": "ترکِ وِیرَث",
+  "new": "ترک ویرث",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.sealed_door_open",
+  "lang": "fa",
+  "old": "درِ مُهرشده گشوده شد",
+  "new": "در مهرشده گشوده شد",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.the_salary_ledger",
+  "lang": "fa",
+  "old": "دفترِ حقوق",
+  "new": "دفتر حقوق",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ui.rotate",
+  "lang": "fa",
+  "old": "برای دیدنِ کامل، دستگاه را بچرخان",
+  "new": "برای دیدن کامل، دستگاه را بچرخان",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "end.1",
+  "lang": "fa",
+  "old": "مقصود هرگز شکست دادنِ من نبود.",
+  "new": "مقصود هرگز شکست دادن من نبود.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "end.2",
+  "lang": "fa",
+  "old": "مقصود، فهمیدنِ آن چیزی بود که می‌سازم.",
+  "new": "مقصود، فهمیدن آن چیزی بود که می‌سازم.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "end.return",
+  "lang": "fa",
+  "old": "بازگشت به وِیرَث",
+  "new": "بازگشت به ویرث",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.seeker.sub",
+  "lang": "fa",
+  "old": "به وِیرَث گام نهادی.",
+  "new": "به ویرث گام نهادی.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.reader.sub",
+  "lang": "fa",
+  "old": "پنج وِرد را گشودی.",
+  "new": "پنج ورد را گشودی.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.whispers.title",
+  "lang": "fa",
+  "old": "نگهبانِ نجواها",
+  "new": "نگهبان نجواها",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.goblin.title",
+  "lang": "fa",
+  "old": "فریب‌خوردهٔ گابلینِ بودجه",
+  "new": "فریب‌خوردهٔ گابلین بودجه",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.goblin.sub",
+  "lang": "fa",
+  "old": "تالارِ ۴۹۹ تو را به یاد خواهد داشت.",
+  "new": "تالار ۴۹۹ تو را به یاد خواهد داشت.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.audience.title",
+  "lang": "fa",
+  "old": "درخواستِ دیدار",
+  "new": "درخواست دیدار",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.page.lead",
+  "lang": "fa",
+  "old": "گواهِ آنکه اینجا گام زدی.",
+  "new": "گواه آنکه اینجا گام زدی.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.page.memory",
+  "lang": "fa",
+  "old": "وِیرَث تنها همین مرورگر را به یاد دارد.",
+  "new": "ویرث تنها همین مرورگر را به یاد دارد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "ach.page.forget_ask",
+  "lang": "fa",
+  "old": "حافظهٔ وِیرَث پاک شود؟",
+  "new": "حافظهٔ ویرث پاک شود؟",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.architect.who_h",
+  "lang": "fa",
+  "old": "چه کسی پشتِ رون‌هاست",
+  "new": "چه کسی پشت رون‌هاست",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.architect.pillars_p",
+  "lang": "fa",
+  "old": "صداقت · شرف · وفاداری · وقت‌شناسی · شجاعت · سخت‌کوشی · اصولِ اخلاقیِ استوار.",
+  "new": "صداقت · شرف · وفاداری · وقت‌شناسی · شجاعت · سخت‌کوشی · اصول اخلاقی استوار.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.architect.why_p",
+  "lang": "fa",
+  "old": "چون رزومه می‌خواهد داوری شود و جهان می‌خواهد کاویده شود. وِیرَث ساخته شد تا نخستین کارت این باشد که از میانِ کار <em>بگذری</em>، نه اینکه تندتند بخوانیش.",
+  "new": "چون رزومه می‌خواهد داوری شود و جهان می‌خواهد کاویده شود. ویرث ساخته شد تا نخستین کارت این باشد که از میان کار <em>بگذری</em>، نه اینکه تندتند بخوانیش.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.lead",
+  "lang": "fa",
+  "old": "هر مهارتِ این جهان، ابزاری است که به آن اعتماد دارد.",
+  "new": "هر مهارت این جهان، ابزاری است که به آن اعتماد دارد.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.structures",
+  "lang": "fa",
+  "old": "استادِ ساختارهای انعطاف‌پذیر",
+  "new": "استاد ساختارهای انعطاف‌پذیر",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.discovery",
+  "lang": "fa",
+  "old": "نگهبانِ یافته‌شدن",
+  "new": "نگهبان یافته‌شدن",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.market",
+  "lang": "fa",
+  "old": "منادیِ بازار",
+  "new": "منادی بازار",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.forge",
+  "lang": "fa",
+  "old": "استادِ کورهٔ سیستم‌های ماژولار",
+  "new": "استاد کورهٔ سیستم‌های ماژولار",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.skills.machine",
+  "lang": "fa",
+  "old": "مفسّرِ ذهن‌های ماشینی",
+  "new": "مفسّر ذهن‌های ماشینی",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.projects.note_h",
+  "lang": "fa",
+  "old": "یادداشتِ میدانی",
+  "new": "یادداشت میدانی",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.experience.h2",
+  "lang": "fa",
+  "old": "ساختنِ دراز",
+  "new": "ساختن دراز",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.contact.h2",
+  "lang": "fa",
+  "old": "درخواستِ دیدار",
+  "new": "درخواست دیدار",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.contact.quote",
+  "lang": "fa",
+  "old": "از جهان گذشتی.<br>حقِّ سخن گفتن را به دست آوردی.",
+  "new": "از جهان گذشتی.<br>حقّ سخن گفتن را به دست آوردی.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.contact.locked_p",
+  "lang": "fa",
+  "old": "هیچ فرمی در کار نیست. و راه‌میانبری نیست. این باگ نیست: <em>تنها راهِ رسیدن به او، ایستادن در برابر اوست.</em>",
+  "new": "هیچ فرمی در کار نیست. و راه‌میانبری نیست. این باگ نیست: <em>تنها راه رسیدن به او، ایستادن در برابر اوست.</em>",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.contact.step2_p",
+  "lang": "fa",
+  "old": "استودانِ آفریده‌های گم‌شده را بپیما. همهٔ آن را.",
+  "new": "استودان آفریده‌های گم‌شده را بپیما. همهٔ آن را.",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.experience.co2",
+  "lang": "fa",
+  "old": "گروهِ دیجیتال مارکتینگِ آیدبکس",
+  "new": "گروه دیجیتال مارکتینگ آیدبکس",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "codex.sent.open",
+  "lang": "fa",
+  "old": "گشودنِ تلگرام ✦",
+  "new": "گشودن تلگرام ✦",
+  "why": "§5 one rule for ezafe: the short-vowel marks are not written (they also read as dots at small sizes)",
+  "file": "kasra"
+ },
+ {
+  "id": "zone.throne.obj.fight",
+  "lang": "en",
+  "old": "He answers no letters. Break the rune, then choose mercy.",
+  "new": "He answers no letters. Stand before him, weapon in hand.",
+  "why": "the rune-and-needle fight is gone; mercy is no longer the stated goal",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "zone.throne.obj.fight",
+  "lang": "fa",
+  "old": "او به نامه پاسخ نمی‌دهد. رون را بشکن، آنگاه رحمت را برگزین.",
+  "new": "او به نامه پاسخ نمی‌دهد. با سلاحی در دست روبه‌رویش بایست.",
+  "why": "the rune-and-needle fight is gone; mercy is no longer the stated goal",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "zone.throne.obj.fight",
+  "lang": "ar",
+  "old": "لا يردّ على الرسائل. حطّم الرونية، ثم اخترِ الرحمة.",
+  "new": "لا يردّ على الرسائل. قف أمامه والسلاح في يدك.",
+  "why": "the rune-and-needle fight is gone; mercy is no longer the stated goal",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "zone.throne.obj.fight",
+  "lang": "ru",
+  "old": "Он не отвечает на письма. Разбей руну — и выбери милость.",
+  "new": "На письма он не отвечает. Встань перед ним с оружием в руке.",
+  "why": "the rune-and-needle fight is gone; mercy is no longer the stated goal",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "zone.throne.obj.fight",
+  "lang": "ja",
+  "old": "彼は手紙に答えない。ルーンを砕き、そして慈悲を選べ。",
+  "new": "彼は手紙に答えない。武器を手に、その前に立て。",
+  "why": "the rune-and-needle fight is gone; mercy is no longer the stated goal",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.1",
+  "lang": "en",
+  "old": "You fell. Twice.",
+  "new": "You fell. Ten times.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.1",
+  "lang": "fa",
+  "old": "افتادی. دو بار.",
+  "new": "افتادی. ده بار.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.1",
+  "lang": "ar",
+  "old": "سقطتَ. مرّتين.",
+  "new": "سقطتَ. عشر مرات.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.1",
+  "lang": "ru",
+  "old": "Ты пал. Дважды.",
+  "new": "Ты пал. Десять раз.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.1",
+  "lang": "ja",
+  "old": "汝は倒れた。二度。",
+  "new": "倒れたな。十度。",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.2",
+  "lang": "en",
+  "old": "And twice you stood up\nin front of the same wall.",
+  "new": "And ten times you stood up\nin front of the same wall.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.2",
+  "lang": "fa",
+  "old": "و دو بار برخاستی\nروبه‌روی همان دیوار.",
+  "new": "و ده بار برخاستی\nروبه‌روی همان دیوار.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.2",
+  "lang": "ar",
+  "old": "ومرّتين نهضتَ\nأمام الجدار ذاته.",
+  "new": "وعشر مرات نهضتَ\nأمام الجدار نفسه.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.2",
+  "lang": "ru",
+  "old": "И дважды поднялся\nперед той же стеной.",
+  "new": "И десять раз поднялся\nперед той же стеной.",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "shyn_yield.3.2",
+  "lang": "ja",
+  "old": "そして二度、\n同じ壁の前に立った。",
+  "new": "そして十度、立ち上がった\n同じ壁の前に。",
+  "why": "mercy now comes after ten defeats, not two",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_rune",
+  "lang": "en",
+  "old": "Shatter the rune",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_rune",
+  "lang": "fa",
+  "old": "رون را بشکن",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_rune",
+  "lang": "ar",
+  "old": "حطّم الرونية",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_rune",
+  "lang": "ru",
+  "old": "Разбить руну",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_rune",
+  "lang": "ja",
+  "old": "ルーンを砕く",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_prototype",
+  "lang": "en",
+  "old": "Shatter the prototype",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_prototype",
+  "lang": "fa",
+  "old": "نمونه را بشکن",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_prototype",
+  "lang": "ar",
+  "old": "حطّم النموذج",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_prototype",
+  "lang": "ru",
+  "old": "Разбить прототип",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_prototype",
+  "lang": "ja",
+  "old": "試作体を砕く",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_revision",
+  "lang": "en",
+  "old": "Shatter the revision",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_revision",
+  "lang": "fa",
+  "old": "بازنگری را بشکن",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_revision",
+  "lang": "ar",
+  "old": "حطّم المراجعة",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_revision",
+  "lang": "ru",
+  "old": "Разбить правку",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_revision",
+  "lang": "ja",
+  "old": "改訂を砕く",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "en",
+  "old": "Shatter the root rune",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "fa",
+  "old": "رون ریشه را بشکن",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "ar",
+  "old": "حطّم رونية الجذر",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "ru",
+  "old": "Разбить корневую руну",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter_the_root_rune",
+  "lang": "ja",
+  "old": "根源のルーンを砕く",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.rune_shattered",
+  "lang": "en",
+  "old": "Rune shattered",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.rune_shattered",
+  "lang": "fa",
+  "old": "رون شکست",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.rune_shattered",
+  "lang": "ar",
+  "old": "تحطّمت الرونية",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.rune_shattered",
+  "lang": "ru",
+  "old": "Руна разбита",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.rune_shattered",
+  "lang": "ja",
+  "old": "ルーンは砕けた",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.the_rune_holds",
+  "lang": "en",
+  "old": "The rune holds",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.the_rune_holds",
+  "lang": "fa",
+  "old": "رون پایدار ماند",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.the_rune_holds",
+  "lang": "ar",
+  "old": "الرونية صامدة",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.the_rune_holds",
+  "lang": "ru",
+  "old": "Руна держится",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.the_rune_holds",
+  "lang": "ja",
+  "old": "ルーンは耐えている",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter",
+  "lang": "en",
+  "old": "shatter",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter",
+  "lang": "fa",
+  "old": "شکستن",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter",
+  "lang": "ar",
+  "old": "حطِّم",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter",
+  "lang": "ru",
+  "old": "разбить",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.shatter",
+  "lang": "ja",
+  "old": "砕く",
+  "new": null,
+  "why": "Round 9 §8: weapon combat replaces the timing needle; mercy comes after ten defeats; knights.",
+  "file": "04-combat.mjs"
+ },
+ {
+  "id": "ui.credits.rest",
+  "lang": "en",
+  "old": "Everything else — pictures, sound, music and code —\nwas made for Veyrath. Nothing is loaded from the network.",
+  "new": "Everything else — pictures, sound, music and code —\nwas made for Veyrath.\nNothing is loaded from the network.",
+  "why": "Round 9 §0: a Credits screen in the pause menu (every outside asset, with author and licence).",
+  "file": "05-credits.mjs"
+ },
+ {
+  "id": "ui.credits.rest",
+  "lang": "fa",
+  "old": "هر چیز دیگر — تصویر، صدا، موسیقی و کد —\nبرای ویراث ساخته شده است. چیزی از شبکه بار نمی‌شود.",
+  "new": "هر چیز دیگر، از تصویر و صدا تا موسیقی و کد،\nبرای ویراث ساخته شده است.\nچیزی از شبکه بار نمی‌شود.",
+  "why": "Round 9 §0: a Credits screen in the pause menu (every outside asset, with author and licence).",
+  "file": "05-credits.mjs"
+ },
+ {
+  "id": "ui.credits.rest",
+  "lang": "ar",
+  "old": "كل ما عدا ذلك — الصور والصوت والموسيقى والشفرة —\nصُنع من أجل فيراث. لا شيء يُحمَّل من الشبكة.",
+  "new": "كل ما عدا ذلك، من الصور والصوت إلى الموسيقى والشفرة،\nصُنع من أجل فيراث.\nلا شيء يُحمَّل من الشبكة.",
+  "why": "Round 9 §0: a Credits screen in the pause menu (every outside asset, with author and licence).",
+  "file": "05-credits.mjs"
+ },
+ {
+  "id": "ui.credits.rest",
+  "lang": "ru",
+  "old": "Всё остальное — рисунки, звук, музыка и код —\nсоздано для Вейрата. Из сети ничего не загружается.",
+  "new": "Всё остальное — рисунки, звук, музыка и код —\nсоздано для Вейрата.\nИз сети ничего не загружается.",
+  "why": "Round 9 §0: a Credits screen in the pause menu (every outside asset, with author and licence).",
+  "file": "05-credits.mjs"
+ },
+ {
+  "id": "ui.credits.rest",
+  "lang": "ja",
+  "old": "それ以外のすべて ― 絵、音、音楽、コード ― は\nヴェイラスのために作られた。ネットワークからは何も読み込まない。",
+  "new": "絵、音、音楽、コード。そのほかはすべて\nヴェイラスのために作られた。\nネットワークからは何も読み込まない。",
+  "why": "Round 9 §0: a Credits screen in the pause menu (every outside asset, with author and licence).",
+  "file": "05-credits.mjs"
+ },
+ {
+  "id": "ui.armoury",
+  "lang": "en",
+  "old": "Armoury",
+  "new": "Backpack",
+  "why": "Owner request (after the Round 9 §8 gate): RE-sync, the mender in the machine halls who rewrites a weapon for points after the first defeat; the weapon screen becomes the Backpack with its own button.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "ui.armoury",
+  "lang": "fa",
+  "old": "زرادخانه",
+  "new": "کوله‌پشتی",
+  "why": "Owner request (after the Round 9 §8 gate): RE-sync, the mender in the machine halls who rewrites a weapon for points after the first defeat; the weapon screen becomes the Backpack with its own button.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "ui.armoury",
+  "lang": "ar",
+  "old": "مستودع السلاح",
+  "new": "حقيبة الظهر",
+  "why": "Owner request (after the Round 9 §8 gate): RE-sync, the mender in the machine halls who rewrites a weapon for points after the first defeat; the weapon screen becomes the Backpack with its own button.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "ui.armoury",
+  "lang": "ru",
+  "old": "Оружейная",
+  "new": "Рюкзак",
+  "why": "Owner request (after the Round 9 §8 gate): RE-sync, the mender in the machine halls who rewrites a weapon for points after the first defeat; the weapon screen becomes the Backpack with its own button.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "ui.armoury",
+  "lang": "ja",
+  "old": "武器庫",
+  "new": "バックパック",
+  "why": "Owner request (after the Round 9 §8 gate): RE-sync, the mender in the machine halls who rewrites a weapon for points after the first defeat; the weapon screen becomes the Backpack with its own button.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_workshop.2",
+  "lang": "fa",
+  "old": "او سایت‌های وردپرس و المنتور را\nبا HTML و CSS پاکیزه می‌سازد،",
+  "new": "او سایت‌های وردپرس و المنتور را\nبا HTML و CSS تمیز و اصولی می‌سازد،",
+  "why": "Owner: «پاکیزه» is not the right word for code; «تمیز و اصولی» is what developers say.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_workshop.3",
+  "lang": "fa",
+  "old": "سپس با سئو، گوگل ادز و محتوا\nرشدشان می‌دهد.",
+  "new": "و سپس با سئو، گوگل ادز و محتوا\nآن‌ها را به بار می‌نشاند.",
+  "why": "Persian: «رشدشان می‌دهد» was flat; «به بار می‌نشاند» carries \"flourish\".",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_forest.1",
+  "lang": "fa",
+  "old": "المنتور. وردپرس. HTML و CSS.\nهر سه، تا لبهٔ استادی آبدیده.",
+  "new": "المنتور. وردپرس. HTML و CSS.\nدر هر سه، کارکشته و چیره‌دست.",
+  "why": "Persian: «تا لبهٔ استادی آبدیده» was a word-for-word image that does not read in Persian.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_forest.2",
+  "lang": "fa",
+  "old": "و اسکیما، تنیده در زیر صفحه\nجایی که تنها ماشین‌ها می‌خوانندش.",
+  "new": "و اسکیما، تنیده در زیر صفحه؛\nآنجا که تنها ماشین‌ها می‌خوانند.",
+  "why": "Persian: smoother second line.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_forest.3",
+  "lang": "fa",
+  "old": "او قالب می‌سازد\nو افزونه‌هایی را که لازم دارند می‌نویسد.",
+  "new": "او قالب طراحی می‌کند\nو افزونه‌های موردنیازش را خودش می‌نویسد.",
+  "why": "Persian: natural word order.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_cathedral.1",
+  "lang": "fa",
+  "old": "یافته شدن، خود هنری جداست.",
+  "new": "دیده‌شدن، خود هنری جداگانه است.",
+  "why": "Persian: «یافته شدن» is not how being found by search is said; «دیده‌شدن» is.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_catacombs.1",
+  "lang": "fa",
+  "old": "او با ذهن‌های ماشینی\nبه دستور خودشان سخن می‌گوید.",
+  "new": "او با ذهن‌های ماشینی\nبه زبان خودشان سخن می‌گوید.",
+  "why": "Persian: «به دستور خودشان» reads as \"by their order\"; «به زبان خودشان» is the meaning.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_catacombs.3",
+  "lang": "fa",
+  "old": "نیت روشن. ساختار سخت.\nآزموده تا برجا بماند.",
+  "new": "هدف روشن. ساختار دقیق.\nآن‌قدر آزموده که پابرجا بماند.",
+  "why": "Persian: clearer.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_repository.4",
+  "lang": "fa",
+  "old": "شش وب‌سایت هنوز برپایند.\nنام‌هایشان در کدکس چشم‌به‌راه است.",
+  "new": "شش وب‌سایت هنوز پابرجاست.\nنام‌هایشان در کدکس آمده است.",
+  "why": "Persian: clearer.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_arena.2",
+  "lang": "fa",
+  "old": "او بر هفت ستون کار می‌کند.",
+  "new": "کار او بر هفت ستون استوار است.",
+  "why": "Persian: «بر هفت ستون کار می‌کند» was literal.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_arena.4",
+  "lang": "fa",
+  "old": "اکنون هرچه او هست را خوانده‌ای.",
+  "new": "اکنون هرچه دربارهٔ او بود، خوانده‌ای.",
+  "why": "Persian: natural phrasing.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "cv_arena.5",
+  "lang": "fa",
+  "old": "برای سخن گفتن با او،\nثابت کن که جدی‌ای.",
+  "new": "برای سخن گفتن با او،\nثابت کن که جدی هستی.",
+  "why": "Persian: «جدی‌ای» is awkward in writing.",
+  "file": "06-resync.mjs"
+ },
+ {
+  "id": "(7 Persian lines)",
+  "lang": "fa",
+  "old": "ویرث",
+  "new": "ویراث",
+  "why": "One spelling for the world's name in Persian: the title screen writes «ویراث»; seven older lines still wrote «ویرث».",
+  "file": "06-resync (script)"
+ },
+ {
+  "id": "codex.architect.who_p",
+  "lang": "fa",
+  "old": "… با HTML و CSS پاک می‌سازد، … شکوفایشان می‌کند",
+  "new": "… با HTML و CSS تمیز و اصولی می‌سازد، … به بار می‌نشاند",
+  "why": "Same correction as cv_workshop.2–3 (owner: the word for clean code).",
+  "file": "06-resync (script)"
+ },
+ {
+  "id": "ui.credits.music.line",
+  "lang": "fa",
+  "old": "نُه قطعه که برای ویراث نوشته شده\nو خود بازی آن‌ها را زنده می‌نوازد. بدون هیچ ضبطی.",
+  "new": "۹ قطعه که برای ویراث نوشته شده\nو خود بازی آن‌ها را زنده می‌نوازد. بدون هیچ ضبطی.",
+  "why": "Round 9 §7: the new score (volume control in the pause menu, the pieces named on the Credits screen).",
+  "file": "07-music.mjs"
+ },
+ {
+  "id": "shyn_offer.1",
+  "lang": "en",
+  "old": "Ten times you have fallen on this floor.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.1",
+  "lang": "fa",
+  "old": "ده بار بر این کف افتاده‌ای.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.1",
+  "lang": "ar",
+  "old": "عشر مرات سقطتَ على هذه الأرض.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.1",
+  "lang": "ru",
+  "old": "Десять раз ты падал на этот пол.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.1",
+  "lang": "ja",
+  "old": "この床に、おまえは十度倒れた。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.2",
+  "lang": "en",
+  "old": "I do not count them to shame you.\nI count them because you came back.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.2",
+  "lang": "fa",
+  "old": "نمی‌شمارم تا شرمسارت کنم.\nمی‌شمارم چون بازگشتی.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.2",
+  "lang": "ar",
+  "old": "لا أعدّها لأُخجلك.\nأعدّها لأنك عدتَ.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.2",
+  "lang": "ru",
+  "old": "Я считаю не затем, чтобы стыдить.\nЯ считаю, потому что ты вернулся.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.2",
+  "lang": "ja",
+  "old": "恥じ入らせるために数えるのではない。\n戻ってきたから、数えている。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.3",
+  "lang": "en",
+  "old": "So choose. I can strike softer\nand show each blow sooner.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.3",
+  "lang": "fa",
+  "old": "پس برگزین. می‌توانم نرم‌تر بزنم\nو هر ضربه را زودتر نشان دهم.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.3",
+  "lang": "ar",
+  "old": "فاختر. أستطيع أن أضرب ألين\nوأن أُريك كل ضربة أبكر.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.3",
+  "lang": "ru",
+  "old": "Так выбирай. Я могу бить мягче\nи показывать каждый удар раньше.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.3",
+  "lang": "ja",
+  "old": "ならば選べ。わたしは手を緩め、\n一撃ごとに早く示すこともできる。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.4",
+  "lang": "en",
+  "old": "Or we lay the weapons down, and speak.\nOr nothing changes.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.4",
+  "lang": "fa",
+  "old": "یا سلاح‌ها را زمین می‌گذاریم و سخن می‌گوییم.\nیا هیچ‌چیز دگرگون نمی‌شود.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.4",
+  "lang": "ar",
+  "old": "أو نضع السلاح ونتكلّم.\nأو لا يتغيّر شيء.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.4",
+  "lang": "ru",
+  "old": "Или мы сложим оружие и поговорим.\nИли ничего не изменится.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.4",
+  "lang": "ja",
+  "old": "あるいは武器を置き、語り合う。\nあるいは、何も変えない。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.ease",
+  "lang": "en",
+  "old": "Then watch. I will show you\nwhere each blow falls.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.ease",
+  "lang": "fa",
+  "old": "پس بنگر. نشانت می‌دهم\nهر ضربه کجا فرود می‌آید.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.ease",
+  "lang": "ar",
+  "old": "فانظر إذن. سأُريك\nأين تقع كل ضربة.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.ease",
+  "lang": "ru",
+  "old": "Тогда смотри. Я покажу,\nкуда ляжет каждый удар.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.ease",
+  "lang": "ja",
+  "old": "ならば見ていろ。一撃ごとに、\nどこへ落ちるかを示そう。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.fight",
+  "lang": "en",
+  "old": "Good.\nThen stand up.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.fight",
+  "lang": "fa",
+  "old": "خوب است.\nپس برخیز.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.fight",
+  "lang": "ar",
+  "old": "حسنٌ.\nفانهض إذن.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.fight",
+  "lang": "ru",
+  "old": "Хорошо.\nТогда вставай.",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "shyn_offer.fight",
+  "lang": "ja",
+  "old": "よい。\nならば立て。",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.ease",
+  "lang": "en",
+  "old": "Strike softer, show me sooner",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.ease",
+  "lang": "fa",
+  "old": "نرم‌تر بزن، زودتر نشانم بده",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.ease",
+  "lang": "ar",
+  "old": "اضرب ألين، وأرني أبكر",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.ease",
+  "lang": "ru",
+  "old": "Бей мягче, показывай раньше",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.ease",
+  "lang": "ja",
+  "old": "手を緩め、早く示してくれ",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.yield",
+  "lang": "en",
+  "old": "Lay the weapons down",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.yield",
+  "lang": "fa",
+  "old": "سلاح‌ها را زمین بگذاریم",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.yield",
+  "lang": "ar",
+  "old": "لنضع السلاح",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.yield",
+  "lang": "ru",
+  "old": "Сложим оружие",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.yield",
+  "lang": "ja",
+  "old": "武器を置こう",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.fight",
+  "lang": "en",
+  "old": "Change nothing",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.fight",
+  "lang": "fa",
+  "old": "هیچ‌چیز را دگرگون نکن",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.fight",
+  "lang": "ar",
+  "old": "لا تغيّر شيئًا",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.fight",
+  "lang": "ru",
+  "old": "Ничего не меняй",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ },
+ {
+  "id": "offer.c.fight",
+  "lang": "ja",
+  "old": "何も変えるな",
+  "new": null,
+  "why": "Owner request (16 Nov): attacks work in every hall but NPCs are under the Keeper's protection; RE-sync joins the fight after five defeats (replaces the offer at ten); his farewell after the win; the Keeper's line when a rewritten weapon comes back.",
+  "file": "09-ally.mjs"
+ }
+]

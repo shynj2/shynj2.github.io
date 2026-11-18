@@ -1,0 +1,333 @@
+{
+ "_doc": "THE INK STALKER — a silhouette that learned to move: void body, two cold eyes, rune-blue hood. Reuses the Recruiter's skeleton and clips; palette.json -> rigs.stalker.",
+ "frame": [
+  64,
+  64
+ ],
+ "origin": [
+  30,
+  58
+ ],
+ "pal": "stalker",
+ "meta": {
+  "portrait": [
+   21,
+   14,
+   23,
+   23
+  ],
+  "headTop": -42,
+  "hit": [
+   14,
+   36
+  ],
+  "hand": [
+   "foreF",
+   7
+  ]
+ },
+ "bones": {
+  "root": {},
+  "hips": {
+   "parent": "root",
+   "x": 0,
+   "y": -18
+  },
+  "torso": {
+   "parent": "hips",
+   "x": 0,
+   "y": 0
+  },
+  "head": {
+   "parent": "torso",
+   "x": 1,
+   "y": -12
+  },
+  "tie": {
+   "parent": "torso",
+   "x": 1,
+   "y": -11,
+   "sign": -1
+  },
+  "bag": {
+   "parent": "torso",
+   "x": -4,
+   "y": -2,
+   "sign": -1
+  },
+  "armF": {
+   "parent": "torso",
+   "x": -3,
+   "y": -10,
+   "sign": -1
+  },
+  "foreF": {
+   "parent": "armF",
+   "x": 0,
+   "y": 6,
+   "sign": -1
+  },
+  "armB": {
+   "parent": "torso",
+   "x": 3,
+   "y": -10,
+   "sign": -1
+  },
+  "foreB": {
+   "parent": "armB",
+   "x": 0,
+   "y": 6,
+   "sign": -1
+  },
+  "thighF": {
+   "parent": "hips",
+   "x": 1,
+   "y": 0,
+   "sign": -1
+  },
+  "shinF": {
+   "parent": "thighF",
+   "x": 0,
+   "y": 8,
+   "sign": -1
+  },
+  "footF": {
+   "parent": "shinF",
+   "x": 0,
+   "y": 8
+  },
+  "thighB": {
+   "parent": "hips",
+   "x": -1,
+   "y": 0,
+   "sign": -1
+  },
+  "shinB": {
+   "parent": "thighB",
+   "x": 0,
+   "y": 8,
+   "sign": -1
+  },
+  "footB": {
+   "parent": "shinB",
+   "x": 0,
+   "y": 8
+  }
+ },
+ "ik": {
+  "legF": {
+   "a": "thighF",
+   "b": "shinF",
+   "end": "footF",
+   "bend": 1,
+   "len2": 8
+  },
+  "legB": {
+   "a": "thighB",
+   "b": "shinB",
+   "end": "footB",
+   "bend": 1,
+   "len2": 8
+  },
+  "armF": {
+   "a": "armF",
+   "b": "foreF",
+   "bend": -1,
+   "len2": 7
+  },
+  "armB": {
+   "a": "armB",
+   "b": "foreB",
+   "bend": -1,
+   "len2": 7
+  }
+ },
+ "secondary": {
+  "tie": {
+   "kx": 14,
+   "ky": 16,
+   "max": 70
+  },
+  "bag": {
+   "kx": 8,
+   "ky": 10,
+   "max": 35
+  }
+ },
+ "groups": {
+  "armB": {
+   "z": 1
+  },
+  "legB": {
+   "z": 2
+  },
+  "legF": {
+   "z": 3
+  },
+  "body": {
+   "z": 5
+  },
+  "bag": {
+   "z": 6
+  },
+  "head": {
+   "z": 7
+  },
+  "armF": {
+   "z": 8
+  }
+ },
+ "parts": [
+  {
+   "name": "armB",
+   "group": "armB",
+   "bone": "armB",
+   "sprite": "arm",
+   "pivot": [
+    2,
+    0
+   ],
+   "shade": -1
+  },
+  {
+   "name": "foreB",
+   "group": "armB",
+   "bone": "foreB",
+   "sprite": "forearm",
+   "pivot": [
+    2,
+    0
+   ],
+   "shade": -1
+  },
+  {
+   "name": "thighB",
+   "group": "legB",
+   "bone": "thighB",
+   "sprite": "thigh",
+   "pivot": [
+    2,
+    0
+   ],
+   "shade": -1
+  },
+  {
+   "name": "shinB",
+   "group": "legB",
+   "bone": "shinB",
+   "sprite": "shin",
+   "pivot": [
+    2,
+    0
+   ],
+   "shade": -1
+  },
+  {
+   "name": "footB",
+   "group": "legB",
+   "bone": "footB",
+   "sprite": "shoe",
+   "pivot": [
+    2,
+    0
+   ],
+   "shade": -1
+  },
+  {
+   "name": "thighF",
+   "group": "legF",
+   "bone": "thighF",
+   "sprite": "thigh",
+   "pivot": [
+    2,
+    0
+   ]
+  },
+  {
+   "name": "shinF",
+   "group": "legF",
+   "bone": "shinF",
+   "sprite": "shin",
+   "pivot": [
+    2,
+    0
+   ]
+  },
+  {
+   "name": "footF",
+   "group": "legF",
+   "bone": "footF",
+   "sprite": "shoe",
+   "pivot": [
+    2,
+    0
+   ]
+  },
+  {
+   "name": "torso",
+   "group": "body",
+   "bone": "torso",
+   "sprite": "torso",
+   "pivot": [
+    5,
+    12
+   ]
+  },
+  {
+   "name": "tie",
+   "group": "body",
+   "bone": "tie",
+   "sprite": "tie",
+   "pivot": [
+    1,
+    0
+   ]
+  },
+  {
+   "name": "bag",
+   "group": "bag",
+   "bone": "bag",
+   "sprite": "bag",
+   "pivot": [
+    4,
+    0
+   ]
+  },
+  {
+   "name": "head",
+   "group": "head",
+   "bone": "head",
+   "sprite": "head",
+   "pivot": [
+    5,
+    10
+   ]
+  },
+  {
+   "name": "armF",
+   "group": "armF",
+   "bone": "armF",
+   "sprite": "arm",
+   "pivot": [
+    2,
+    0
+   ]
+  },
+  {
+   "name": "foreF",
+   "group": "armF",
+   "bone": "foreF",
+   "sprite": "forearm",
+   "pivot": [
+    2,
+    0
+   ]
+  }
+ ],
+ "pivots": {
+  "headBack": [
+   7,
+   10
+  ]
+ }
+}

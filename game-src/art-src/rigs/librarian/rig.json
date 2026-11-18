@@ -1,0 +1,41 @@
+{
+  "_doc": "THE LIBRARIAN — tall, still, eyes closed; six books orbit them, passing behind and in front (depth-sorted per frame via pose.z). Robe hides the legs: no IK. Units are pixels, y down, root = ground under the hem.",
+  "frame": [64, 80],
+  "origin": [32, 76],
+  "pal": "librarian",
+  "meta": { "portrait": [21, 5, 23, 23], "headTop": -68, "backRim": "rune1" },
+  "bones": {
+    "root":  {},
+    "body":  { "parent": "root",  "x": 0,  "y": 0 },
+    "chest": { "parent": "body",  "x": 0,  "y": -46 },
+    "head":  { "parent": "chest", "x": 1,  "y": -6 },
+    "armB":  { "parent": "chest", "x": 3,  "y": 1,  "sign": -1 },
+    "armF":  { "parent": "chest", "x": -3, "y": 1,  "sign": -1 },
+    "handF": { "parent": "armF",  "x": 0,  "y": 13, "sign": -1 },
+    "b1": { "parent": "root" }, "b2": { "parent": "root" }, "b3": { "parent": "root" },
+    "b4": { "parent": "root" }, "b5": { "parent": "root" }, "b6": { "parent": "root" }
+  },
+  "ik": {},
+  "secondary": {},
+  "groups": {
+    "armB": { "z": 2 }, "body": { "z": 4 }, "head": { "z": 5 }, "armF": { "z": 6 },
+    "b1": { "z": 1 }, "b2": { "z": 1 }, "b3": { "z": 1 }, "b4": { "z": 1 }, "b5": { "z": 1 }, "b6": { "z": 1 }
+  },
+  "parts": [
+    { "name": "armB",  "group": "armB", "bone": "armB",  "sprite": "sleeve", "pivot": [3, 1], "shade": -1 },
+    { "name": "robe",  "group": "body", "bone": "body",  "sprite": "robe",   "pivot": [11, 51] },
+    { "name": "head",  "group": "head", "bone": "head",  "sprite": "head",   "pivot": [5, 11] },
+    { "name": "armF",  "group": "armF", "bone": "armF",  "sprite": "sleeve", "pivot": [3, 1] },
+    { "name": "handF", "group": "armF", "bone": "handF", "sprite": "hand",   "pivot": [1, 0] },
+    { "name": "b1", "group": "b1", "bone": "b1", "sprite": "bookR", "pivot": [3, 2] },
+    { "name": "b2", "group": "b2", "bone": "b2", "sprite": "bookB", "pivot": [3, 2] },
+    { "name": "b3", "group": "b3", "bone": "b3", "sprite": "bookG", "pivot": [3, 2] },
+    { "name": "b4", "group": "b4", "bone": "b4", "sprite": "bookV", "pivot": [3, 2] },
+    { "name": "b5", "group": "b5", "bone": "b5", "sprite": "bookR", "pivot": [3, 2] },
+    { "name": "b6", "group": "b6", "bone": "b6", "sprite": "bookB", "pivot": [3, 2] }
+  ],
+  "pivots": {
+    "robeM": [12, 44],
+    "robeK": [14, 31]
+  }
+}

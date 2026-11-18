@@ -1,0 +1,481 @@
+
+/* ==========================================================================
+   VEYRATH REBORN — layout overrides for the 640x360 integer-scaled canvas.
+   (The original stylesheet above is kept; these rules only re-seat it.)
+   ========================================================================== */
+#app{background:#020106}
+#stage{box-shadow:none;background:#020106}
+canvas#cv{image-rendering:pixelated;image-rendering:crisp-edges;image-rendering:pixelated;background:#040208}
+/* portrait phones: the game view sits at the top at 1 logical px = whole device px,
+   dialogue and the controls live in the dark stone below it */
+#stage.tall canvas#cv{position:absolute;left:50%;top:0;transform:translateX(-50%)}
+#stage.tall .hud{bottom:auto;height:var(--gh)}
+#stage.tall .det{bottom:.6em}
+#stage.tall #prompt{bottom:auto;top:calc(var(--gh) - 3.2em)}
+#stage.tall #zonecard{bottom:auto;height:var(--gh)}
+#stage.tall #dlg{bottom:auto;top:calc(var(--gh) + 1.2em);width:94%}
+#stage.tall #fight{bottom:auto;height:var(--gh)}
+#stage.tall #touch .dpad,#stage.tall #touch .right{bottom:calc(2.2em + env(safe-area-inset-bottom))}
+#stage.tall #mute{top:calc(var(--gh) + 1.6em);transform:none}
+#stage.tall #menuBtn{top:calc(var(--gh) + 4.4em)}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.01ms !important;transition-duration:.01ms !important} }
+
+/* ---- UI skin: carved stone, violet rune studs (9-slice from art-src/ui/ui.mjs) ---- */
+#dlg{background:none;box-shadow:none;border:16px solid transparent;border-image:var(--ui-frame) 8 fill / 16px / 0 stretch;
+  image-rendering:pixelated;padding:.5em .9em .6em}
+#dlg::before,#dlg::after{content:none}
+#dlg.silence{border-image:none;border-color:transparent;background:rgba(3,2,7,.55)}
+#dlg .por{image-rendering:pixelated;box-shadow:0 0 0 2px #040208,0 0 0 4px #3b3149}
+#stage.compact #dlg{padding:.3em .5em .4em}
+#toast{background:none;box-shadow:none;border:8px solid transparent;border-image:var(--ui-frame) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:.35em .7em}
+#prompt{background:none;box-shadow:none;border:8px solid transparent;border-image:var(--ui-frame) 8 fill / 8px / 0 stretch;image-rendering:pixelated;border-radius:0;padding:.25em .7em .2em}
+#stage.compact #toast{padding:.25em .5em}
+#stage.compact #prompt{padding:.2em .5em}
+/* landscape / desktop: the speakers stand low in the frame now, so the box moves to the top */
+#stage:not(.tall) #dlg{top:1.2em;bottom:auto;width:84%}
+#stage.dim .nameplate,#stage.dim .score{opacity:0;transition:opacity .3s}
+/* pixel-art rule: no blur on the canvas. The new scenes are already ~70% dark, so the dialogue dim is gentler. */
+#stage.dim canvas#cv{filter:brightness(.82) saturate(.8)}
+#stage.void canvas#cv{filter:brightness(.3) saturate(.4)}
+
+/* ---------- first screen, bilingual intro, extra buttons, salary line ---------- */
+#gate{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1em;background:#030207;text-align:center}
+#gate .g-t{font-family:Georgia,serif;font-size:2.6em;letter-spacing:.5em;margin-right:-.5em;color:#d9ccff}
+#gate .g-s{font-size:.8em;letter-spacing:.42em;text-transform:uppercase;color:#8d80ad;margin-bottom:1.2em}
+#gate .g-b{display:flex;gap:1em;flex-wrap:wrap;justify-content:center}
+#gate .g-b{max-width:44em}
+#gate .g-b .btn{min-width:7.4em;font-size:1em;letter-spacing:.06em;text-transform:none}
+#gate .g-n{font-size:.68em;color:#6f6588;line-height:1.9;margin-top:1em}
+#intro .ln.solo{transition:opacity .9s ease;min-height:5.4em;display:flex;flex-direction:column;justify-content:center}
+#intro .ln .fa-line{font-family:var(--ff);font-style:normal;font-size:.92em;letter-spacing:0;opacity:.78}
+#intro .ln.one .fa-line{display:none}
+#stage.l10n #intro .ln.one .en{font-family:var(--ff)}
+#stage:is(.l-fa,.l-ar,.l-ja) #intro .ln.one .en{font-style:normal;letter-spacing:0}
+.hbtn{position:absolute;right:1.15em;z-index:8;width:2.1em;height:2.1em;border-radius:50%;border:1px solid rgba(160,130,230,.35);background:rgba(20,12,40,.5);color:#cbbce8;opacity:.5;font:inherit;font-size:1em;line-height:1;padding:0;cursor:pointer}
+.hbtn:hover{opacity:.95}
+#fsBtn{top:calc(50% - 3.1em);transform:translateY(-50%)}
+#langBtn{top:calc(50% - 6.2em);transform:translateY(-50%);font-size:.78em;width:2.7em;height:2.7em;right:1.47em}
+#stage.tall #fsBtn{top:calc(var(--gh) + 1.6em);right:4.1em;transform:none}
+#stage.tall #langBtn{top:calc(var(--gh) + 1.6em);right:8.9em;transform:none}
+#stage.dim .hbtn,#stage.void .hbtn{opacity:0;pointer-events:none}
+.hud .cut{font-size:.5em;letter-spacing:.08em;color:#8f84a8;opacity:.75;margin-top:.5em;text-align:right;position:absolute;right:2.2em;top:4.6em;white-space:nowrap}
+#stage.dim .cut{opacity:0}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:.7em;margin:1.2em 0}
+.contacts a{display:flex;flex-direction:column;gap:.3em;text-decoration:none;text-align:center;padding:.8em .6em}
+.contacts a i{font-style:normal;font-size:.7em;letter-spacing:.2em;opacity:.7;text-transform:uppercase}
+.contacts a b{font-weight:400;font-size:.95em;word-break:break-all}
+a.artifact{text-decoration:none;color:inherit}
+
+/* ---------- languages: right-to-left for Persian and Arabic (#stage.rtl), a font for each (#stage.l-xx) ---------- */
+#stage.rtl #dlg,#stage.rtl #toast,#stage.rtl .ov,#stage.rtl #zonecard,#stage.rtl #prompt,#stage.rtl .hud .cut{direction:rtl}
+/* the font of each language (the files are embedded by tools/build.mjs from art-src/fonts/, so no device shows empty boxes) */
+#stage{--ff:Georgia,serif}
+#stage.l-fa{--ff:VeyFa,Vazirmatn,Vazir,IRANSans,'Segoe UI',Tahoma,sans-serif}
+#stage.l-ar{--ff:VeyAr,Amiri,'Noto Naskh Arabic','Traditional Arabic','Geeza Pro','Segoe UI',Tahoma,serif}
+#stage.l-ru{--ff:VeyRu,'PT Serif',Georgia,'Times New Roman',serif}
+#stage.l-ja{--ff:VeyJa,'Shippori Mincho','Noto Serif JP','Hiragino Mincho ProN','Yu Mincho','MS PMincho',serif}
+.f-fa{font-family:VeyFa,Vazirmatn,'Segoe UI',Tahoma,sans-serif!important;letter-spacing:0!important}
+.f-ar{font-family:VeyAr,Amiri,'Noto Naskh Arabic','Segoe UI',Tahoma,serif!important;letter-spacing:0!important}
+.f-ru{font-family:VeyRu,Georgia,serif!important}
+.f-ja{font-family:VeyJa,'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif!important;letter-spacing:0!important}
+#stage.l10n :is(#dlg,#toast,.ov,#zonecard,#prompt,.hud,#fight,#signTip,#secret) *{font-family:var(--ff)!important}
+#stage:is(.l-fa,.l-ar,.l-ja) :is(#dlg,#toast,.ov,#zonecard,#prompt,.hud,#fight,#signTip,#secret) *{letter-spacing:0!important;font-style:normal!important}
+#stage.l10n :is(#dlg,#toast,.ov,#zonecard,#prompt,.hud,#fight,#signTip,#secret) :is(kbd,[dir=ltr]){font-family:Georgia,serif!important}
+/* Naskh letters are small for their line height: Arabic text is set a little larger */
+#stage.l-ar #dlg .txt{font-size:1.14em;line-height:1.62}
+#stage.l-ar #dlg .who{font-size:.9em}
+#stage.l-ja #dlg .who{font-size:.78em}
+#stage.l-ar :is(#toast,#zonecard,#prompt,#signTip,.book .page,#coinEnd .l1,#coinEnd .l2,#attempt,.hud .obj,#intro .ln){font-size:1.1em}
+#stage.l-ja #dlg .txt{line-height:1.8;line-break:strict}
+#stage.l-ja #toast .t{white-space:nowrap}
+/* #stage carries dir="rtl" in Persian and Arabic; the layout itself (pad, buttons, HUD frame) never mirrors, only the text boxes below do */
+#stage[dir=rtl]>*{direction:ltr}
+#stage.rtl .hud .cut{text-align:left}
+#stage.rtl #gate,#stage.rtl #gate *{direction:ltr}
+
+.contacts a b{text-transform:none;letter-spacing:0}
+#fsBtn svg{display:block;margin:auto}
+/* touch landscape: the timing needle sits above the thumb buttons, not under them */
+#stage.touching:not(.tall) #timing{bottom:2.35em;width:46%;display:flex;flex-direction:column-reverse}
+#stage.touching:not(.tall) #timing .hint{margin:.3em 0 0;font-size:.5em}   /* between the two thumbs, under the fighters' feet: never over Shyn's face */
+#hudScore{unicode-bidi:isolate;display:inline-block}
+
+/* the four round buttons on the right edge: same size, same gap */
+#langBtn,#fsBtn,#mute,#menuBtn{position:absolute;right:1.4em;width:2.4em;height:2.4em;font-size:.8em;border-radius:50%;display:grid;place-items:center;
+  padding:0;line-height:1;transform:none;background:rgba(24,18,38,.45);border:1px solid rgba(150,110,230,.25);color:#a99dd0;opacity:.5;z-index:8}
+#langBtn{top:calc(50% - 5.9em)} #fsBtn{top:calc(50% - 2.9em)} #mute{top:calc(50% + .1em)} #menuBtn{top:calc(50% + 3.1em)}
+#stage.tall #langBtn,#stage.tall #fsBtn,#stage.tall #mute,#stage.tall #menuBtn{top:calc(var(--gh) + 1.6em);transform:none}
+#stage.tall #menuBtn{right:1.4em} #stage.tall #mute{right:4.4em} #stage.tall #fsBtn{right:7.4em} #stage.tall #langBtn{right:10.4em}
+#fsBtn svg{width:1.1em;height:1.1em}
+
+/* ---------- Codex in Persian: the book is mirrored (chapters on the right, spine beside them) ---------- */
+#stage.rtl .book .spine{left:auto;right:9.5em}
+#stage.rtl .book nav{border-right:none;border-left:1px solid rgba(90,70,120,.22)}
+#stage.rtl .book nav .title{padding-left:0;padding-right:.6em}
+#stage.rtl .chap{text-align:right;border-left:none;border-right:2px solid transparent}
+#stage.rtl .chap.on{border-right-color:#8a5cd8}
+#stage.rtl .book .page .quote{border-left:none;padding-left:0;border-right:2px solid #5b3f8f;padding-right:1em}
+#stage.rtl .book .page ul{padding-left:0;padding-right:1.2em}
+#stage.rtl .book .page .artifact span{text-align:left}
+#stage.rtl .codex-close{right:auto;left:1.4em}
+#stage.rtl .book{inset:1.5em 1.5em 1.5em 6.4em}
+.book nav .keys{margin-top:auto;padding:.9em .6em 0;font-size:.5em;letter-spacing:.14em;color:#5f5674;white-space:nowrap}
+#stage.rtl .book nav .keys{letter-spacing:0;font-size:.56em}
+#stage.touching .book nav .keys{display:none}
+.form{max-width:none}                      /* the form is as wide as the contact cards above it */
+@media (min-width:700px){ .form{grid-template-columns:1fr 1fr;column-gap:.7em} .form .row:nth-child(n+3),.form>div:not(.row){grid-column:1 / -1} }
+
+/* ---------- back to the main résumé ---------- */
+#cvBtn{position:absolute;right:1.4em;width:2.4em;height:2.4em;font-size:.8em;border-radius:50%;display:grid;place-items:center;padding:0;line-height:1;transform:none;
+  background:rgba(24,18,38,.45);border:1px solid rgba(150,110,230,.25);color:#a99dd0;opacity:.5;z-index:8;letter-spacing:0;font-weight:600}
+#langBtn{top:calc(50% - 7.4em)} #fsBtn{top:calc(50% - 4.4em)} #mute{top:calc(50% - 1.4em)} #menuBtn{top:calc(50% + 1.6em)} #cvBtn{top:calc(50% + 4.6em)}
+#stage.tall #cvBtn{top:calc(var(--gh) + 1.6em);right:1.4em}
+#stage.tall #menuBtn{right:4.4em} #stage.tall #mute{right:7.4em} #stage.tall #fsBtn{right:10.4em} #stage.tall #langBtn{right:13.4em}
+#pause .menu a.btn{display:block;text-decoration:none;text-align:left;padding:.78em 1.1em}
+#stage.rtl #pause .menu .btn{text-align:right}
+#gate .g-r{margin-top:1.3em;font-size:.66em;line-height:1.8;color:#9b8fc0;text-decoration:none;border-bottom:1px solid rgba(150,110,230,.3);padding-bottom:.2em;text-align:center}
+#gate .g-r:hover,#endResume:hover{color:#e6d9ff}
+#endResume{text-decoration:none;font-style:normal;margin-left:.6em}
+
+/* ---------- the hidden achievement, written across the screen ---------- */
+#secret{position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6em;pointer-events:none;
+  background:rgba(4,2,10,.78);opacity:0;transition:opacity .6s ease}
+#secret.on{opacity:1}
+#secret b{font-family:Georgia,serif;font-weight:400;font-size:min(6.4em,15vw);letter-spacing:.14em;line-height:1.1;color:#f1e6ff;
+  text-shadow:0 0 .3em rgba(150,90,255,.9),0 0 1em rgba(120,60,230,.6);transform:scale(.55);transition:transform 1.1s cubic-bezier(.2,1.4,.3,1)}
+#secret.on b{transform:scale(1)}
+#secret i{font-style:normal;font-size:.62em;letter-spacing:.3em;text-transform:uppercase;color:#a694d6}
+#stage.rtl #secret b,#stage.rtl #secret i{letter-spacing:0}
+
+/* the lock on a sealed chapter: drawn, because the chain glyph is missing from many fonts */
+.chap.locked::after{content:"";display:inline-block;width:.75em;height:.85em;margin-inline-start:.55em;vertical-align:-.08em;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M2 6V4a4 4 0 0 1 8 0v2h1v8H1V6zm2 0h4V4a2 2 0 0 0-4 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M2 6V4a4 4 0 0 1 8 0v2h1v8H1V6zm2 0h4V4a2 2 0 0 0-4 0z'/%3E%3C/svg%3E") center/contain no-repeat}
+/* phone held sideways: the right edge belongs to the thumb, so the résumé button lives in the menu (☰) there */
+#stage.touching:not(.tall) #cvBtn{display:none}
+#stage.touching:not(.tall) #langBtn{top:calc(50% - 5.9em)} #stage.touching:not(.tall) #fsBtn{top:calc(50% - 2.9em)} #stage.touching:not(.tall) #mute{top:calc(50% + .1em)} #stage.touching:not(.tall) #menuBtn{top:calc(50% + 3.1em)}
+
+/* ---------- the notice board's words (53-sign.js) ---------- */
+#signTip{position:absolute;z-index:6;transform:translate(-50%,-100%);width:max-content;max-width:min(15.5em,76%);padding:.6em .9em;text-align:center;pointer-events:none;
+  font-family:Georgia,serif;font-size:.74em;line-height:1.6;letter-spacing:.03em;color:#eadfff;background:rgba(18,12,30,.9);border:1px solid #6b4fa6;
+  box-shadow:0 0 0 1px #0a0612,0 .3em 0 rgba(4,2,10,.55);opacity:0;transition:opacity .5s ease}
+#signTip.on{opacity:1}
+#signTip::after{content:"";position:absolute;left:calc(50% + var(--tail,0px));bottom:-.42em;width:.7em;height:.7em;margin-left:-.35em;background:rgba(18,12,30,.95);
+  border-right:1px solid #6b4fa6;border-bottom:1px solid #6b4fa6;transform:rotate(45deg)}
+#stage.titlecard #signTip,#stage.dim #signTip,#stage.void #signTip{opacity:0}
+#stage.rtl #signTip{direction:rtl;letter-spacing:0}
+
+/* ---------------- Round 7 · the goblin's dark screen (src/js/63-goblin.js) ---------------- */
+#coinEnd{z-index:12;background:transparent;cursor:pointer}
+#coinEnd .center{text-align:center}
+#coinEnd .hee{font-family:Georgia,serif;font-style:italic;font-size:1.9em;letter-spacing:.06em;color:#e7c25a;opacity:0;line-height:1.5}
+#coinEnd.laugh .hee{opacity:1;animation:ceHee .16s steps(2) 14}
+#coinEnd .num{font-family:Georgia,serif;font-size:3em;letter-spacing:.06em;color:#b23a3a;margin:.15em 0 .3em;line-height:1.1}
+#coinEnd .l1{font-family:Georgia,serif;font-style:italic;font-size:1em;color:#cfc3b4;line-height:1.9}
+#coinEnd .l2{font-family:Georgia,serif;font-size:.86em;color:#8e8496;margin-top:.3em;line-height:1.9}
+#coinEnd .ret{margin-top:2em;font-size:.64em;letter-spacing:.34em;text-transform:uppercase;color:#6a5f7c;visibility:hidden}
+#coinEnd.ready .ret{visibility:visible;animation:blink 1.8s infinite}
+#stage:is(.l-fa,.l-ar,.l-ja) #coinEnd :is(.ret,.hee){letter-spacing:0}
+#coinEnd .l1{white-space:pre-line;min-height:5.7em;display:flex;align-items:center;justify-content:center}
+#coinEnd.turn .l1{animation:cePage .5s ease}
+#coinEnd .nx{font-size:.7em;color:#6a5f7c;visibility:hidden;height:1em;margin-top:.4em}
+#coinEnd.more .nx{visibility:visible;animation:blink 1.4s infinite}
+#coinEnd .ret{margin-top:.6em;color:#8a7fa6}
+#stage:is(.l-fa,.l-ar,.l-ja) #coinEnd .ret{font-size:.84em}
+@keyframes cePage{0%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){#coinEnd.turn .l1{animation:none}}
+@keyframes ceHee{0%{transform:translateY(0)}50%{transform:translateY(-.12em)}}
+@media (prefers-reduced-motion:reduce){#coinEnd.laugh .hee{animation:none}}
+@media (max-height:430px){#coinEnd .hee{font-size:1.4em}#coinEnd .num{font-size:2.1em;margin:.05em 0 .15em}#coinEnd .ret{margin-top:.3em}#coinEnd .l1{line-height:1.6;min-height:4.8em}#coinEnd .l2{line-height:1.5;margin-top:0}}
+
+/* ---------- the language choices beside the language button:  EN · فا · ع · РУ · 日 ---------- */
+#langMenu{position:absolute;z-index:9;display:none;gap:.4em;padding:.35em;border-radius:1.6em;background:rgba(10,6,22,.88);border:1px solid rgba(150,110,230,.3)}
+#langMenu.on{display:flex}
+#langMenu button{width:2.5em;height:2.5em;border-radius:50%;border:1px solid rgba(160,130,230,.35);background:rgba(20,12,40,.6);color:#cbbce8;font-size:.8em;line-height:1;padding:0;cursor:pointer;display:grid;place-items:center}
+#langMenu button.on{background:rgba(110,70,200,.55);color:#fff;border-color:#a98cf0}
+#langMenu button:hover{color:#fff}
+#stage.dim #langMenu,#stage.void #langMenu{display:none}
+/* upright phone: the salary line may take two lines instead of running into the name plate (Russian and Japanese are long) */
+#stage.tall .hud .cut{white-space:normal;max-width:54%;line-height:1.45}
+
+/* ---------- Round 9 · the redacted name ----------
+   <span class="redacted" data-name>decoy letters</span> : the scribble is one inline SVG laid over the letters.
+   Used everywhere the name appears until G.flags.named (see Redact in 61-i18n.js). */
+.redacted{position:relative;display:inline-block;white-space:nowrap;unicode-bidi:isolate;color:rgba(190,180,205,.42);letter-spacing:.02em;user-select:none;-webkit-user-select:none}
+.redacted::after{content:'';position:absolute;left:-.14em;right:-.14em;top:.1em;bottom:-.04em;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30' preserveAspectRatio='none'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 17L9 8 13 23 21 7 26 24 34 8 39 23 47 7 52 24 60 8 65 23 73 7 78 24 86 9 91 22 98 12' stroke='%235a0f1b' stroke-width='6.5'/%3E%3Cpath d='M1 14L18 17 37 12 58 18 79 13 99 16' stroke='%238f1d2c' stroke-width='5'/%3E%3Cpath d='M3 21L24 19 49 22 71 18 97 21' stroke='%23701624' stroke-width='3.6'/%3E%3Cpath d='M5 9L28 11 52 8 76 11 95 8' stroke='%23a52a3a' stroke-width='2.2'/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat}
+#stage.rtl .redacted{letter-spacing:0}
+/* the ceremony: the scribble burns off, left to right in Latin scripts, right to left in Persian and Arabic */
+#nameReveal{position:absolute;inset:0;z-index:70;display:none;align-items:center;justify-content:center;flex-direction:column;background:#07050c;text-align:center}
+#nameReveal.on{display:flex}
+#nameReveal .nr-c{font-size:.8em;letter-spacing:.3em;color:#8d80ad;margin-bottom:1.4em;opacity:0;transition:opacity 1.2s}
+#nameReveal .nr-n{font-size:3.2em;color:#e9d9a6;position:relative;display:inline-block;padding:0 .2em;line-height:1.5}
+#nameReveal .nr-n .redacted{color:rgba(190,180,205,.5)}
+#nameReveal .nr-n .redacted::after{transition:clip-path 2.4s cubic-bezier(.3,.1,.3,1),filter 2.4s}
+#nameReveal.burn .nr-n .redacted::after{clip-path:inset(0 0 0 100%);filter:brightness(2.6) saturate(1.6)}
+#stage.rtl #nameReveal.burn .nr-n .redacted::after{clip-path:inset(0 100% 0 0)}
+#nameReveal .nr-n .clean{position:absolute;inset:0;opacity:0;transition:opacity 1.6s .9s;color:#f0dfa8;white-space:nowrap}
+#nameReveal.burn .nr-n .clean{opacity:1}
+#nameReveal.burn .nr-n .redacted{color:transparent;transition:color 1.2s .9s}
+#nameReveal.on .nr-c{opacity:1}
+#nameReveal .nr-s{font-size:.78em;color:#a59bbd;margin-top:1.6em;opacity:0;transition:opacity 1.2s 2.2s;max-width:30em;padding:0 1em}
+#nameReveal.burn .nr-s{opacity:1}
+#nameReveal i.em{position:absolute;width:.22em;height:.22em;background:#f2b24a;opacity:0;animation:nrEm 2.2s linear forwards}
+@keyframes nrEm{0%{opacity:0;transform:translateY(0)}15%{opacity:1}100%{opacity:0;transform:translateY(-5em)}}
+@media (prefers-reduced-motion:reduce){#nameReveal i.em{display:none}#nameReveal .nr-n .redacted::after{transition:opacity 1.5s}#nameReveal.burn .nr-n .redacted::after{clip-path:none;filter:none;opacity:0}}
+/* the title on the first screen is written in the chosen language */
+#stage.l10n #gate .g-t{font-family:var(--ff);letter-spacing:.12em;margin-right:0}
+#stage.rtl #gate .g-t,#stage.rtl #gate .g-s,#stage.l-ja #gate .g-s{letter-spacing:0}
+/* Round 9 · the opening: long sentences, typed with the narrator */
+#intro .ln.solo{transition:opacity .4s ease;min-height:7.4em}
+#introLines{max-width:36em;margin-left:auto;margin-right:auto;padding:0 1.2em;position:relative;z-index:2}
+#intro .ln.solo .en{font-size:.92em;line-height:1.65;text-wrap:balance}
+
+/* ==========================================================================
+   Round 9 · §8 the fight: weapon badge, stamina, hints, thumb buttons, armoury
+   ========================================================================== */
+#fight .cbar{position:absolute;left:1em;bottom:3.1em;display:flex;flex-direction:column;gap:.35em;align-items:flex-start}
+#stage.touching #fight .cbar{bottom:5.4em}
+#wpNow{display:flex;align-items:center;gap:.45em;font-size:.62em;color:#d8cba0;letter-spacing:.06em}
+#wpNow img{width:2.6em;height:2.6em;image-rendering:pixelated;background:#120c1e;border:1px solid #3a2d58}
+#stamBar{width:8.5em;height:.34em;background:#0f0a18;border:1px solid #33284d;position:relative;overflow:hidden}
+#stamFill{position:absolute;inset:0;display:block;background:#5fae7a;transform-origin:left;transition:transform .08s linear}
+#stamBar.low #stamFill{background:#c9553f}
+#stage.rtl #fight .cbar{left:auto;right:1em;align-items:flex-end}
+#stage.rtl #stamFill{transform-origin:right}
+#fightSay{position:absolute;left:0;right:0;top:27%;text-align:center;font-size:.9em;color:#f0dfa8;letter-spacing:.2em;opacity:0;transition:opacity .25s;text-shadow:0 1px 0 #07050c,0 -1px 0 #07050c,1px 0 0 #07050c,-1px 0 0 #07050c}
+#fightSay.on{opacity:1}
+#fightSay.bad{color:#e0705a}
+#fightHint{position:absolute;left:50%;top:4.6em;transform:translateX(-50%);font-size:.7em;padding:.3em .9em;color:#e9d9a6;background:#120c1e;border:1px solid #6b4fb0;opacity:0;transition:opacity .15s;white-space:nowrap}
+#fightHint.on{opacity:1}
+#fightHint.h-jump,#fightHint.h-away{border-color:#c9553f;color:#f3c0a8}
+#fight .keyhint{display:flex;gap:1em;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
+#fight .keyhint span{white-space:nowrap}
+#stage.touching #fight .keyhint{display:none}
+#stage.rtl #fight .keyhint{right:auto;left:1.4em;justify-content:flex-start}
+/* thumb buttons: only in the fight. Two rows of three on the right; jump keeps the corner. */
+#touch .cmb{display:none}
+#stage.fighting #touch .cmb{position:absolute;right:1em;bottom:1em;display:grid;grid-template-columns:repeat(3,3.3em);grid-auto-rows:3.3em;gap:.5em;direction:ltr}
+#stage.fighting #touch .right button[data-act="act"]{display:none}
+#stage.fighting #touch .right .jmp{width:3.3em;height:3.3em;font-size:1em}
+#touch .cmb button{pointer-events:auto;border-radius:50%;background:rgba(24,16,42,.72);border:1px solid rgba(160,120,240,.45);color:#eadfff;display:grid;place-items:center;padding:0;touch-action:none}
+#touch .cmb button svg{width:1.5em;height:1.5em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#touch .cmb button img{width:2em;height:2em;image-rendering:pixelated}
+#touch .cmb button.dn{background:rgba(120,70,220,.6);color:#fff}
+#touch .cmb .cb-attack{border-color:#e9d9a6;color:#f0dfa8}
+#touch .cmb .cb-guard{border-color:rgba(120,190,220,.6)}
+#stage.fighting.dlg-on #touch .cmb{display:none}
+/* the armoury */
+#armoury{z-index:13;background:#07050c;overflow:auto;-webkit-overflow-scrolling:touch}
+#armoury .arm{max-width:46em;margin:0 auto;padding:1.4em 1em 2em;text-align:center}
+#armoury h2{font-size:1.2em;color:#e9d9a6;letter-spacing:.2em;margin:0 0 .3em;font-weight:normal}
+#armoury .lead{font-size:.7em;color:#8d80ad;margin:0 0 1.2em}
+#armoury .arm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19em,1fr));gap:.7em;text-align:start}
+.wcard{display:flex;gap:.8em;padding:.7em;border:1px solid #2c2242;background:#0e0a18}
+.wcard.eq{border-color:#8a6a2a}
+.wcard.locked{opacity:.45}
+.wcard img{width:4em;height:4em;flex:none;image-rendering:pixelated;background:#120c1e;border:1px solid #3a2d58}
+.wcard .wtx{flex:1;min-width:0}
+.wcard b{display:block;font-size:.86em;color:#e9d9a6;font-weight:normal;letter-spacing:.06em}
+.wcard p{font-size:.66em;color:#a59bbd;line-height:1.55;margin:.3em 0 .5em}
+.wcard .bars{display:grid;grid-template-columns:1fr 1fr;gap:.2em .9em;font-size:.56em;color:#8d80ad}
+.wcard .bars span{display:flex;justify-content:space-between;align-items:center;gap:.4em}
+.wcard .bars i{display:inline-flex;gap:2px;direction:ltr}
+.wcard .bars u{width:.55em;height:.55em;background:#221a34;text-decoration:none}
+.wcard .bars u.on{background:#b98cff}
+.wcard .slots{display:flex;gap:.4em;margin-top:.6em}
+.wcard .slots .btn{font-size:.6em;padding:.45em .8em;flex:1;text-align:center}
+.wcard .slots .btn.on{border-color:#c9a04a;color:#f0dfa8;background:#2a2010}
+#armoury .back{margin-top:1.2em}
+#pause .menu .btn.opt{font-size:.74em;color:#a59bbd}
+#stage.rtl #pause .menu .btn{text-align:right}
+
+/* ==========================================================================
+   Round 9 · §8.2b Reality Override: the terminal, the falling code, the panic screen
+   ========================================================================== */
+#term{position:absolute;left:1em;right:1em;top:3.6em;z-index:3;display:none;pointer-events:none;text-align:left;
+  font-family:VeyMono,ui-monospace,Menlo,Consolas,monospace!important;color:#39c27a;font-size:.86em;line-height:1.15;transition:opacity .45s,transform .45s}
+#term *{font-family:inherit!important;letter-spacing:0!important}
+#term.on{display:block}
+#term.collapse{opacity:0;transform:scaleY(.04)}
+#term .tlog div{opacity:.55;white-space:pre-wrap;overflow-wrap:anywhere}
+#term .tlog div.read{color:#7fd9a6;opacity:.7}
+#term .tlog div.run{color:#d6ffe6;opacity:.9}
+#term .tlog div.err{color:#ff5d7a;opacity:1}
+#term .tlog div.last{color:#f0dfa8;opacity:1;margin-top:.5em;font-family:var(--ff)!important;font-size:.9em;line-height:1.5}
+#term .tcmd{margin-top:.3em;font-size:1.25em;color:#b6ffd2;white-space:pre-wrap;overflow-wrap:anywhere;min-height:2.4em}
+#term .tcmd .tp{color:#39c27a}
+#term .tcmd .run{color:#fff3b0}
+#term .cur{display:inline-block;width:.55em;height:1em;background:#39c27a;vertical-align:-.12em;animation:termCur 1s steps(1) infinite}
+@keyframes termCur{50%{opacity:0}}
+#term .redacted{color:rgba(57,194,122,.45)}
+#stage.term .bossbar .bn{color:#39c27a}
+#stage.term .bossbar .fill{background:#39c27a;box-shadow:none}
+#stage.term .bossbar .pips i.on{color:#39c27a;text-shadow:none}
+#stage.term #stamFill{background:#39c27a}
+#stage.term #wpNow{color:#7fd9a6}
+#stage.tall #term{top:4.6em}
+#stage.compact #term{font-size:.74em}
+#codefall{position:absolute;inset:0;z-index:4;display:none;overflow:hidden;pointer-events:none;font-family:VeyMono,ui-monospace,monospace;color:#39c27a;font-size:.8em}
+#stage.tall #codefall{bottom:auto;height:var(--gh)}
+#codefall.on{display:block}
+#codefall span{position:absolute;top:-2em;white-space:nowrap;opacity:0;animation:codeFall 1.4s linear forwards}
+@keyframes codeFall{0%{transform:translateY(0);opacity:0}10%{opacity:.9}100%{transform:translateY(34em);opacity:0}}
+#stage.calm #codefall span{animation:none;opacity:.5;top:auto;position:static;display:block;margin:.2em 1em}
+@media (prefers-reduced-motion:reduce){#codefall span{animation:none;opacity:.5;position:static;display:block;margin:.2em 1em}#term .cur{animation:none}}
+#restoreCap{position:absolute;left:0;right:0;top:40%;z-index:5;text-align:center;font-size:.9em;color:#e9d9a6;opacity:0;transition:opacity .6s;pointer-events:none;padding:0 1em;
+  text-shadow:0 1px 0 #07050c,0 -1px 0 #07050c,1px 0 0 #07050c,-1px 0 0 #07050c}
+#stage.tall #restoreCap{top:calc(var(--gh) * .4)}
+#restoreCap.on{opacity:1}
+#panic{position:absolute;inset:0;z-index:14;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.7em;background:#030806;color:#39c27a;text-align:center;padding:1em}
+#panic.on{display:flex}
+#panic .pk{font-family:VeyMono,ui-monospace,monospace!important;font-size:2.6em;color:#ff5d7a;letter-spacing:.08em}
+#panic .pl{font-size:.95em;color:#d6ffe6;line-height:1.7;white-space:pre-line}
+#panic .ps{font-size:.74em;color:#7fd9a6;line-height:1.7;white-space:pre-line}
+#panic .pc{font-family:VeyMono,ui-monospace,monospace!important;font-size:.8em;color:#2a7a50;margin-top:.8em}
+/* in the fight the objective line and the salary note step aside (the weapon badge and the terminal need the room) */
+#stage.fighting #hudObj,#stage.fighting .hud .nameplate i{display:none}
+#stage.term .hud .score{opacity:.35}
+/* Round 9 · credits */
+#credits{z-index:13;background:#07050c;overflow:auto;-webkit-overflow-scrolling:touch}
+#credits .arm{max-width:34em;margin:0 auto;padding:1.4em 1em 2em;text-align:center}
+#credits h2{font-size:1.2em;color:#e9d9a6;letter-spacing:.2em;margin:0 0 .8em;font-weight:normal}
+#credits h3{font-size:.7em;color:#8d80ad;letter-spacing:.2em;margin:1.4em 0 .5em;font-weight:normal}
+#credits ul{list-style:none;margin:0;padding:0}
+#credits li{font-size:.74em;color:#cfc3b4;padding:.35em 0;border-bottom:1px solid #1c1530;font-family:Georgia,serif!important}
+#credits li b{color:#e9d9a6;font-weight:normal}
+#credits li small{display:block;font-size:.8em;color:#6f6588}
+#credits p{font-size:.74em;color:#a59bbd;line-height:1.7;margin:.3em 0}
+#credits .rest{margin-top:1.4em;color:#8d80ad}
+#credits .back{margin-top:1.4em}
+/* Round 9 · fight layout fixes: the cluster sits where the jump button sits (upright phones lift both), the salary note and the
+   key legend step out of the way, the boss bar drops below the name row on upright phones */
+#stage.tall.fighting #touch .cmb{bottom:calc(2.2em + env(safe-area-inset-bottom))}
+#stage.fighting .hud .cut{display:none}
+#stage.compact.fighting .bossbar{top:2.5em;width:92%}
+#stage.compact.fighting #term{top:6.4em}
+#fight .keyhint{bottom:3.3em;max-width:none}
+#stage.rtl.fighting #touch .cmb,#stage.rtl.fighting #touch .right{direction:ltr}
+#stage.rtl.touching #fight .cbar{left:1em;right:auto;align-items:flex-start}
+
+/* ==========================================================================
+   Owner request after Round 9 §8: the backpack button, RE-sync's editor, "Visit RE-sync" on the Attempt screen
+   ========================================================================== */
+#bagBtn{display:none;left:1.15em;right:auto;top:50%;transform:translateY(-50%);width:2.9em;height:2.9em;opacity:.9;border-color:#c9a04a;color:#f0dfa8;background:rgba(42,32,16,.8);place-items:center}
+#bagBtn.on{display:grid}
+#bagBtn svg{width:1.7em;height:1.7em;display:block}
+#bagBtn:active{background:rgba(120,90,30,.9)}
+#stage.tall #bagBtn{top:calc(var(--gh) + 1.3em);left:1.2em;transform:none}
+#stage.fighting.touching:not(.tall) #bagBtn{top:38%}
+#wpNow b{color:#b6ffd2;font-weight:normal}
+.wcard b small{font-size:.72em;color:#7fd9a6;margin:0 .5em}
+#attRe{margin-top:1.6em;font-size:.7em;border-color:#2a7a50;color:#b6ffd2}
+#editor{position:absolute;inset:0;z-index:12;display:none;align-items:center;justify-content:center;background:rgba(3,8,6,.86);padding:.8em}
+#stage.tall #editor{bottom:auto;height:var(--gh)}
+#editor.on{display:flex}
+#editor .ed{width:min(100%,34em);border:1px solid #2a7a50;background:#030806;color:#7fd9a6;font-family:VeyMono,ui-monospace,Menlo,Consolas,monospace;text-align:left}
+#editor .ed *{font-family:inherit!important;letter-spacing:0!important}
+#editor .ed-bar{display:flex;align-items:center;gap:.35em;padding:.3em .6em;background:#0d2a1c;color:#b6ffd2;font-size:.8em}
+#editor .ed-bar i{width:.55em;height:.55em;border-radius:50%;background:#2a7a50}
+#editor .ed-bar b{font-weight:normal;margin-left:.5em;flex:1}
+#editor .ed-bar span{color:#39c27a}
+#editor .ed-code{padding:.45em .6em;font-size:.82em;line-height:1.28;white-space:pre;overflow:hidden}
+#editor .ln u{text-decoration:none;color:#1f5a3c;margin-right:.9em}
+#editor .ln.cur{background:#0a2016}
+#editor .ln em{font-style:normal;color:#d6ffe6}
+#editor .ln em.sel{background:#39c27a;color:#030806}
+#editor .ln em.new{color:#fff3b0}
+#editor .ed-stat{padding:.25em .6em;background:#0d2a1c;color:#fff3b0;font-size:.74em;min-height:1.5em;white-space:nowrap;overflow:hidden}
+#editor .ed-cap{padding:.4em .6em;font-size:.66em;color:#8fbfa3;font-family:var(--ff)!important;text-align:center;border-top:1px solid #12301f}
+#stage.compact #editor .ed-code{font-size:.66em}
+#dlg .who.asis{text-transform:none}
+#credits .tracks{font-family:Georgia,serif!important;font-style:italic;color:#cfc3b4;font-size:.72em}
+#credits p{white-space:pre-line}
+
+/* ==========================================================================
+   Round 9 · §3 the life-stage pictures (57-stills.js)
+   ========================================================================== */
+#still{position:absolute;inset:0;z-index:1;display:none;align-items:center;justify-content:center;background:#030207;pointer-events:none}
+#still.on{display:flex;animation:stillIn .7s ease both}
+@keyframes stillIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){#still.on{animation:none}}
+#still canvas{image-rendering:pixelated;image-rendering:crisp-edges;display:block;flex:none}
+#still .cap{position:absolute;left:0;right:0;top:0;padding:.55em 1em;font-size:.66em;color:#e9d9a6;background:rgba(3,2,7,.82);text-align:center;font-family:var(--ff);letter-spacing:.04em}
+#stage > #still{z-index:4}
+#stage.tall > #still{bottom:auto;height:var(--gh)}
+#stage.still-on .hud{opacity:0}
+#intro.still-on #introLines{position:absolute;left:0;right:0;bottom:0;max-width:none;margin:0;padding:.7em 1.2em 1em;background:rgba(3,2,7,.86)}
+#intro.still-on .ln.solo{min-height:4.6em}
+#intro.still-on .ln.solo .en{font-size:.84em;line-height:1.5}
+@media (orientation:portrait){#intro #still{align-items:flex-start;padding-top:22%}#intro #still .cap{top:auto;bottom:auto;position:static;margin-top:.4em;background:none}#intro #still{flex-direction:column;justify-content:flex-start}#intro.still-on #introLines{bottom:8%}}
+#ending .e3{display:inline-block;margin-top:1.2em;font-size:.82em;color:#a59bbd;white-space:pre-line}
+#stage.still-on:not(.tall) #dlg{top:auto;bottom:.8em}
+#stage:not(.tall) > #still{align-items:flex-start;padding-top:2.3em}
+@media (orientation:landscape){#intro #still{align-items:flex-start;padding-top:2.1em}#intro.still-on #introLines{background:none;padding-bottom:.6em}}
+#stage:not(.tall) > #still{padding-top:1.9em}
+/* Round 10 · weapons in every hall (67-ward.js). `armed`: the fight's thumb buttons show in the world too; `near`: the ✦ button
+   comes back above them when there is something to speak with; `swing`: weapon badge and stamina show for a moment. */
+#stage.armed #touch .cmb{position:absolute;right:1em;bottom:1em;display:grid;grid-template-columns:repeat(3,3.3em);grid-auto-rows:3.3em;gap:.5em;direction:ltr}
+#stage.tall.armed #touch .cmb{bottom:calc(2.2em + env(safe-area-inset-bottom))}
+#stage.armed #touch .right .jmp{width:3.3em;height:3.3em;font-size:1em}
+#stage.armed #touch .right button[data-act="act"]{display:none}
+#stage.armed.near #touch .right button[data-act="act"]{display:block;position:absolute;right:0;bottom:8.1em;width:3.3em;height:3.3em;border-color:#e9d9a6;color:#f0dfa8;background:rgba(42,32,16,.85)}
+#stage.rtl.armed #touch .cmb,#stage.rtl.armed #touch .right{direction:ltr}
+#stage.swing:not(.fighting) #fight{opacity:1;transition:opacity .2s}
+#stage.swing:not(.fighting) #fight>:not(.cbar):not(.keyhint){display:none}
+/* the Keeper's ward: the third blow against someone in the halls */
+#smite{z-index:12;background:#05030a;display:none;place-items:center;text-align:center}
+#smite.on{display:grid;animation:smiteIn 1.1s steps(6) both}
+#smite .l1{font-size:1.25em;line-height:1.9;color:#e6dcff;white-space:pre-line;letter-spacing:.06em;max-width:22em;margin:0 auto;padding:0 1em}
+#smite .ret{margin-top:2.4em;font-size:.62em;letter-spacing:.2em;color:#8f7fb8;opacity:0;animation:smiteIn .6s 1.7s steps(4) both}
+#stage.l10n #smite *{font-family:var(--ff)!important}
+#stage:is(.l-fa,.l-ar,.l-ja) #smite *{letter-spacing:0!important}
+@keyframes smiteIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){#smite.on,#smite .ret{animation-duration:.01s}}
+/* landscape phones with the fight buttons out (in the fight, and in the halls once a weapon is carried): the four small
+   buttons leave the right edge, where the thumb cluster now reaches, and sit in a row under the score */
+#stage.touching:not(.tall):is(.armed,.fighting) :is(#langBtn,#fsBtn,#mute,#menuBtn){top:5.6em;transform:none}
+#stage.touching:not(.tall):is(.armed,.fighting) #menuBtn{right:1.4em}
+#stage.touching:not(.tall):is(.armed,.fighting) #mute{right:4.4em}
+#stage.touching:not(.tall):is(.armed,.fighting) #fsBtn{right:7.4em}
+#stage.touching:not(.tall):is(.armed,.fighting) #langBtn{right:10.4em}
+
+/* In the dojo use the combat instructions without showing a boss bar. */
+#stage.dojo #fight .bossbar { display:none; }
+#stage.dojo #fightHint { top: 1.4em; }
+
+#stage.dojo .hud .score,#stage.dojo .hud .cut{display:none}
+#stage.dojo #touch .cmb{position:absolute;right:1em;bottom:1em;display:grid;grid-template-columns:repeat(3,3.3em);grid-auto-rows:3.3em;gap:.5em;direction:ltr}
+#stage.dojo.dlg-on #touch .cmb{display:none}
+#stage.dojo.swing #fightHint{display:block!important}
+
+/* ==========================================================================
+   18 Nov · the roster: who walks into Veyrath (66-roster.js)
+   ========================================================================== */
+#roster{background:radial-gradient(120% 90% at 50% 0%,rgba(30,18,54,.96),rgba(3,2,7,.985) 62%)}
+#roster .rs{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6em;padding:2.2em 1em 1.2em;box-sizing:border-box;overflow:auto}
+#roster .rs-h{text-align:center;line-height:1.35}
+#roster .rs-h b{display:block;font-family:Georgia,serif;font-size:1.5em;letter-spacing:.34em;margin-right:-.34em;color:#e6dcff;text-transform:uppercase}
+#roster .rs-h i{display:block;font-style:normal;font-size:.62em;letter-spacing:.22em;color:#8d80ad;text-transform:uppercase;margin-top:.35em}
+#roster .rs-grid{display:flex;gap:.45em;flex-wrap:wrap;justify-content:center;max-width:100%;margin:.2em 0}
+#roster .rs-card{position:relative;width:6.9em;padding:.5em .4em .45em;border:1px solid rgba(120,96,180,.35);background:linear-gradient(180deg,rgba(22,14,38,.9),rgba(8,5,16,.94));color:#cdc0e8;font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.18em;overflow:hidden;transition:border-color .15s,transform .15s,box-shadow .15s}
+#roster .rs-card:hover{border-color:rgba(190,150,255,.7);transform:translateY(-2px)}
+#roster .rs-card.on{border-color:#e8ddff;box-shadow:0 0 0 1px rgba(240,230,255,.35),0 0 18px rgba(150,110,255,.28) inset}
+#roster .rs-card.op{border-color:rgba(255,214,130,.65);background:linear-gradient(180deg,rgba(52,32,16,.92),rgba(10,6,12,.95))}
+#roster .rs-card.op.on{border-color:#ffe6a8;box-shadow:0 0 0 1px rgba(255,226,150,.5),0 0 22px rgba(255,190,90,.28) inset}
+#roster .rs-bod{position:absolute;top:.3em;left:50%;width:4.2em;height:4.2em;transform:translateX(-50%);background-size:100% 100%;image-rendering:pixelated;opacity:.16;pointer-events:none}
+#roster .rs-por{width:3.9em;height:3.9em;margin-top:.1em;background-size:100% 100%;image-rendering:pixelated;border:1px solid rgba(150,120,220,.5);background-color:#120c1e}
+#roster .rs-n{font-size:.66em;margin-top:.25em;letter-spacing:.1em;text-transform:uppercase;color:#f0e9ff;line-height:1.1;text-align:center}
+#roster .rs-s{font-size:.5em;color:#9c8fc0;line-height:1.15;text-align:center;min-height:2.3em}
+#roster .rs-tag{position:absolute;top:0;left:0;right:0;font-size:.42em;letter-spacing:.18em;padding:.4em 0 .28em;background:linear-gradient(180deg,#f2c46a,#b57b26);color:#1c1004;font-weight:700;text-transform:uppercase}
+#roster .rs-bars{display:flex;flex-direction:column;gap:.15em;width:100%;margin-top:.2em}
+#roster .rs-bars em{display:flex;gap:.14em;justify-content:center}
+#roster .rs-bars u{width:.55em;height:.22em;border:1px solid rgba(150,120,220,.5);text-decoration:none;display:block}
+#roster .rs-bars u.on{background:#c9b6ff;border-color:#e8ddff;box-shadow:0 0 .3em rgba(180,150,255,.6)}
+#roster .rs-card.op .rs-bars u.on{background:#ffe0a0;border-color:#fff0cc;box-shadow:0 0 .3em rgba(255,200,110,.7)}
+#roster .rs-foot{display:flex;flex-direction:column;align-items:center;gap:.5em;max-width:44em;text-align:center}
+#roster .rs-line{font-size:.6em;color:#b6a8d8;line-height:1.5;min-height:2.4em}
+#roster .rs-foot .btn{min-width:12em}
+#roster .rs-foot #rsBack{font-size:.55em;opacity:.7;min-width:0}
+@media (orientation:portrait){#roster .rs{padding-top:.8em}#roster .rs-card{width:5.6em}#roster .rs-h b{font-size:1.1em}#roster .rs-h i{font-size:.52em}#roster .rs-line{font-size:.55em}}
+@media (max-width:520px){#roster .rs-card{width:4.9em}#roster .rs-h b{font-size:.95em;letter-spacing:.2em}}

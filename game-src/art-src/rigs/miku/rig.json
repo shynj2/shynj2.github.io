@@ -1,0 +1,78 @@
+{
+  "_doc": "MIKU — Cyber-diva pilgrim with dual flowing cyan twin-tails, headset, silver vest, cyan tie, pleated skirt, detached equalizer sleeves, and zettai-ryouiki boots.",
+  "frame": [68, 66],
+  "origin": [34, 60],
+  "pal": "miku",
+  "meta": {
+    "portrait": [22, 13, 23, 23],
+    "headTop": -44,
+    "hit": [14, 36],
+    "hand": ["foreF", 7],
+    "backRim": "cold4"
+  },
+  "bones": {
+    "root": {},
+    "hips":   { "parent": "root",  "x": 0,  "y": -19 },
+    "skirt":  { "parent": "hips",  "x": 0,  "y": -2,  "sign": -1 },
+    "torso":  { "parent": "hips",  "x": 0,  "y": -1 },
+    "tie":    { "parent": "torso", "x": 2,  "y": -10, "sign": -1 },
+    "head":   { "parent": "torso", "x": 1,  "y": -12 },
+    "tailB":  { "parent": "head",  "x": -2, "y": -8,  "sign": -1 },
+    "tailF":  { "parent": "head",  "x": -4, "y": -7,  "sign": -1 },
+    "armF":   { "parent": "torso", "x": -2, "y": -10, "sign": -1 },
+    "foreF":  { "parent": "armF",  "x": 0,  "y": 6,   "sign": -1 },
+    "armB":   { "parent": "torso", "x": 2,  "y": -10, "sign": -1 },
+    "foreB":  { "parent": "armB",  "x": 0,  "y": 6,   "sign": -1 },
+    "thighF": { "parent": "hips",  "x": 1,  "y": 0,   "sign": -1 },
+    "shinF":  { "parent": "thighF","x": 0,  "y": 8,   "sign": -1 },
+    "footF":  { "parent": "shinF", "x": 0,  "y": 8 },
+    "thighB": { "parent": "hips",  "x": -1, "y": 0,   "sign": -1 },
+    "shinB":  { "parent": "thighB","x": 0,  "y": 8,   "sign": -1 },
+    "footB":  { "parent": "shinB", "x": 0,  "y": 8 }
+  },
+  "ik": {
+    "legF": { "a": "thighF", "b": "shinF", "end": "footF", "bend": 1,  "len2": 8 },
+    "legB": { "a": "thighB", "b": "shinB", "end": "footB", "bend": 1,  "len2": 8 },
+    "armF": { "a": "armF",   "b": "foreF", "bend": -1, "len2": 7 },
+    "armB": { "a": "armB",   "b": "foreB", "bend": -1, "len2": 7 }
+  },
+  "secondary": {
+    "tailF": { "kx": 16, "ky": 18, "max": 60 },
+    "tailB": { "kx": 19, "ky": 20, "max": 68 },
+    "tie":   { "kx": 15, "ky": 16, "max": 65 },
+    "skirt": { "kx": 7,  "ky": 8,  "max": 22 }
+  },
+  "groups": {
+    "tailB": { "z": 0 },
+    "armB":  { "z": 1 },
+    "legB":  { "z": 2 },
+    "legF":  { "z": 3 },
+    "body":  { "z": 4 },
+    "skirt": { "z": 5 },
+    "tie":   { "z": 6 },
+    "head":  { "z": 7 },
+    "tailF": { "z": 8 },
+    "armF":  { "z": 9 }
+  },
+  "parts": [
+    { "name": "tailB",  "group": "tailB", "bone": "tailB",  "sprite": "tailB",   "pivot": [3, 1], "shade": -1 },
+    { "name": "armB",   "group": "armB",  "bone": "armB",   "sprite": "arm",     "pivot": [1, 0], "shade": -1 },
+    { "name": "foreB",  "group": "armB",  "bone": "foreB",  "sprite": "forearm", "pivot": [2, 0], "shade": -1 },
+    { "name": "thighB", "group": "legB",  "bone": "thighB", "sprite": "thigh",   "pivot": [1, 0], "shade": -1 },
+    { "name": "shinB",  "group": "legB",  "bone": "shinB",  "sprite": "shin",    "pivot": [1, 0], "shade": -1 },
+    { "name": "footB",  "group": "legB",  "bone": "footB",  "sprite": "shoe",    "pivot": [1, 0], "shade": -1 },
+    { "name": "thighF", "group": "legF",  "bone": "thighF", "sprite": "thigh",   "pivot": [1, 0] },
+    { "name": "shinF",  "group": "legF",  "bone": "shinF",  "sprite": "shin",    "pivot": [1, 0] },
+    { "name": "footF",  "group": "legF",  "bone": "footF",  "sprite": "shoe",    "pivot": [1, 0] },
+    { "name": "torso",  "group": "body",  "bone": "torso",  "sprite": "torso",   "pivot": [4, 11] },
+    { "name": "skirt",  "group": "skirt", "bone": "skirt",  "sprite": "skirt",   "pivot": [5, 1] },
+    { "name": "tie",    "group": "tie",   "bone": "tie",    "sprite": "tie",     "pivot": [1, 0] },
+    { "name": "head",   "group": "head",  "bone": "head",   "sprite": "head",    "pivot": [5, 11] },
+    { "name": "tailF",  "group": "tailF", "bone": "tailF",  "sprite": "tailF",   "pivot": [6, 1] },
+    { "name": "armF",   "group": "armF",  "bone": "armF",   "sprite": "arm",     "pivot": [1, 0] },
+    { "name": "foreF",  "group": "armF",  "bone": "foreF",  "sprite": "forearm", "pivot": [2, 0] }
+  ],
+  "pivots": {
+    "headBack": [7, 11]
+  }
+}

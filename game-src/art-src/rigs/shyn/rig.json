@@ -1,0 +1,34 @@
+{
+  "_doc": "SHYN, THE RUNE ARCHITECT — horned, long-coated, twice the Recruiter's height, leaning on the ROOTKEY staff; four code glyphs orbit him. Units are pixels, y down, root = ground between the boots. Clips: idle, cast, hurt, kneel (the game sets BOSS.pose to one of these).",
+  "frame": [176, 144],
+  "origin": [84, 140],
+  "pal": "shyn",
+  "meta": { "portrait": [76, 38, 23, 23], "headTop": -104, "backRim": "rune3" },
+  "bones": {
+    "root":  {},
+    "body":  { "parent": "root",  "x": 0,  "y": 0 },
+    "chest": { "parent": "body",  "x": 0,  "y": -74 },
+    "head":  { "parent": "chest", "x": 2,  "y": -3 },
+    "armB":  { "parent": "chest", "x": -12, "y": 5, "sign": -1 },
+    "armF":  { "parent": "chest", "x": 12, "y": 5, "sign": -1 },
+    "staff": { "parent": "armF",  "x": 0,  "y": 29, "sign": -1 },
+    "g1": { "parent": "root" }, "g2": { "parent": "root" }, "g3": { "parent": "root" }, "g4": { "parent": "root" }
+  },
+  "ik": {},
+  "secondary": {},
+  "groups": {
+    "armB": { "z": 2 }, "body": { "z": 4 }, "head": { "z": 5 }, "staff": { "z": 6 }, "armF": { "z": 7 },
+    "g1": { "z": 1 }, "g2": { "z": 1 }, "g3": { "z": 1 }, "g4": { "z": 1 }
+  },
+  "parts": [
+    { "name": "armB",  "group": "armB",  "bone": "armB",  "sprite": "arm",   "pivot": [5, 2], "shade": -1 },
+    { "name": "coat",  "group": "body",  "bone": "body",  "sprite": "coat",  "pivot": [22, 83] },
+    { "name": "head",  "group": "head",  "bone": "head",  "sprite": "head",  "pivot": [14, 28] },
+    { "name": "staff", "group": "staff", "bone": "staff", "sprite": "staff", "pivot": [8, 76] },
+    { "name": "armF",  "group": "armF",  "bone": "armF",  "sprite": "arm",   "pivot": [5, 2] },
+    { "name": "g1", "group": "g1", "bone": "g1", "sprite": "g1", "pivot": [2, 3] },
+    { "name": "g2", "group": "g2", "bone": "g2", "sprite": "g2", "pivot": [2, 3] },
+    { "name": "g3", "group": "g3", "bone": "g3", "sprite": "g3", "pivot": [2, 2] },
+    { "name": "g4", "group": "g4", "bone": "g4", "sprite": "g4", "pivot": [1, 3] }
+  ]
+}

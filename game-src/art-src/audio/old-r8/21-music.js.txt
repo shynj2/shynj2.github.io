@@ -1,0 +1,84 @@
+/* ==========================================================================
+   MUSIC — a generative score, synthesised live (no audio files).
+   One slow piece per zone: bass + pad chords, a sparse bell melody that wanders
+   over the scale, and a war pulse in the Throne that climbs with each phase.
+   To retune a zone, edit its row in SCORE.
+   ========================================================================== */
+const Music = (() => {
+  const MIN = [0, 2, 3, 5, 7, 8, 10], DOR = [0, 2, 3, 5, 7, 9, 10], PHR = [0, 1, 3, 5, 7, 8, 10], MAJ = [0, 2, 4, 5, 7, 9, 11];
+  // root = semitones from middle C · ch = chord roots as scale degrees (two bars each) · bell = how talkative the melody is
+  const SCORE = {
+    workshop:   { root: -10, sc: MIN, ch: [0, 5, 2, 6],       bpm: 66,  wave: 'triangle', cut: 900,  bell: .55 },
+    forest:     { root: -7,  sc: DOR, ch: [0, 3, 6, 4],       bpm: 72,  wave: 'sine',     cut: 1500, bell: .75 },
+    cathedral:  { root: -12, sc: MIN, ch: [0, 3, 5, 4],       bpm: 54,  wave: 'sawtooth', cut: 700,  bell: .4, organ: 1 },
+    catacombs:  { root: -11, sc: PHR, ch: [0, 1, 0, 6],       bpm: 60,  wave: 'triangle', cut: 600,  bell: .3 },
+    repository: { root: -9,  sc: MIN, ch: [0, 5, 3, 4],       bpm: 58,  wave: 'sine',     cut: 1100, bell: .65 },
+    arena:      { root: -14, sc: PHR, ch: [0, 0, 1, 0, 5, 1], bpm: 92,  wave: 'sawtooth', cut: 800,  bell: .22, pulse: 1 },
+    room499:    { root: -5,  sc: MAJ, ch: [0, 3, 4, 0],       bpm: 104, wave: 'triangle', cut: 1800, bell: .7, pizz: 1 }
+  };
+  const TONES = [0, 2, 4, 6, 7, 9, 11];
+  let cur = null, bus = null, step = 0, nextT = 0, rnd = Math.random, walk = 3, started = false;
+
+  function setup() {
+    const c = Sound.ctx; if (!c || !Sound.out) return false;
+    if (bus) return true;
+    bus = c.createGain(); bus.gain.value = 0;
+    const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+    const dly = c.createDelay(1.5), fb = c.createGain(), wet = c.createGain();
+    dly.delayTime.value = .42; fb.gain.value = .38; wet.gain.value = .34;
+    bus.connect(lp); lp.connect(Sound.out); lp.connect(dly); dly.connect(fb); fb.connect(dly); dly.connect(wet); wet.connect(Sound.out);
+    return true;
+  }
+  function voice(f, t, dur, type, vol, att, cut) {
+    const c = Sound.ctx, o = c.createOscillator(), g = c.createGain();
+    o.type = type; o.frequency.value = f;
+    g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(vol, t + att); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    if (cut) { const fl = c.createBiquadFilter(); fl.type = 'lowpass'; fl.frequency.value = cut; o.connect(fl); fl.connect(g); } else o.connect(g);
+    g.connect(bus); o.start(t); o.stop(t + dur + .05);
+  }
+  function hz(z, d, oct) { const n = z.sc.length, k = ((d % n) + n) % n; return 261.63 * Math.pow(2, (z.root + z.sc[k] + 12 * (oct + Math.floor(d / n))) / 12); }
+
+  function tick() {
+    const c = Sound.ctx; if (!cur || !c || c.state !== 'running' || !setup()) return;
+    if (typeof BossMusic !== 'undefined' && BossMusic.on) { bus.gain.setTargetAtTime(0, c.currentTime, .4); return; }   // the fight has its own piece (22-boss-violin.js)
+    bus.gain.setTargetAtTime(Sound.muted ? 0 : .6, c.currentTime, .6);
+    const z = SCORE[cur], sp = 60 / z.bpm / 2;                                   // one eighth note
+    const heat = (typeof BOSS !== 'undefined' && BOSS.active) ? BOSS.phase + 1 : 0;
+    if (nextT < c.currentTime) nextT = c.currentTime + .06;
+    while (nextT < c.currentTime + .4) {
+      const t = nextT, bar = step % 16, cd = z.ch[Math.floor(step / 16) % z.ch.length];
+      if (bar === 0) {                                                            // a new chord: bass and pad swell in
+        const L = sp * 16;
+        voice(hz(z, cd, -1), t, L * 1.05, 'sine', .2, 1.2);
+        for (let i = 0; i < 3; i++) voice(hz(z, cd + i * 2, 0) * (1 + (i - 1) * .003), t + i * .09, L * 1.1, z.wave, z.wave === 'sawtooth' ? .034 : .065, 2.2, z.cut);
+        if (z.organ) voice(hz(z, cd + 4, 1), t, L, 'sine', .028, 3);
+      }
+      if (z.pulse) {                                                              // the Throne: a low drum-like ostinato
+        voice(hz(z, cd, -1), t, sp * .9, 'sawtooth', step % 4 === 0 ? .13 : .06, .005, 260 + heat * 170);
+        if (heat >= 2) voice(hz(z, cd, 0), t + sp / 2, sp * .45, 'sawtooth', .04, .004, 500 + heat * 200);
+        if (step % 8 === 0) voice(hz(z, cd, -2), t, .5, 'sine', .3, .004);
+        if (heat >= 3 && step % 8 === 6) voice(hz(z, cd + 1, 1), t, .3, 'square', .025, .004, 1400);
+      }
+      if (z.pizz && step % 2 === 0) voice(hz(z, cd + [0, 2, 4, 2][(step / 2) % 4], 0), t, .24, 'triangle', .09, .005);
+      const p = z.bell * (step % 2 === 0 ? .42 : .1) * (bar === 0 ? 1.8 : 1);   // the bell: mostly on the beat, often silent
+      if (rnd() < p) {
+        walk = clamp(walk + ((rnd() * 5) | 0) - 2, 0, 6);
+        const f = hz(z, cd + TONES[walk], 1);
+        voice(f, t, 2.4, 'sine', .085, .006); voice(f * 2.005, t, .9, 'sine', .022, .004);
+      }
+      step++; nextT += sp;
+    }
+  }
+  return {
+    /* level < .5 means "quiet now" (the mercy scene keeps only the wind) */
+    play(zone, level) {
+      if (!started) { started = true; setInterval(tick, 120); }
+      const on = SCORE[zone] && (level == null || level >= .5);
+      if (!on) { cur = null; if (bus && Sound.ctx) bus.gain.setTargetAtTime(0, Sound.ctx.currentTime, .9); return; }
+      if (cur !== zone) { cur = zone; rnd = mulberry32(zone.length * 977 + zone.charCodeAt(0)); step = 0; walk = 3; nextT = 0; }
+    },
+    stop() { this.play(null, 0); }
+  };
+})();
+/* the old drone stays underneath, quieter; every place that set the ambience now also sets the music */
+{ const amb0 = Sound.ambience; Sound.ambience = function (mood, level) { amb0(mood, (level == null ? 1 : level) * .55); Music.play(mood, level); }; }

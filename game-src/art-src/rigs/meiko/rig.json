@@ -1,0 +1,79 @@
+{
+  "_doc": "MEIKO — Seraphic Angel of Veyrath. Tall, regal silhouette with four articulated feathered wings, flowing ivory-and-gold gown, sacred stole, golden tiara, and cascading hair.",
+  "frame": [84, 84],
+  "origin": [42, 74],
+  "pal": "meiko",
+  "meta": {
+    "portrait": [31, 18, 23, 23],
+    "headTop": -54,
+    "hit": [14, 36],
+    "backRim": "gold4"
+  },
+  "bones": {
+    "root": {},
+    "hips":    { "parent": "root",  "x": 0,  "y": -23 },
+    "gown":    { "parent": "hips",  "x": 0,  "y": -1,  "sign": -1 },
+    "sash":    { "parent": "hips",  "x": 2,  "y": -1,  "sign": -1 },
+    "torso":   { "parent": "hips",  "x": 0,  "y": -1 },
+    "wingB":   { "parent": "torso", "x": 1,  "y": -11, "sign": -1 },
+    "wingF":   { "parent": "torso", "x": -3, "y": -11, "sign": -1 },
+    "cherubB": { "parent": "torso", "x": 0,  "y": -4,  "sign": -1 },
+    "cherubF": { "parent": "torso", "x": -3, "y": -4,  "sign": -1 },
+    "head":    { "parent": "torso", "x": 1,  "y": -14 },
+    "hairB":   { "parent": "head",  "x": -3, "y": -6,  "sign": -1 },
+    "armF":    { "parent": "torso", "x": -2, "y": -11, "sign": -1 },
+    "foreF":   { "parent": "armF",  "x": 0,  "y": 6,   "sign": -1 },
+    "armB":    { "parent": "torso", "x": 2,  "y": -11, "sign": -1 },
+    "foreB":   { "parent": "armB",  "x": 0,  "y": 6,   "sign": -1 },
+    "thighF":  { "parent": "hips",  "x": 1,  "y": 2,   "sign": -1 },
+    "shinF":   { "parent": "thighF","x": 0,  "y": 9,   "sign": -1 },
+    "footF":   { "parent": "shinF", "x": 0,  "y": 9 },
+    "thighB":  { "parent": "hips",  "x": -1, "y": 2,   "sign": -1 },
+    "shinB":   { "parent": "thighB","x": 0,  "y": 9,   "sign": -1 },
+    "footB":   { "parent": "shinB", "x": 0,  "y": 9 }
+  },
+  "ik": {
+    "legF": { "a": "thighF", "b": "shinF", "end": "footF", "bend": 1,  "len2": 9 },
+    "legB": { "a": "thighB", "b": "shinB", "end": "footB", "bend": 1,  "len2": 9 },
+    "armF": { "a": "armF",   "b": "foreF", "bend": -1, "len2": 7 },
+    "armB": { "a": "armB",   "b": "foreB", "bend": -1, "len2": 7 }
+  },
+  "secondary": {
+    "hairB": { "kx": 14, "ky": 16, "max": 50 },
+    "sash":  { "kx": 13, "ky": 15, "max": 45 },
+    "gown":  { "kx": 7,  "ky": 8,  "max": 22 }
+  },
+  "groups": {
+    "wingB":   { "z": 0 },
+    "hairB":   { "z": 1 },
+    "wingF":   { "z": 2 },
+    "cherub":  { "z": 3 },
+    "armB":    { "z": 4 },
+    "legs":    { "z": 5 },
+    "gown":    { "z": 6 },
+    "body":    { "z": 7 },
+    "sash":    { "z": 8 },
+    "head":    { "z": 9 },
+    "armF":    { "z": 10 }
+  },
+  "parts": [
+    { "name": "wingB",   "group": "wingB",  "bone": "wingB",   "sprite": "wingB",   "pivot": [21, 18], "shade": -1 },
+    { "name": "cherubB", "group": "wingB",  "bone": "cherubB", "sprite": "cherub",  "pivot": [13, 4],  "shade": -1 },
+    { "name": "hairB",   "group": "hairB",  "bone": "hairB",   "sprite": "hairB",   "pivot": [6, 1] },
+    { "name": "wingF",   "group": "wingF",  "bone": "wingF",   "sprite": "wingF",   "pivot": [25, 19] },
+    { "name": "cherubF", "group": "cherub", "bone": "cherubF", "sprite": "cherub",  "pivot": [13, 4] },
+    { "name": "armB",    "group": "armB",   "bone": "armB",    "sprite": "arm",     "pivot": [1, 0],  "shade": -1 },
+    { "name": "foreB",   "group": "armB",   "bone": "foreB",   "sprite": "forearm", "pivot": [2, 0],  "shade": -1 },
+    { "name": "footB",   "group": "legs",   "bone": "footB",   "sprite": "sandal",  "pivot": [1, 0],  "shade": -1 },
+    { "name": "footF",   "group": "legs",   "bone": "footF",   "sprite": "sandal",  "pivot": [1, 0] },
+    { "name": "gown",    "group": "gown",   "bone": "gown",    "sprite": "gown",    "pivot": [9, 1] },
+    { "name": "torso",   "group": "body",   "bone": "torso",   "sprite": "torso",   "pivot": [5, 13] },
+    { "name": "sash",    "group": "sash",   "bone": "sash",    "sprite": "sash",    "pivot": [2, 0] },
+    { "name": "head",    "group": "head",   "bone": "head",    "sprite": "head",    "pivot": [6, 13] },
+    { "name": "armF",    "group": "armF",   "bone": "armF",    "sprite": "arm",     "pivot": [1, 0] },
+    { "name": "foreF",   "group": "armF",   "bone": "foreF",   "sprite": "forearm", "pivot": [2, 0] }
+  ],
+  "pivots": {
+    "headBack": [7, 13]
+  }
+}
